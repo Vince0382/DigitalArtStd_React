@@ -1,0 +1,40 @@
+.Home {
+    height: calc(100vh - 72px);
+    width: 100vw;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.Animation {
+    height: 30%;
+    padding-top: 10%;
+    width: 60vw;
+    margin-left: 10vw;
+}
+
+.DivButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.DivMouse {
+    position: absolute;
+    bottom: 10vh;
+    left: 0;
+    width: 100%;
+}
+
+.Content {
+    height: 70vh;
+    width: 100vw;
+}
+
+.ContentAfter {
+    width: 100vw;
+    height: 100px;
+    background: transparent;
+}
+
+

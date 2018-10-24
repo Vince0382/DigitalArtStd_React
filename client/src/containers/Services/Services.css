@@ -1,0 +1,85 @@
+.ServicesHead {
+    width: 100vw;
+    height: calc(100vh - 72px);
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.HeadTitle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    height: 50%;
+}
+
+.HeadTitle h1 {
+    width: 100%; 
+    text-align: center;
+    font-size: 200%;
+    font-style: italic;
+}
+
+.HeadTitle p {
+    width: 80%; 
+    text-align: right;
+    font-style: italic;
+}
+
+.DivMouse {
+    position: absolute;
+    bottom: 10vh;
+    left: 0;
+    width: 100%;
+}
+
+.Main {
+    padding-top: 50px;
+    width: 100%;
+}
+
+.SkillDiv {
+    width: 75%;
+    margin: auto;
+}
+
+.SkillBars {
+    width: 100%;
+}
+
+.SkillImage {
+    width: 100%;
+    
+}
+
+.SkillImage img {
+    width: 100%;
+}
+
+@media (min-width: 750px){
+    .SkillDiv {
+        width: 80%;
+        height: 50vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .SkillBars {
+        width: 60%;
+    }
+    
+    .SkillImage {
+        width: 35%;
+    }
+    
+    .SkillImage img {
+        height: 100%;
+        max-width: 100%;
+    }
+
+
+}

@@ -1,0 +1,103 @@
+* {
+-webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+}
+
+.buttons,
+.btn1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn1 {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid;
+    padding: 1rem 2rem 1rem 2rem;
+    transition: 0.3s;
+}
+
+.btn1 .rect1,
+.btn1 .rect2 {
+    height: 100%;
+    width: 0;
+    left: 0;
+    position: absolute;
+}
+
+.btn1 .rect1 {
+    animation: firstRectOut 0.3s ease-in-out forwards;
+    animation-delay: 0.1s;
+}
+
+.btn1 .rect2 {
+    animation: secondRectOut 0.3s ease-in-out forwards; 
+}
+
+.btn1 .text {
+    position: relative;
+    transition: 0.3s linear;
+}
+
+
+.btn1:hover .text {
+    color: white !important;
+}
+
+.btn1:hover .rect1 {
+    animation: firstRectIn 0.3s ease-in-out forwards; 
+} 
+
+.btn1:hover .rect2 {
+    animation: secondRectIn 0.3s ease-in-out forwards;
+    animation-delay: 0.1s; 
+}
+
+@keyframes firstRectIn {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes secondRectIn {
+    0% {
+        width: 0;
+    }
+
+    50% {
+        width: 0;
+    }
+
+    100% {
+        width:100%;
+    }
+}
+
+@keyframes firstRectOut {
+    0% {
+        width: 100%;
+    }
+
+    50% {
+        width: 100%;
+    }
+
+    100% {
+        width:0;
+    }
+}
+
+@keyframes secondRectOut {
+    0% {
+        width: 100%;
+    }
+
+    100% {
+        width:0;
+    }
+}

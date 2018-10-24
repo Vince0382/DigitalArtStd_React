@@ -1,0 +1,118 @@
+.AboutContact {
+    z-index: 500;
+    background-color: transparent;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+    overflow-y: auto;
+}
+
+@media (max-width: 749px) {
+    .OpenCloseEnter {
+        opacity: 0;
+        transform: translateX(-100vw);
+    }
+    
+    .OpenCloseEnterActive {
+        transform : translateX(0);
+        opacity: 1;
+    }
+    
+    .OpenCloseExitActive {
+        transform: translateX(-100vw);
+        opacity: 0;
+    }
+}
+
+
+.About,
+.Contact {
+    width: 100%;
+}
+
+.About {
+    background: white;
+}
+
+.Contact {
+    background: rgb(107, 107, 107);
+}
+
+.Contact .Close {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 500;
+}
+
+.Contact .Content {
+    width: 100%;
+    height: calc(100% - 40px);
+}
+
+
+@media (min-width: 750px) {
+    .AboutContact {
+        width: 70vw;
+        height: 80vh;
+        position: fixed;
+        top: 10%;
+        left: 15%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .OpenCloseEnter .About{
+        opacity: 0;
+        transform: translateY(-100vh);
+    }
+    
+    .OpenCloseEnterActive .About{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .OpenCloseExitActive .About{
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+
+    .OpenCloseEnter .Contact{
+        opacity: 0;
+        transform: translateY(100vh);
+    }
+    
+    .OpenCloseEnterActive .Contact{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .OpenCloseExitActive .Contact{
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+
+    .About,
+    .Contact {
+        position: absolute;
+        width: 50.1%;
+        height: 100%;
+        top:0;
+        transition: all 0.5s ease-out;
+    }
+
+    .About {
+        left: 0;
+    }
+
+    .Contact {
+        right: 0;
+    }
+}

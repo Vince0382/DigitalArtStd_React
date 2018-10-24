@@ -1,0 +1,75 @@
+.Toolbar {
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 399;
+    transition: all 0.3s ease-out;
+}
+
+.bgWhite {
+    background: white;
+}
+
+@media (min-width: 750px) {
+    .Collapse {
+        height: 7px;
+        padding: 0;
+        background: #ffffff;
+        border: 4px solid #c2e1f5;
+    }
+
+
+    .Collapse:after, .Collapse:before {
+        top: 100%;
+        left: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+    
+    .Collapse:after {
+        border-color: rgba(255, 255, 255, 0);
+        border-top-color: #ffffff;
+        border-width: 15px;
+        margin-left: -15px;
+    }
+    .Collapse:before {
+        border-color: rgba(194, 225, 245, 0);
+        border-top-color: #c2e1f5;
+        border-width: 21px;
+        margin-left: -21px;
+    }
+
+}
+
+
+.Toolbar nav {
+    height: 100%;
+}
+
+
+
+.Logo {
+    height: 80%;
+}
+
+@media (max-width: 749px) {
+    .DesktopOnly {
+        display: none;
+    }
+
+    .Collapse {
+        height: 70px;
+    }
+}

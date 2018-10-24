@@ -1,0 +1,17 @@
+.Content {
+    
+}
+
+.Layout {
+}
+
+
+.LayoutOld {
+    height: 100%;
+
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7db9e8+0,1e5799+100&0+0,0.7+32,1+38,1+100 */
+    background: -moz-linear-gradient(-45deg, rgba(125,185,232,0) 0%, rgba(95,154,207,0.7) 32%, rgba(89,148,202,1) 38%, rgba(30,87,153,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, rgba(125,185,232,0) 0%,rgba(95,154,207,0.7) 32%,rgba(89,148,202,1) 38%,rgba(30,87,153,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, rgba(125,185,232,0) 0%,rgba(95,154,207,0.7) 32%,rgba(89,148,202,1) 38%,rgba(30,87,153,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007db9e8', endColorstr='#1e5799',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}

@@ -1,0 +1,40 @@
+.Input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.Label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+}
+
+.LabelActive {
+    opacity: 1;
+}
+
+.InputElement {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font: inherit;
+    padding: 6px 10px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.InputElement::placeholder {
+    color: white;
+}
+
+.InputElement:focus {
+    outline: none;
+}
+
+.Invalid {
+    border: 1px solid red !important;
+    color: red;
+}

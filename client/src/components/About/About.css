@@ -1,0 +1,49 @@
+.MainDiv {
+    height: 100%;
+    width: 100%;
+}
+
+.Image {
+    width: 70%;
+    margin-left: 3px;
+}
+
+.Image img {
+    max-width: 100%;
+    max-height: 100%;
+    opacity: 0.2;
+}
+
+.Content {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+}
+
+.Content h2 {
+    margin: 10px 0;
+}
+
+.Stickers {
+    width: 100%;
+    max-height: 60%;
+    list-style-type: none;
+    box-sizing: border-box;
+    overflow: auto;
+    padding: 5px;
+    margin: 0;
+    text-align: center;
+}
+
+.Stickers li {
+    margin: auto;
+    font-size: 12px;
+    display: inline-block;
+    padding: 0 5px;
+}
+
+.NavigationItem{
+    padding-top: 15px;
+    widows: 100%;
+    text-align: center;
+}
