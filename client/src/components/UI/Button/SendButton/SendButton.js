@@ -1,26 +1,29 @@
 import React from 'react';
 
-import Button from '@material-ui/core/Button';
-import Icon from '@material-ui/core/Icon';
-import Tooltip from '@material-ui/core/Tooltip';
-
 import classes from './SendButton.css';
 
 const sendButton = (props) => {
 
-    let title = '';
+    let attachedClasses = [classes.Button];
+    let cursor = '';
+
+
     if (props.disabled) {
-        title = props.title;
+        attachedClasses.push(classes.Disabled);
+        cursor= classes.DisabledCursor;
+    } else {
+        attachedClasses = [classes.Button];
+        cursor= classes.EnabledCursor;
     }
+
     return (
-        <Tooltip title={title}>
-            <span>
-                <Button variant="contained" disabled={props.disabled} type="submit">
-                    {props.children}
-                    <Icon className={classes.Icon}>send</Icon>
-                </Button>
-            </span>
-        </Tooltip>
+        <div className={attachedClasses.join(' ')}>
+            <button variant="contained" disabled={props.disabled} type="submit" className={cursor}>
+                {props.children}
+            </button>
+            <div className={classes.ToolTip}>Please fill in the form</div>
+        </div>
+
     );
 
 

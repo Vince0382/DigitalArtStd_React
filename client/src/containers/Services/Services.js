@@ -1,71 +1,323 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Element } from 'react-scroll';
 
 import classes from './Services.css';
 import BackImage from '../../components/BackImg/BackImg';
 import Img from '../../assets/images/img5.jpg';
-import SkillBars from '../../components/SkillBars/SkillBars';
+import SkillBar from '../../components/SkillBars/SkillBar/SkillBar';
+import SkillCircle from '../../components/SkillCircles/SkillCircle/SkillCircle';
+import SkillCircles from '../../components/SkillCircles/SkillCircles';
 import * as actions from '../../store/actions';
 import Mouse from '../../components/UI/Scroll/Mouse/Mouse';
 import ScrollTo from '../../hoc/scrollToComponent';
 import SkillImg from '../../assets/images/img6.png';
+import Spacer from '../../components/Spacer/Spacer';
+import BlockContent from '../../components/BlockContent/Services/BlockContent';
+import Block from '../../components/BlockContent/Services/Block';
+import TiltComponent from '../../hoc/tiltComponent';
+import Section from '../../hoc/Section/Section';
+import AgileImg from '../../assets/images/agile.svg';
+import ProjectImg from '../../assets/images/project.svg';
+import ArchitectureImg from '../../assets/images/architecture.svg';
+import WebImg from '../../assets/images/laptop.svg';
+import MobileImg from '../../assets/images/phone.svg';
+import AgileBackground from '../../assets/images/agileBg.svg';
+import ProjectBackground from '../../assets/images/projectBg.svg';
+import ArchitectureBackground from '../../assets/images/architectureBg.svg';
+import WebBackground from '../../assets/images/webBg.svg';
+import MobileBackground from '../../assets/images/mobileBg.svg';
 
 class Services extends Component {
 
-    componentWillMount = () => {
-        this.props.setTextColor();
+    state = {
+        blockComponent: null
     }
 
-    render (){    
+    onClickHandler = (component) => {
+        this.setState({blockComponent: component});
+        console.log(this.state.blockComponent);
+    }
+
+    render (){
+
+
+        // const agileBlock = (
+        //     <SkillCircles in>
+        //         <SkillCircle color="white" percent="90" radius="60" stroke="8" strokeColor={this.props.fixedColor}>Agile Coaching</SkillCircle>
+        //         <SkillCircle color="white" percent="70" radius="60" stroke="8" strokeColor={this.props.fixedColor}>Lean</SkillCircle>
+        //         <SkillCircle color="white" percent="95" radius="60" stroke="8" strokeColor={this.props.fixedColor}>Scrum</SkillCircle>
+        //         <SkillCircle color="white" percent="90" radius="60" stroke="8" strokeColor={this.props.fixedColor}>Kanban</SkillCircle>
+        //         <SkillCircle color="white" percent="95" radius="60" stroke="8" strokeColor={this.props.fixedColor}>Visual Management</SkillCircle>
+        //         <SkillCircle color="white" percent="80" radius="60" stroke="8" strokeColor={this.props.fixedColor}>SAFe</SkillCircle>
+        //         <SkillCircle color="white" percent="95" radius="60" stroke="8" strokeColor={this.props.fixedColor}>People Coaching</SkillCircle>
+        //         <SkillCircle color="white" percent="50" radius="60" stroke="8" strokeColor={this.props.fixedColor}>Lean Startup</SkillCircle>
+        //     </SkillCircles>
+        // );
+
+        // const projectBlock = (
+        //     <SkillCircles in>
+        //         <SkillCircle color="white" percent="70" radius="60" stroke="8" strokeColor={this.props.fixedColor}>Waterfall</SkillCircle>
+        //         <SkillCircle color="white" percent="90" radius="60" stroke="8" strokeColor={this.props.fixedColor}>V Cycle</SkillCircle>
+        //         <SkillCircle color="white" percent="80" radius="60" stroke="8" strokeColor={this.props.fixedColor}>Prince 2</SkillCircle>
+        //         <SkillCircle color="white" percent="95" radius="60" stroke="8" strokeColor={this.props.fixedColor}>People Management</SkillCircle>
+        //     </SkillCircles>
+        // );
+
+        // const architectureBlock = (
+        //     <SkillCircles in></SkillCircles>
+        // );
+
+        // const webBlock = (
+        //     <SkillCircles in>
+        //         <SkillCircle color="white" percent="85" radius="60" stroke="8" strokeColor={this.props.fixedColor}>ASP .NET</SkillCircle>
+        //         <SkillCircle color="white" percent="90" radius="60" stroke="8" strokeColor={this.props.fixedColor}>netCore</SkillCircle>
+        //         <SkillCircle color="white" percent="95" radius="60" stroke="8" strokeColor={this.props.fixedColor}>React</SkillCircle>
+        //     </SkillCircles>
+        // );
+
+        // const mobileBlock = (
+        //     <SkillCircles in>
+        //         <SkillCircle color="white" percent="85" radius="60" stroke="8" strokeColor={this.props.fixedColor}>Xamarin</SkillCircle>
+        //         <SkillCircle color="white" percent="95" radius="60" stroke="8" strokeColor={this.props.fixedColor}>React Native</SkillCircle>
+        //     </SkillCircles>
+        // );
+
+
         return (
-            <div key="services">
+            <div key="services" className={classes.Main} id="services">
                 <BackImage image={Img}/>
-                <div className={classes.ServicesHead} style={{color: this.props.color}}>
-                    <div className={classes.HeadTitle}>
-                        <h1>'' Stop chasing the money and start chasing the passion. ''</h1>
-                        <p>-- Tony Hsieh</p>
-                    </div>  
-                    <div className={classes.DivMouse}>
-                        <ScrollTo element="serviceContent">
-                            <Mouse borderColor="white" bgColor="white"/>
-                        </ScrollTo>
+
+                <div className={classes.SkillDiv} ref={this.props.ReactRef}>
+                    <div className={classes.SkillTitle} style={{color: "white"}}>
+                        <h2>Answer to a specific need by a specific skill</h2>
                     </div>
+
+                    <Section link="/#services" mainSection="/#services"/>
+
+                    <div className={classes.SkillOverview}>
+                        <Block 
+                            image={AgileImg} 
+                            textColor={this.props.color}
+                            imageColor={this.props.color2}
+                            inactiveColor={"darkgray"}
+                            title={"Agile Management"}
+                            link={"/#agiles"}>
+                            
+                            <p>Be flexible and faster with Agile project management</p>
+                        </Block>
+
+                        <Block 
+                            image={ProjectImg} 
+                            textColor={this.props.color}
+                            imageColor={this.props.color2}
+                            inactiveColor={"darkgray"} 
+                            title={"Project Management"}
+                            link={"/#project"}>
+                            
+                            <p>Let us follow you all along your project to ensure a success story</p>
+                        </Block>
+
+                        <Block 
+                            image={ArchitectureImg} 
+                            textColor={this.props.color}
+                            imageColor={this.props.color2}
+                            inactiveColor={"darkgray"} 
+                            title={"Software Architecture"}
+                            link={"/#architecture"}>
+                            
+                            <p>Our expert will guide you through the entire modeling process of your application project by providing guidance regarding the perfect software architecture for your needs</p>    
+                        </Block>
+
+                        <Block 
+                            image={WebImg} 
+                            textColor={this.props.color}
+                            imageColor={this.props.color2}
+                            inactiveColor={"darkgray"} 
+                            title={"Web Development"}
+                            link={"/#web"}>
+                            
+                            
+                            <p>Fully responsive web application</p>
+                            <p>Cross-platform hosting by using non proprietary framework (except for Microsoft ASP .NET)</p>
+                            <p>Secured, highly avalaible, flexible and affordable web hosting</p>    
+                        </Block>
+
+                        <Block 
+                            image={MobileImg} 
+                            textColor={this.props.color}
+                            imageColor={this.props.color2}
+                            inactiveColor={"darkgray"} 
+                            title={"Mobile Development"}
+                            link={"/#mobile"}>
+                            
+                            <p>By using the last and industry leading technologies we are able to provide in one shot cross-platform appliactions to fit your needs</p>    
+                        </Block>
+                        
+                    </div>
+                        {/* 
+                            <SkillBar percent="60%" bgColor={"black"} color={"white"} clicked={() => this.onClickHandler(agileBlock)}>Agile Services</SkillBar>
+                            <SkillBar percent="75%" bgColor={"black"} color={"white"} clicked={() => this.onClickHandler(projectBlock)}>Project Managment</SkillBar>
+                            <SkillBar percent="50%" bgColor={"black"} color={"white"} clicked={() => this.onClickHandler(architectureBlock)}>Architecture</SkillBar>
+                            <SkillBar percent="80%" bgColor={"black"} color={"white"} clicked={() => this.onClickHandler(webBlock)}>Web Development</SkillBar>
+                            <SkillBar percent="60%" bgColor={"black"} color={"white"} clicked={() => this.onClickHandler(mobileBlock)}>Mobile Development</SkillBar>
+                        
+                        
+                        
+                            <div className={classes.SkillDivCircles}>
+                                {this.state.blockComponent ? this.state.blockComponent : (
+                                    <SkillCircles in noBg>
+                                        <div style={{textAlign: "center", fontWeight: "100", color: this.props.color}}>Please click or over a service to see details</div>
+                                    </SkillCircles>
+                                    )
+                                }
+                            </div> 
+                        */}
+                </div>
+                
+                <Spacer height='100px' />
+
+                <div className={classes.Content} id="agiles">
+                    <BlockContent 
+                        title="Agiles Services"
+                        hash="/#agiles"
+                        mainSection="/#services"
+                        image={[AgileBackground, AgileImg]}
+                        bgColor="white"
+                        color={this.props.color}
+                        frameColor={this.props.gradient}
+                        overviewItems={["Agile Coaching", "Lean", "Scrum", "Kanban", "SAFe"]}>
+                        
+                        <p>Rise Up provides high quality consulting, 
+                                coaching and training solutions for clients seeking the benefits of agile software development including Lean-UX, 
+                                DevOps and Continuous Delivery. 
+                        </p>
+                        <p>Its our passion to improve the performance of software development teams and programs 
+                                while maximizing the delivery of business value through innovative agile technology delivery techniques. 
+                        </p>
+                        <p>No matter what your stage of agile adoption is, just beginning, or needing to take your teams 
+                                and programs to the next level, we have solutions that will deliver your organizations an improved 
+                                flow of business value to your customers.
+                        </p>
+                    </BlockContent>
                 </div>
 
+                <Spacer height='100px' />
 
-                <Element name="serviceContent">
-                    <div className={classes.Main}>
-                        <div className={classes.SkillDiv}>
-                            <div className={classes.SkillBars}>
-                                <SkillBars />
-                            </div>
-                            <div className={classes.SkillImage}>
-                                <img src={SkillImg} />
-                            </div>
+                <div className={classes.Content} id="project">
+                    <BlockContent 
+                        title="Project Management"
+                        hash="/#project"
+                        mainSection="/#services"
+                        image={[ProjectBackground, ProjectImg]}
+                        bgColor="white"
+                        color={this.props.color}
+                        frameColor={this.props.gradient}
+                        overviewItems={["Waterfall", "V Cycle", "Prince 2", "People Management"]}>
                         
-                        </div>
+                        <p>Rise Up provides high quality consulting, 
+                                coaching and training solutions for clients seeking the benefits of agile software development including Lean-UX, 
+                                DevOps and Continuous Delivery. 
+                        </p>
+                        <p>Its our passion to improve the performance of software development teams and programs 
+                                while maximizing the delivery of business value through innovative agile technology delivery techniques. 
+                        </p>
+                        <p>No matter what your stage of agile adoption is, just beginning, or needing to take your teams 
+                                and programs to the next level, we have solutions that will deliver your organizations an improved 
+                                flow of business value to your customers.
+                        </p>
+                    </BlockContent>
+                </div>
 
-                    
-                    </div>
+                <Spacer height='100px' />
 
-                </Element>
+                <div className={classes.Content} id="architecture">
+                    <BlockContent 
+                        title="Software Architecture"
+                        hash="/#architecture"
+                        mainSection="/#services"
+                        image={[ArchitectureBackground, ArchitectureImg]}
+                        bgColor="white"
+                        color={this.props.color}
+                        frameColor={this.props.gradient}
+                        overviewItems={["Some Skill", "Some Skill"]}>
+                        
+                        <p>Rise Up provides high quality consulting, 
+                                coaching and training solutions for clients seeking the benefits of agile software development including Lean-UX, 
+                                DevOps and Continuous Delivery. 
+                        </p>
+                        <p>Its our passion to improve the performance of software development teams and programs 
+                                while maximizing the delivery of business value through innovative agile technology delivery techniques. 
+                        </p>
+                        <p>No matter what your stage of agile adoption is, just beginning, or needing to take your teams 
+                                and programs to the next level, we have solutions that will deliver your organizations an improved 
+                                flow of business value to your customers.
+                        </p>
+                    </BlockContent>
+                </div>
 
+                <Spacer height='100px' />
+
+                <div className={classes.Content} id="web">
+                    <BlockContent 
+                        title="Web Development"
+                        hash="/#web"
+                        mainSection="/#services"
+                        image={[WebBackground, WebImg]}
+                        bgColor="white"
+                        color={this.props.color}
+                        frameColor={this.props.gradient}
+                        overviewItems={["ASP .NET", "netCore", "React", "Javascript", "UI/UX", "Responsive"]}>
+                        
+                        <p>Rise Up provides high quality consulting, 
+                                coaching and training solutions for clients seeking the benefits of agile software development including Lean-UX, 
+                                DevOps and Continuous Delivery. 
+                        </p>
+                        <p>Its our passion to improve the performance of software development teams and programs 
+                                while maximizing the delivery of business value through innovative agile technology delivery techniques. 
+                        </p>
+                        <p>No matter what your stage of agile adoption is, just beginning, or needing to take your teams 
+                                and programs to the next level, we have solutions that will deliver your organizations an improved 
+                                flow of business value to your customers.
+                        </p>
+                    </BlockContent>
+                </div>
+
+                <Spacer height='100px' />
+
+                <div className={classes.Content} id="mobile">
+                    <BlockContent 
+                        title="Mobile Development"
+                        hash="/#mobile"
+                        mainSection="/#services"
+                        image={[MobileBackground, MobileImg]}
+                        bgColor="white"
+                        color={this.props.color}
+                        frameColor={this.props.gradient}
+                        overviewItems={["Xamarin", "React Native", "Cross-platform"]}>
+                        
+                        <p>Rise Up provides high quality consulting, 
+                                coaching and training solutions for clients seeking the benefits of agile software development including Lean-UX, 
+                                DevOps and Continuous Delivery. 
+                        </p>
+                        <p>Its our passion to improve the performance of software development teams and programs 
+                                while maximizing the delivery of business value through innovative agile technology delivery techniques. 
+                        </p>
+                        <p>No matter what your stage of agile adoption is, just beginning, or needing to take your teams 
+                                and programs to the next level, we have solutions that will deliver your organizations an improved 
+                                flow of business value to your customers.
+                        </p>
+                    </BlockContent>
+                </div>
+
+                            {/* 
+                                items={["Agile Coaching", "Lean", "Lean Startup", "Scrum", "Kanban", "Visual Management", "SAFe", "People Coaching"]} /> 
+                                items={["Waterfall", "V Cycle", "Prince 2", "People Management"]}
+                                items={["Some Skill", "Some Skill"]}
+                                items={["ASP .NET", "netCore", "React"]}
+                                items={["Xamarin", "React Native"]}
+                            */}
             </div>
         );
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        color: state.textColor
-    }
-}
-
-const mapDispatchToProps = dispatch => {
-    return {
-        setTextColor: () => dispatch(actions.setTextColor("rgb(255, 255, 255)"))
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Services);
+export default Services;

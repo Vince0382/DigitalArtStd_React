@@ -1,5 +1,5 @@
 
-.TransitionGroup {
+/* .TransitionGroup {
     position: relative;
     top: 0;
     left: 0;
@@ -7,29 +7,31 @@
 
 .SectionRoute {
     position: absolute;
-    padding-top: 72px;
-}
+    width: 100%;
+} */
 
 .Enter {
     opacity: 0;
-    transform: translateX(-100vw);
+  /*  transform: translateX(-100vw); */
 
 }
 
 .EnterActive {
     opacity: 1;
-    transform: translateX(0);
-    transition: all 0.5s cubic-bezier(0.311, 0.441, 0.444, 1.649);
+    transition: opacity 0.7s linear;
+  /*  transform: translateX(0); 
+    transition: opacity 0.5s cubic-bezier(0.311, 0.441, 0.444, 1.649); */
 }
 
 .Exit{
     opacity: 1;
-    transform: translateX(0);
+  /*  transform: translateX(0); */
 }
 
 .ExitActive {
     opacity: 0;
-    transition: all 0.5s cubic-bezier(0.311, 0.441, 0.444, 1.649);
-    transform: translateX(-100vw);
+    transition: opacity 0.7s linear;
+    /* transition: opacity 0.5s cubic-bezier(0.311, 0.441, 0.444, 1.649);
+    transform: translateX(-100vw); */
 }
 

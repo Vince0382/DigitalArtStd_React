@@ -1,0 +1,10 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+ <path id="path">
+		<animate attributeName="d" from="m0,110 h0" to="m0,110 h1100" dur="5.8s" begin="0s" fill="freeze"/>
+	</path>
+	<text font-size="14" font-style="italic">
+		<textPath xlink:href="#path">“There are no secrets to success. It is the result of preparation, hard work, and learning from failure.” – Colin Powell
+
+    </textPath>
+	</text>
+</svg>

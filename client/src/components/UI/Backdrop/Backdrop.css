@@ -5,7 +5,7 @@
 @media (min-width: 750px){
     .Backdrop {
         display: block;
-        width: 100vw;
+        width: 100%;
         height: 100vh;
         position: fixed;
         z-index: 400;

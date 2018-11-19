@@ -44,3 +44,25 @@ export const setTextColor = (color) => {
         color: color
     }
 }
+
+export const lock = () => {
+    return {
+        type: actiontypes.LOCK
+    }
+}
+
+export const unLock = () => {
+    return {
+        type: actiontypes.UNLOCK
+    }
+}
+
+export const setCurrentMainSection = (section) => {
+    return {
+        type: actiontypes.SET_CURRENT_MAIN_SECTION,
+        section: section
+    }
+}
+
+
+

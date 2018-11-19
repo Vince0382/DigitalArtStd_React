@@ -24,9 +24,11 @@ class Toolbar extends Component {
         const isHide = this.state.isHide;
 
         window.scrollY > 30 ?
-        !isHide && this.setState({ isHide: true, isScrolled: true })
+        //!isHide && 
+        this.setState({ isScrolled: true })
         :
-        isHide && this.setState({ isHide: false, isScrolled: false });
+        //isHide && 
+        this.setState({ isScrolled: false });
  
     }
 
@@ -38,7 +40,7 @@ class Toolbar extends Component {
 
         let attachedClasses = [classes.Toolbar];
         if (this.state.isHide) {
-            attachedClasses.push(classes.Collapse);
+         //   attachedClasses.push(classes.Collapse);
         }
 
         if (this.state.isScrolled) {
@@ -53,10 +55,10 @@ class Toolbar extends Component {
         return (
             <header className={attachedClasses.join(' ')} onMouseOver={this.showBar} onMouseLeave={this.hideBar}>
                 <div className={classes.Logo}>
-                    {!this.state.isHide? <Logo animated={false}/> : null}
+                    {this.state.isScrolled && !this.state.isHide? <Logo animated={false}/> : null}
                 </div>
                 <nav className={classes.DesktopOnly}>
-                    {!this.state.isHide? <NavigationItems color={color}/> : null} 
+                    {!this.state.isHide? <NavigationItems color={color}/> : <div style={{color: "white"}}>Menu</div>} 
                 </nav>
                 <DrawerToggle   color={color}
                                 open={this.props.open}

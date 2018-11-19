@@ -13,7 +13,6 @@ const button = (props) => {
                 <span className={classes.text} style={{color: props.color}}>{props.children}</span>
             </div>
         </div>
-
     );
 
 };

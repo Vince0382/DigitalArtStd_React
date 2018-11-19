@@ -37,6 +37,6 @@ export function* sendMailSaga(action) {
     } catch (error) {
         yield put(actions.sendMailFailure(error));
     }
-
-
 }
+
+

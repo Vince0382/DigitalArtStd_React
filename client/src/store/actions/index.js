@@ -5,5 +5,8 @@ export {
     sendMailStarted,
     sendMailSuccess,
     sendMailFailure,
-    setTextColor
+    setTextColor,
+    lock,
+    unLock,
+    setCurrentMainSection
 } from './actions'; 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+import ScrollTo from '../../../../hoc/scrollToComponent';
 import classes from './NavigationItem.css';
 
 
@@ -39,15 +40,17 @@ const navigationItem = ( props ) => {
         }
         default: {
             navlink = (
-                <NavLink
+                <ScrollTo
                         className={classes.Link}
-                        to={props.link}
+                        toTop={props.toTop}
+                        element={props.link}
                         exact={props.exact}
-                        activeClassName={classes.active}
+                        fixed={props.fixed}
+                        active={classes.active}
                         style={{color: props.color}}>   
                     {props.children}
                     {after}
-                </NavLink>
+                </ScrollTo>
             );
             break;
         }

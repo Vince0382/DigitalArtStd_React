@@ -7,8 +7,13 @@ const initialState = {
     sent: null,
     err: null,
     textColor: "rgb(7, 87, 119)",
-    fixedTextColor: "rgb(7, 87, 119)"
+    fixedTextColor: "rgb(7, 87, 119)",
+    riseUpGreen : "linear-gradient(to bottom, rgba(201,222,150,1) 0%,rgba(8,107,55,1) 100%)",
+    riseUpBlue : "linear-gradient(to bottom, rgba(2,163,223,1) 0%,rgba(6,42,82,1) 100%)",
+    locked: false,
+    currentMainSection: null
 }
+
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
@@ -48,6 +53,25 @@ const reducer = (state = initialState, action) => {
                 textColor: action.color
             }
         }
+        case actionTypes.LOCK : {
+            return {
+                ...state,
+                locked: true
+            }
+        }
+        case actionTypes.UNLOCK : {
+            return {
+                ...state,
+                locked: false
+            }
+        }
+        case actionTypes.SET_CURRENT_MAIN_SECTION : {
+            return {
+                ...state,
+                currentMainSection: action.section
+            }
+        }
+
         default : {
             return state;
         }

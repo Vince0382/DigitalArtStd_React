@@ -10,39 +10,41 @@ class TransitionWrapper extends Component {
         this.state = {
             style : {
                 height: '0'
-            }
+            },
+            active: false
         }
     }
 
-    updateSectionHeight = () => {
-        if (this.sectionRef.current){
-            if (this.state.style.height != this.sectionRef.current.clientHeight) {
-                this.setState({
-                    style: {
-                        height: this.sectionRef.current.clientHeight
-                    }
-                });
-            }
-        } 
-    }
+    // updateSectionHeight = () => {
+    //     if (this.sectionRef.current){
+    //         if (this.state.style.height !== this.sectionRef.current.clientHeight) {
+    //             this.setState({
+    //                 style: {
+    //                     height: this.sectionRef.current.clientHeight
+    //                 }
+    //             });
+    //         }
+    //     } 
+    // }
 
-    componentDidUpdate = () => {
-        this.updateSectionHeight();
-    }
+    // componentDidUpdate = () => {
+    //     this.updateSectionHeight();
+    // }
 
-    componentDidMount = () => {
-        this.updateSectionHeight();
-
+    componentDidMount () {
+      //  this.updateSectionHeight();
+        this.setState({active: true});
     }
 
     render () {
 
-        
+       
         return (
-            <TransitionGroup className={classes.TransitionGroup} style={this.state.style}>
+            // <TransitionGroup className={classes.TransitionGroup} style={this.state.style}>
                 <CSSTransition 
-                              key={this.props.location.key}
-                              timeout={{ enter: 500, exit: 500 }}
+                             // key={this.props.location.key}
+                              in={this.state.active}
+                              timeout={{ enter: 700, exit: 700 }}
                               classNames={{
                                 enter: classes.Enter,
                                 enterActive: classes.EnterActive,
@@ -51,11 +53,11 @@ class TransitionWrapper extends Component {
                               }}
                               mountOnEnter
                               unmountOnExit>
-                    <div className={classes.SectionRoute} ref={this.sectionRef}>
+                    {/* <div className={classes.SectionRoute} ref={this.sectionRef}> */}
                         {this.props.children}
-                    </div>
+                    {/* </div> */}
                 </CSSTransition>
-              </TransitionGroup>
+            // </TransitionGroup>
         );
     }
 }

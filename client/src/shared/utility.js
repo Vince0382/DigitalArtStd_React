@@ -35,3 +35,38 @@ export const checkValidity = ( value, rules ) => {
 
     return isValid;
 }
+
+export const getOffsetTop = (el) => {
+
+    let rect = null;
+
+    if (el) {
+        try {
+            rect = el.getBoundingClientRect();
+        } catch (error) {
+            return getOffsetTop (document.getElementById(el));
+        }
+  
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        return (rect.top + scrollTop);
+    } 
+
+    return 0;
+}
+
+export const scrollTo = (el, offset, isTop) => {
+
+    let elementPosition = getOffsetTop(el) - offset;
+    
+    if (isTop) {
+      elementPosition = 0;
+    }
+    console.log(el, elementPosition);
+    window.scroll({
+      top: elementPosition,
+      left: 0,
+      behavior: "smooth"
+    });
+
+  }

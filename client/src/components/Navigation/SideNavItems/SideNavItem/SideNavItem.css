@@ -1,0 +1,29 @@
+.SideNavContainer {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.SideNavItem {
+    width: 4px;
+    height: 4px;
+    margin: auto;
+    border: 1px solid;
+    border-radius: 50%;
+    transition: all 0.2s linear;
+}
+
+
+.Active .SideNavItem{
+    transform: scale(2);
+    transform-origin: center center;
+    background: transparent !important;
+}
+
+.SideNavContainer:hover .SideNavItem{
+    transform: scale(2);
+    transform-origin: center center;
+}

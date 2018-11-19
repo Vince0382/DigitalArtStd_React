@@ -1,85 +1,84 @@
-.ServicesHead {
-    width: 100vw;
-    height: calc(100vh - 72px);
-    position: relative;
-    top: 0;
-    left: 0;
-}
-
-.HeadTitle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 75%;
-    height: 50%;
-}
-
-.HeadTitle h1 {
-    width: 100%; 
-    text-align: center;
-    font-size: 200%;
-    font-style: italic;
-}
-
-.HeadTitle p {
-    width: 80%; 
-    text-align: right;
-    font-style: italic;
-}
-
-.DivMouse {
-    position: absolute;
-    bottom: 10vh;
-    left: 0;
-    width: 100%;
-}
 
 .Main {
-    padding-top: 50px;
-    width: 100%;
+    position: relative;
 }
 
 .SkillDiv {
-    width: 75%;
+    height: calc(100vh - 70px);
+    width: 100%;
+}
+
+.SkillTitle {
+    position: relative;
+    width: 100%;
+    height: 20%;
+}
+
+.SkillTitle h2 {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 2vw;
+    transform: translate(-50%, -50%);
+}
+
+.SkillTitle * {
+    font-weight: 200;
+}
+
+.SkillOverview {
+    width: 85%;
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
     margin: auto;
 }
 
-.SkillBars {
+.Content {
+    height: 100vh;
     width: 100%;
 }
 
-.SkillImage {
-    width: 100%;
-    
+.SkillDivCircles {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    z-index: 200;
+    top: 5%;
 }
 
-.SkillImage img {
-    width: 100%;
+@media (max-width: 749px) {
+    .SkillDivCircles {
+        left: 5%;
+    }
+    .SkillTitle h2 {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 3vw;
+        transform: translate(-50%, -50%);
+    }
 }
 
-@media (min-width: 750px){
-    .SkillDiv {
-        width: 80%;
+/* @media (min-width: 750px){
+    .SkillDivBody {
+        width: 44%;
         height: 50vh;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+        top: 20%;
+        left: 5%;
     }
     
-    .SkillBars {
-        width: 60%;
+    .SkillDivCircles {
+        width: 44%;
+        top: 10% ;
+        right: 5%;
     }
     
-    .SkillImage {
-        width: 35%;
-    }
-    
-    .SkillImage img {
-        height: 100%;
-        max-width: 100%;
-    }
 
+} */
 
-}

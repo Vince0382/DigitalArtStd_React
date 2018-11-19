@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import ScrollTo from '../../hoc/scrollToComponent';
 import classes from './About.css';
 import AboutImg from '../../assets/images/aboutus.svg';
 import Sticker from '../Sticker/Sticker';
@@ -32,8 +33,9 @@ const about = (props) => {
                     <Button color={localTextColor}
                             borderColor={localTextColor}
                             bgColor2={localTextColor}
-                            bgColor1="#3D9842">
-                        <Link style={{color: 'inherit', textDecoration: 'none'}} to="/services" onClick={props.clicked}>Learn More</Link>
+                            bgColor1="#3D9842"
+                            clicked={props.clicked}>
+                        <ScrollTo style={{color: 'inherit', textDecoration: 'none'}} element="/#services">Learn More</ScrollTo>
                     </Button>
                 </div>
             </div>

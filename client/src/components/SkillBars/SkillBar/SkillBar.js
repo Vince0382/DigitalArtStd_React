@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Transition } from 'react-transition-group';
 import IntersectionVisible from 'react-intersection-visible';
 
 import classes from './SkillBar.css';
@@ -28,11 +27,13 @@ class SkillBar extends Component {
     }
 
     render() {
-        console.log(this.state);
         return (
-            <div className={classes.SkillBar}>
+            <div className={classes.SkillBar} onClick={this.props.clicked}>
                 <div className={classes.SkillBarTitle} style={{color: this.props.color}}>
                     {this.props.children}
+                </div>
+                <div className={classes.SkillBarMore} style={{color: this.props.color, borderBottomColor: this.props.color}}>
+                    Click to Pin
                 </div>
                 <div className={classes.SkillBarBar} style={{borderColor: this.props.color}}>
                     <IntersectionVisible 
@@ -41,7 +42,7 @@ class SkillBar extends Component {
                         <div className={classes.SkillBarPercent} style={this.state.style}>
                             {this.props.percent}
                         </div>
-                    </IntersectionVisible>    
+                    </IntersectionVisible>
                 </div>              
         </div>
         );

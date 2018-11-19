@@ -1,0 +1,278 @@
+.Block {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+/* .Section {
+    position: absolute;
+    top: 25%;
+    left: 0;
+} */
+
+.Title {
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 20%;
+    background: transparent;
+    z-index: 10;
+    font-size: 36px;
+    font-weight: 800;
+    margin-top: 20px;
+}
+
+.Image {
+    max-width: 60%;
+    height: 60%;
+    background: transparent;
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    box-shadow: 0 100px 200px rgba(66,0,5,0.3);
+    z-index: 1;
+    overflow: hidden;
+}
+
+.Image img {
+    /* width: 100%;
+    height: auto; */
+}
+
+.OverviewOuter {
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 67%;
+    left: 50%;
+    z-index: 10;
+}
+
+.OverviewInner {
+    width: 20vw;
+    padding: 20px;
+}
+
+.Text {
+    width: 40%;
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    z-index: 10;
+}
+
+.OverviewInner .Item {
+    text-align: left;
+    border-bottom: 1px solid white;
+    padding: 20px;
+    color: white;
+}
+
+.OverviewInner .Item:last-child {
+    border: none;
+}
+
+@media (max-width: 749px) {
+    .Block {
+        width: 100%;
+        height: 100%;
+        position: static;
+    }
+
+    .Title {
+        position: static;
+        margin-left: 10%;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    
+    .Image {
+        width: 100%;
+        height: 35%;
+        position: static;
+        box-shadow: 0 100px 200px rgba(66,0,5,0.3);
+        overflow: hidden;
+    }
+    
+    .Image img {
+        width: 100%;
+    }
+
+    .OverviewInner {
+        width: 80%;
+        padding: 20px;
+        position: static;
+        margin: auto;
+    }
+
+    .Text {
+        width: 70%;
+        position: static;
+        margin-left: 10%;
+        margin-top: - 20px;
+        z-index: 10;
+    }
+
+    .OverviewOuter {
+        width: 80%;
+        margin: auto;
+        margin-top: 20px;
+        position: static;
+        z-index: 10;
+    }
+
+    .OverviewInner .Item {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .OverviewInner .Item:first-child {
+        padding-top: 0;
+    }
+
+    .OverviewInner .Item:last-child {
+        padding-bottom: 0;
+    }
+}
+
+
+
+
+
+.OnScreen {
+    animation: moveToOrgin 0.5s ease-out forwards;
+}
+
+/* .Title,
+.BodyLeft,
+.BodyRight,
+.ImageLeft,
+.ImageRight{
+    background: inherit;
+    box-sizing: border-box;
+    opacity: 0;
+}
+
+.BlockLeft,
+.BlockRight {
+    height: 100%;
+    width: 50%;
+    position: absolute;
+}
+
+.Title{
+    height: 10%;
+    width: 100%;
+    text-align: center;
+    transform: translateY(50px);
+    font-weight: 400;
+    color: gray;
+}
+
+.BodyLeft,
+.BodyRight{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+    transform: translateY(50px);
+    background: rgba(95,154,207,0.8);
+    color: white;
+    border-radius: 5px;
+}
+
+.ImageLeft,
+.ImageRight{
+    width: 50%;
+    height: 100%;
+    top : 0;
+    background: transparent;
+    position: absolute;
+    overflow: hidden;
+}
+
+.ImageLeft img,
+.ImageRight img {
+    height: 101%;
+    width: auto;
+    position: absolute;
+}
+
+
+
+
+.BlockLeft {
+    left : 0;
+}
+
+.BodyLeft {
+    box-shadow: -1px 2px rgba(49, 101, 146, 0.8);
+}
+
+.ImageLeft,
+.ImageLeft img {
+    left:0;
+}
+
+
+
+
+.BlockRight {
+    right: 0;
+}
+
+.BodyRight{
+    box-shadow: 1px 2px rgba(49, 101, 146, 0.8);
+}
+
+.ImageRight,
+.ImageRight img {
+    right: 0;
+}
+
+@keyframes moveToOrgin {
+    to {
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+
+
+
+@media (max-width: 749px){
+    .Title{
+        font-size: 2vw;
+    }
+
+    .ImageLeft,
+    .ImageRight{
+        width: 100%;
+        height: 50%;
+        position: static;
+        background: transparent;
+        overflow: hidden;
+    }
+
+    .BlockLeft,
+    .BlockRight {
+        width: 100%;
+        height: 50%;
+        position: static;
+    }
+
+    .ImageLeft img,
+    .ImageRight img {
+        height: auto;
+        width: 100%;
+    }
+
+    .MobileOnly{
+        width: 100%;
+        height: 80%;
+        display: flex;
+    }
+} */

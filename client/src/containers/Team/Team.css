@@ -1,0 +1,16 @@
+.Team {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.Title {
+    width: 100%;
+    text-align: center;
+    font-size: 72px;
+    font-weight: 400;
+}

@@ -26,14 +26,17 @@
     position: absolute;
 }
 
+
 .btn1 .rect1 {
-    animation: firstRectOut 0.3s ease-in-out forwards;
-    animation-delay: 0.1s;
+   /* animation: firstRectOut 0.3s ease-in-out forwards;
+    animation-delay: 0.1s; */
+    transition: width 0.3s 0.1s ease-in-out;
 }
 
 .btn1 .rect2 {
-    animation: secondRectOut 0.3s ease-in-out forwards; 
-}
+  /* animation: secondRectOut 0.3s ease-in-out forwards; */
+    transition: width 0.3s ease-in-out;
+} 
 
 .btn1 .text {
     position: relative;
@@ -46,12 +49,16 @@
 }
 
 .btn1:hover .rect1 {
-    animation: firstRectIn 0.3s ease-in-out forwards; 
+  /*  animation: firstRectIn 0.3s ease-in-out forwards; */
+    transition: width 0.3s ease-in-out;
+    width: 100%;
 } 
 
 .btn1:hover .rect2 {
-    animation: secondRectIn 0.3s ease-in-out forwards;
-    animation-delay: 0.1s; 
+ /*   animation: secondRectIn 0.3s ease-in-out forwards;
+    animation-delay: 0.1s; */
+    transition: width 0.3s 0.1s ease-in-out;
+    width: 100%;
 }
 
 @keyframes firstRectIn {

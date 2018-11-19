@@ -1,16 +1,21 @@
+.Main {
+    position: relative;
+}
+
 .Home {
     height: calc(100vh - 72px);
-    width: 100vw;
+    width: 100%;
     position: relative;
     top: 0;
+    padding-top: 72px;
     left: 0;
 }
 
 .Animation {
     height: 30%;
-    padding-top: 10%;
-    width: 60vw;
-    margin-left: 10vw;
+    padding-top: 5%;
+    width: 60%;
+    margin-left: 10%;
 }
 
 .DivButton {
@@ -26,15 +31,26 @@
     width: 100%;
 }
 
+.Text {
+    width: 70%; 
+    text-align: right;
+    font-size: 20px;
+    font-weight: 200;
+    transform: translateX(20%);
+}
+
 .Content {
-    height: 70vh;
-    width: 100vw;
+    height: 100vh;
+    width: 100%;
 }
 
-.ContentAfter {
-    width: 100vw;
-    height: 100px;
-    background: transparent;
+.ColorWhite {
+    color: white !important;
+    transition: all 0.3s linear;
 }
 
-
+@media (max-width: 749px) {
+    .Text {
+        font-size: 14px;
+    }
+}

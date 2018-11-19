@@ -1,6 +1,6 @@
 .SideDrawer {
     position: fixed;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     right: 0;
     top: 0;
@@ -23,7 +23,7 @@
 }
 
 .Close {
-    transform: translateX(-100vw);
+    transform: translateX(-100%);
 }
 
 nav {

@@ -1,0 +1,68 @@
+.Main {
+    width: calc(20% - 10px);
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 50px 100px rgba(255,255,255,0.3);
+    height: 100%;
+    margin: 5px;
+    transition: all 0.3s linear;
+    position: relative;
+    cursor: pointer;
+}
+
+.Main:hover {
+    transform: scale(1.03);
+}
+
+.Image {
+    width: auto;
+    height: 100px;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.Image svg {
+    height: 100%;
+    transition: all 0.3s linear;
+}
+
+.Block {
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    transition: all 0.3s linear;
+}
+
+.Block .Title {
+    font-size: 14px;
+    padding: 10px;
+    border-bottom: 1px solid darkgray;
+}
+
+.Block .Text {
+    text-align: center;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.Arrow{
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.3s linear;
+}
+
+.Main:hover .Arrow{
+    opacity: 1;
+    transform: translate(-50%,70%);
+}
+
+
+
+@media (max-width: 749px){
+    .Main {
+        width: 45%;
+        margin: 2%;
+    }
+}

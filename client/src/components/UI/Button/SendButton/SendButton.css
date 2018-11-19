@@ -1,3 +1,33 @@
-.Icon{
-    padding-left: 10px;
+.Button{
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+
+.Button button {
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    color: gray;
+}
+
+.Disabled:hover .ToolTip{
+    opacity: 1;
+}
+
+.ToolTip{
+    opacity: 0;
+    font-weight: 200;
+    font-size: 12px;
+    transition: opacity 0.3s linear;
+}
+
+.DisabledCursor {
+    cursor: not-allowed;
+}
+
+.EnabledCursor {
+    cursor: pointer;
 }

@@ -7,10 +7,11 @@ import NavigationItem from './NavigationItem/NavigationItem';
 
 const navigationItems = ( props ) => (
     <ul className={classes.NavigationItems}>
-        <NavigationItem color={props.color} link="/" exact>Home</NavigationItem>
-        <NavigationItem color={props.color} link="/services">Services</NavigationItem>
+        <NavigationItem color={props.color} link="/" exact toTop fixed>Home</NavigationItem>
+        <NavigationItem color={props.color} link="/#services" fixed>Services</NavigationItem>
+        <NavigationItem color={props.color} link="/#team" fixed>Team</NavigationItem>
         <NavigationItem color={props.color} type="function" link="#" clickHandler={props.clickHandler}>Contact</NavigationItem>
-        <NavigationItem color={props.color} type="external" link="https://www.linkedin.com/company/rise-up-luxebmourg/">Blog</NavigationItem>
+        <NavigationItem color={props.color} link="/blog" fixed>Blog</NavigationItem>
     </ul>
 );
 
