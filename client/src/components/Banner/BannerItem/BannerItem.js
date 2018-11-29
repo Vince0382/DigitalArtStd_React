@@ -5,7 +5,7 @@ import classes from './BannerItem.css';
 const bannerItem = (props) => {
     return (
         <div style={{height: props.size}} className={classes.BannerItem}>
-            <img src={props.image}></img>
+            <img src={props.image} alt=''></img>
         </div>
     );
 }

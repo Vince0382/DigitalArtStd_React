@@ -38,12 +38,13 @@
 .Arrow svg {
     height: 60px;
     margin-top: 20px;
+    transition: all 0.3s linear;
 }
 
 @media (max-width: 749px){
     .ScrollDiv {
         position: absolute;
-        top: calc(100vh - 200px);
+        top: calc(100vh - 260px);
         left: 10px;
     }
 

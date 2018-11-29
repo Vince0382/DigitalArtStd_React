@@ -8,14 +8,6 @@ import * as actions from '../../store/actions';
 
 class Section extends Component {
 
-    componentDidMount () {
-        console.log(this.props.link + " : MOUNTED");
-    }
-
-    componentWillUnmount () {
-        console.log(this.props.link + " : UNMOUNTED");
-    }
-
     onInViewPort = () => {
         const current = window.location.pathname + window.location.hash ;
         
@@ -26,12 +18,12 @@ class Section extends Component {
         if (this.props.currentMainSection !== this.props.mainSection) {
             this.props.setCurrentMainSection(this.props.mainSection);
         }
-        console.log("IN VIEWPORT" + this.props.link, this.props.mainSection, this.props.currentMainSection);
+       // console.log("IN VIEWPORT" + this.props.link);
     }
 
     onOutViewPort = () => {
       //  this.setState({locked: false});
-        console.log("OUT VIEWPORT" + this.props.link);
+      //  console.log("OUT VIEWPORT" + this.props.link);
     }
 
     render() {

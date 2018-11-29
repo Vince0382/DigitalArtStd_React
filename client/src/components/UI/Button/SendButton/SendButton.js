@@ -5,20 +5,28 @@ import classes from './SendButton.css';
 const sendButton = (props) => {
 
     let attachedClasses = [classes.Button];
-    let cursor = '';
+    let style = null;
 
 
     if (props.disabled) {
         attachedClasses.push(classes.Disabled);
-        cursor= classes.DisabledCursor;
+        style= {
+            cursor: "not-allowed",
+            background: "darkgray",
+            color: "lightgray"
+        }
     } else {
         attachedClasses = [classes.Button];
-        cursor= classes.EnabledCursor;
+        style= {
+            cursor: "pointer",
+            background: "white",
+            color: "gray"
+        };
     }
 
     return (
         <div className={attachedClasses.join(' ')}>
-            <button variant="contained" disabled={props.disabled} type="submit" className={cursor}>
+            <button disabled={props.disabled} type="submit" style={style}>
                 {props.children}
             </button>
             <div className={classes.ToolTip}>Please fill in the form</div>

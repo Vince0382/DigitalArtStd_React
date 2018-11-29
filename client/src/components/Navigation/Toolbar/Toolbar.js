@@ -4,69 +4,45 @@ import classes from './Toolbar.css';
 import Logo from '../../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
 import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle';
+import ScrollHandler from '../../../hoc/ScrollHandler';
 
 class Toolbar extends Component {
 
     state = {
-        isHide: false,
-        isScrolled: false
+        scrolled: false
     }
 
-    componentDidMount(){
-        window.addEventListener('scroll', this.hideBar);
-    }
-
-    componentWillUnmount(){
-         window.removeEventListener('scroll', this.hideBar);
-    }
-
-    hideBar = () => {
-        const isHide = this.state.isHide;
-
-        window.scrollY > 30 ?
-        //!isHide && 
-        this.setState({ isScrolled: true })
-        :
-        //isHide && 
-        this.setState({ isScrolled: false });
- 
-    }
-
-    showBar = () => {
-        this.setState({isHide:false});
-    }
-
-    render () {
-
-        let attachedClasses = [classes.Toolbar];
-        if (this.state.isHide) {
-         //   attachedClasses.push(classes.Collapse);
+    scrollHandler = () => {
+        if (window.scrollY > 30) {
+            if (!this.state.scrolled) this.setState({scrolled: true});
+        } else {
+            this.setState({scrolled: false});
         }
+    }
 
-        if (this.state.isScrolled) {
+    render (){
+        let attachedClasses = [classes.Toolbar];
+
+        if (this.state.scrolled && !attachedClasses.includes(classes.bgWhite)) {
             attachedClasses.push(classes.bgWhite);
         }
 
-        let color = this.props.color;
-        if (this.state.isScrolled) {
-            color = this.props.fixedColor; 
-        }
-
         return (
-            <header className={attachedClasses.join(' ')} onMouseOver={this.showBar} onMouseLeave={this.hideBar}>
-                <div className={classes.Logo}>
-                    {this.state.isScrolled && !this.state.isHide? <Logo animated={false}/> : null}
-                </div>
-                <nav className={classes.DesktopOnly}>
-                    {!this.state.isHide? <NavigationItems color={color}/> : <div style={{color: "white"}}>Menu</div>} 
-                </nav>
-                <DrawerToggle   color={color}
-                                open={this.props.open}
-                                clicked={this.props.clicked}/>
-            </header>
+            <ScrollHandler onWindowScroll={this.scrollHandler}>
+                <header className={attachedClasses.join(' ')}>
+                    <div className={classes.Logo}>
+                        {window.scrollY > 30 ? <Logo animated={false}/> : null}
+                    </div>
+                    <nav className={classes.DesktopOnly}>
+                        <NavigationItems color={this.props.color}/>
+                    </nav>
+                    <DrawerToggle   color={this.props.color}
+                                    open={this.props.open}
+                                    clicked={this.props.clicked}/>
+                </header>
+            </ScrollHandler>
         );
     }
-
-};
+}
 
 export default Toolbar;

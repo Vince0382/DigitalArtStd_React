@@ -1,9 +1,31 @@
-.Sticker {
-    border-radius: 20px;
-    text-align: center;
+.Content {
+    width: 100%;
 }
 
-.Sticker p {
-    padding: 10px 5px;
-    margin-top: 0;
+.Content .Image, 
+.Content .Text {
+    transition: all 0.3s linear;
+}
+
+.Content .Image {
+    width: 100%;
+}
+
+.Content .Text {
+    transform: translateY(-50%);
+    opacity: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.Content:hover .Text{
+    transform: translateY(20%);
+    opacity: 1;
+}
+
+@media (max-width: 749px){
+    .Content .Text {
+        transform: translateY(20%);
+        opacity: 1;
+    }
 }

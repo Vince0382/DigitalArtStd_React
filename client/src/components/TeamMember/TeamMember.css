@@ -1,7 +1,8 @@
 .TeamMember {
     width: 25%;
-    height: 50%;
-    box-shadow: 0 50px 100px rgba(7, 87, 119, 0.3);
+    box-shadow: 0 100px 200px rgba(255,255,255,0.3);
+    background: transparent;
+    padding-bottom: 15px;
 }
 
 .Person {
@@ -16,11 +17,15 @@
 .Text {
     width: 60%;
     text-align: left;
+    margin-left: 10px;
 }
 
 .Image {
     width: 40%;
     margin: auto;
+    margin-top: 10px;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 .Image img {
@@ -29,23 +34,27 @@
 
 
 .Skill {
-    width: 30%;
+    width: 49%;
     font-size: 12px;
     text-align: center;
+    text-decoration: none;
+}
+
+.Skill:not(:first-child) {
+    border-left: solid 1px darkgray;
 }
 
 .Skill svg {
-    width : 60%;
-    padding: 20px;
+    width : 40%;
 }
 
 .Skills {
-    width: 95%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
     align-items: center;
+    justify-content: space-around;
     padding-top: 50px;
 }
 
@@ -53,5 +62,6 @@
     .TeamMember {
         width: 100%;
         height: auto;
+        margin: 20px 0;
     }
 }

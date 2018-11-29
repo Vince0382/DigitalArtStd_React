@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Logo from '../../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
 import classes from './SideDrawer.css';
 
@@ -13,7 +12,7 @@ const sideDrawer = ( props ) => {
         <div>
             <div className={attachedClasses.join(' ')} onClick={props.closed}>
                 <nav>
-                    <NavigationItems color="white"/>
+                    <NavigationItems color="white" callBack={props.closed}/>
                 </nav>
             </div>
         </div>

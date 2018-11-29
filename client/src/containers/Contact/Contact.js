@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import SVG from 'react-inlinesvg';
 
 import classes from './Contact.css';
 import ContactImg from '../../assets/images/contact.svg';
@@ -7,6 +8,7 @@ import Input from '../../components/UI/Input/Input';
 import SendButton from '../../components/UI/Button/SendButton/SendButton';
 import * as actions from '../../store/actions/index';
 import { updateObject, checkValidity } from '../../shared/utility';
+import ArrowDown from '../../assets/images/arrow_down.svg';
 
 class Contact extends Component {
     state = {
@@ -174,8 +176,11 @@ class Contact extends Component {
                 <p>Feel free to contact us for any new project</p>
                 {form}
                 </div>
+                <div className={classes.Arrow}>
+                    <SVG src={ArrowDown} style={{stroke: "white"}} />
+                </div>
                 <div className={classes.Image}>
-                    <img src={ContactImg}/>   
+                    <img src={ContactImg} alt=''/>   
                 </div>
             </div>
         );

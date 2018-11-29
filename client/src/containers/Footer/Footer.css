@@ -3,4 +3,20 @@
     width: 100%;
     height: 20vh;
     padding-top: 100px;
+    background: white;
+}
+
+.Container {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.Copyright {
+    width: 100%;
+    text-align: center;
 }

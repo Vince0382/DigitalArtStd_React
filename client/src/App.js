@@ -1,33 +1,31 @@
 import React from 'react';
-import {Route, Switch, withRouter, Redirect} from 'react-router-dom';
+import {Route, Switch, withRouter} from 'react-router-dom';
+import {withGetScreen} from 'react-getscreen';
 
-import asyncComponent from './hoc/asyncComponent';
 import Layout from './hoc/Layout/Layout';
 import Home from './containers/Home/Home';
 import TransitionWrapper from './hoc/TransitionWrapper/TransitionWrapper';
 import Blog from './containers/Blog/Blog';
-import classes from './App.css';
 
-const app = ({ location }) => {
+const App = ({ location, isMobile }) => {
 
     const main = () => (
       <TransitionWrapper location={location}>
-        <Home />
+        <Home isMobile={() => isMobile()}/>
       </TransitionWrapper>
     );
 
     const blog = () => (
       <TransitionWrapper location={location}>
-        <Blog />
+        <Blog isMobile={() => isMobile()}/>
       </TransitionWrapper>
     );
 
 
     let routes = (
       <Switch location={location}>
-          <Route path='/' exact component={main} >
+          <Route path='/' exact component={main} />
           
-          </Route>
           <Route path='/blog' component={blog} />
           {/* <Redirect from='/#top' to='/' />
           <Redirect from='/blog/#top' to='/blog' /> */}
@@ -37,11 +35,14 @@ const app = ({ location }) => {
 
     return (
       <div>
-        <Layout>
+        <Layout isMobile={isMobile}>
             {routes}
         </Layout>
       </div>
     );
+      
 }
 
-export default withRouter(app);
+
+const options = {mobileLimit: 749}
+export default withRouter(withGetScreen(App,options));

@@ -13,7 +13,7 @@ const selectLogo = (animated) => {
      return (
         
         <div className={classes.Logo} style={{height: props.height}}>
-            <object type="image/svg+xml" data={selectLogo(props.animated)}></object>
+            <object type="image/svg+xml" data={selectLogo(props.animated)} aria-label='Logo'></object>
         </div>
      );
  } 

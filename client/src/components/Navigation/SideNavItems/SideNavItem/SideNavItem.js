@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ScrollTo from '../../../../hoc/scrollToComponent';
 
+import { isBetween } from '../../../../shared/utility';
+
 import classes from './SideNavItem.css';
 
 class SideNavItem extends Component {
@@ -26,7 +28,9 @@ class SideNavItem extends Component {
 
     render(){
 
-        let color = (this.state.navTop < this.props.changeColorAt[0]) || (this.state.navBottom > this.props.changeColorAt[1]) ? this.props.color : this.props.color2;
+        const changeColorAt = this.props.changeColorAt? this.props.changeColorAt : [[0,0]];
+        const color = isBetween(this.state.navTop, this.state.navBottom, changeColorAt)? this.props.color2 : this.props.color;
+        
         return (
             <div className={classes.SideNavContainer} ref={this.navRef}>
                 <ScrollTo 
@@ -37,7 +41,8 @@ class SideNavItem extends Component {
                         toTop={this.props.toTop}>
                     <div 
                         className={classes.SideNavItem} 
-                        style={{ background: color, borderColor: color}}>
+                        style={{ 
+                            background: color, borderColor: color}}>
                     </div>
                 </ScrollTo>
             </div>

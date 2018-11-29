@@ -21,29 +21,42 @@
 }
 
 .Content h2 {
-    margin: 10px 0;
+    margin: 30px 0;
 }
 
 .Stickers {
     width: 100%;
     max-height: 60%;
-    list-style-type: none;
     box-sizing: border-box;
     overflow: auto;
     padding: 5px;
     margin: 0;
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
 }
 
-.Stickers li {
-    margin: auto;
+.Skill {
+    width: 17%;
     font-size: 12px;
-    display: inline-block;
-    padding: 0 5px;
+    text-align: center;
+    text-decoration: none;
+    padding: 5px;
 }
 
-.NavigationItem{
-    padding-top: 15px;
-    widows: 100%;
-    text-align: center;
+.Skill svg {
+    width : 60%;
+}
+
+@media (max-width: 749px) {
+    .Skill{
+        width: 30%;
+    } 
+
+    .Content {
+        margin-bottom: 150px;
+        background: white;
+    }
 }

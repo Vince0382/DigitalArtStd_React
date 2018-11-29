@@ -58,8 +58,8 @@ class BlockContent extends Component {
                             className={classes.Title}
                             offsetYMax={0}
                             offsetYMin={-50}
-                            
-                            tag="figure">
+                            tag="figure"
+                            styleInner={{willChange: "transform"}}>
                         
                             <div>
                                 <h1>{this.props.title}</h1>
@@ -67,15 +67,15 @@ class BlockContent extends Component {
                     </Parallax>
                     
                     <div className={classes.Image}>
-                        <img src={this.props.image}/>
+                        <img src={this.props.image} alt=''/>
                     </div>
 
                     <Parallax
                             className={classes.OverviewOuter}
                             offsetYMax={0}
                             offsetYMin={-50}
-                            
-                            tag="figure">
+                            tag="figure"
+                            styleInner={{willChange: "transform"}}>
                         <div className={classes.OverviewInner} style={{background: this.props.frameColor}}>
                             {this.props.overviewItems ? 
                                 this.props.overviewItems.map((item, i) => {

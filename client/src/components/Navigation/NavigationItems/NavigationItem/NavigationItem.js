@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import SVG from 'react-inlinesvg';
 
 import ScrollTo from '../../../../hoc/scrollToComponent';
 import classes from './NavigationItem.css';
@@ -8,20 +8,32 @@ import classes from './NavigationItem.css';
 const navigationItem = ( props ) => {
 
     let navlink = null;
-    const after = (
-        <div className={classes.After} style={{background: props.color}}></div>
+
+    const icon = (
+        <span className={classes.Icon}>
+            <SVG src={props.image} style={{fill: props.color}} />
+        </span>
+    );
+
+    const line = (
+        <span className={classes.Line} style={{background: props.color}}></span>
+    );
+
+    const text = (
+        <span className={classes.Text}>{props.children}</span>
     );
 
     switch (props.type) {
         case "function" : {
             if (props.clickHandler) {
                 navlink = ( 
-                    <div    className={classes.Link} 
+                    <span   className={classes.Link} 
                             onClick={props.clickHandler}
                             style={{color: props.color}}>
-                        {props.children}
-                        {after}
-                    </div>
+                        {icon}
+                        {line}
+                        {text}
+                    </span>
                 );
             }
             break;
@@ -32,8 +44,9 @@ const navigationItem = ( props ) => {
                         target="_blank"
                         href={props.link}
                         style={{color: props.color}}>
-                    {props.children}
-                    {after}
+                    {icon}
+                    {line}
+                    {text}
                 </a>
             );
             break;
@@ -47,9 +60,11 @@ const navigationItem = ( props ) => {
                         exact={props.exact}
                         fixed={props.fixed}
                         active={classes.active}
+                        callBack={props.callBack}
                         style={{color: props.color}}>   
-                    {props.children}
-                    {after}
+                    {icon}
+                    {line}
+                    {text}
                 </ScrollTo>
             );
             break;
@@ -61,7 +76,7 @@ const navigationItem = ( props ) => {
 
 
     return (
-        <li className={classes.NavigationItem}>
+        <li className={classes.NavigationItem} onClick={props.callBack}>
             {navlink}
         </li>
     );

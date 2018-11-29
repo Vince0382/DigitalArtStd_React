@@ -44,6 +44,7 @@
     width: 100%;
 }
 
+
 .ColorWhite {
     color: white !important;
     transition: all 0.3s linear;
@@ -52,5 +53,9 @@
 @media (max-width: 749px) {
     .Text {
         font-size: 14px;
+    }
+
+    .Content {
+        height: auto;
     }
 }

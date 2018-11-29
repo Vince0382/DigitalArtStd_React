@@ -3,17 +3,9 @@ import React, { Component } from 'react';
 import classes from './Services.css';
 import BackImage from '../../components/BackImg/BackImg';
 import Img from '../../assets/images/img5.jpg';
-import SkillBar from '../../components/SkillBars/SkillBar/SkillBar';
-import SkillCircle from '../../components/SkillCircles/SkillCircle/SkillCircle';
-import SkillCircles from '../../components/SkillCircles/SkillCircles';
-import * as actions from '../../store/actions';
-import Mouse from '../../components/UI/Scroll/Mouse/Mouse';
-import ScrollTo from '../../hoc/scrollToComponent';
-import SkillImg from '../../assets/images/img6.png';
 import Spacer from '../../components/Spacer/Spacer';
 import BlockContent from '../../components/BlockContent/Services/BlockContent';
 import Block from '../../components/BlockContent/Services/Block';
-import TiltComponent from '../../hoc/tiltComponent';
 import Section from '../../hoc/Section/Section';
 import AgileImg from '../../assets/images/agile.svg';
 import ProjectImg from '../../assets/images/project.svg';
@@ -84,7 +76,7 @@ class Services extends Component {
 
         return (
             <div key="services" className={classes.Main} id="services">
-                <BackImage image={Img}/>
+                <BackImage image={Img} isMobile={this.props.isMobile}/>
 
                 <div className={classes.SkillDiv} ref={this.props.ReactRef}>
                     <div className={classes.SkillTitle} style={{color: "white"}}>
@@ -99,6 +91,7 @@ class Services extends Component {
                             textColor={this.props.color}
                             imageColor={this.props.color2}
                             inactiveColor={"darkgray"}
+                            isMobile={this.props.isMobile}
                             title={"Agile Management"}
                             link={"/#agiles"}>
                             
@@ -109,7 +102,8 @@ class Services extends Component {
                             image={ProjectImg} 
                             textColor={this.props.color}
                             imageColor={this.props.color2}
-                            inactiveColor={"darkgray"} 
+                            inactiveColor={"darkgray"}
+                            isMobile={this.props.isMobile} 
                             title={"Project Management"}
                             link={"/#project"}>
                             
@@ -120,7 +114,8 @@ class Services extends Component {
                             image={ArchitectureImg} 
                             textColor={this.props.color}
                             imageColor={this.props.color2}
-                            inactiveColor={"darkgray"} 
+                            inactiveColor={"darkgray"}
+                            isMobile={this.props.isMobile} 
                             title={"Software Architecture"}
                             link={"/#architecture"}>
                             
@@ -131,7 +126,8 @@ class Services extends Component {
                             image={WebImg} 
                             textColor={this.props.color}
                             imageColor={this.props.color2}
-                            inactiveColor={"darkgray"} 
+                            inactiveColor={"darkgray"}
+                            isMobile={this.props.isMobile} 
                             title={"Web Development"}
                             link={"/#web"}>
                             
@@ -145,7 +141,8 @@ class Services extends Component {
                             image={MobileImg} 
                             textColor={this.props.color}
                             imageColor={this.props.color2}
-                            inactiveColor={"darkgray"} 
+                            inactiveColor={"darkgray"}
+                            isMobile={this.props.isMobile} 
                             title={"Mobile Development"}
                             link={"/#mobile"}>
                             
@@ -184,6 +181,7 @@ class Services extends Component {
                         bgColor="white"
                         color={this.props.color}
                         frameColor={this.props.gradient}
+                        isMobile={this.props.isMobile}
                         overviewItems={["Agile Coaching", "Lean", "Scrum", "Kanban", "SAFe"]}>
                         
                         <p>Rise Up provides high quality consulting, 
@@ -211,6 +209,7 @@ class Services extends Component {
                         bgColor="white"
                         color={this.props.color}
                         frameColor={this.props.gradient}
+                        isMobile={this.props.isMobile}
                         overviewItems={["Waterfall", "V Cycle", "Prince 2", "People Management"]}>
                         
                         <p>Rise Up provides high quality consulting, 
@@ -238,6 +237,7 @@ class Services extends Component {
                         bgColor="white"
                         color={this.props.color}
                         frameColor={this.props.gradient}
+                        isMobile={this.props.isMobile}
                         overviewItems={["Some Skill", "Some Skill"]}>
                         
                         <p>Rise Up provides high quality consulting, 
@@ -265,6 +265,7 @@ class Services extends Component {
                         bgColor="white"
                         color={this.props.color}
                         frameColor={this.props.gradient}
+                        isMobile={this.props.isMobile}
                         overviewItems={["ASP .NET", "netCore", "React", "Javascript", "UI/UX", "Responsive"]}>
                         
                         <p>Rise Up provides high quality consulting, 
@@ -292,6 +293,7 @@ class Services extends Component {
                         bgColor="white"
                         color={this.props.color}
                         frameColor={this.props.gradient}
+                        isMobile={this.props.isMobile}
                         overviewItems={["Xamarin", "React Native", "Cross-platform"]}>
                         
                         <p>Rise Up provides high quality consulting, 
@@ -307,14 +309,6 @@ class Services extends Component {
                         </p>
                     </BlockContent>
                 </div>
-
-                            {/* 
-                                items={["Agile Coaching", "Lean", "Lean Startup", "Scrum", "Kanban", "Visual Management", "SAFe", "People Coaching"]} /> 
-                                items={["Waterfall", "V Cycle", "Prince 2", "People Management"]}
-                                items={["Some Skill", "Some Skill"]}
-                                items={["ASP .NET", "netCore", "React"]}
-                                items={["Xamarin", "React Native"]}
-                            */}
             </div>
         );
     }

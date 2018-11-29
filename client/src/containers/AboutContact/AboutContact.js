@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
+import { disableBodyScroll, enableBodyScroll} from 'body-scroll-lock';
 
 import classes from './AboutContact.css';
 import Backdrop from '../../components/UI/Backdrop/Backdrop';
@@ -13,7 +14,17 @@ import CloseButton from '../../components/UI/Button/CloseButton/CloseButton';
 
 class AboutContact extends Component {
 
+    aboutContactRef = React.createRef();
+    targetElement = null;
+
+    componentDidMount () {
+        this.targetElement = this.aboutContactRef.current;
+    }
+
+
     render () {
+
+        this.props.showModal? disableBodyScroll(this.targetElement) : enableBodyScroll(this.targetElement);
 
         return (
             <div>
@@ -29,7 +40,7 @@ class AboutContact extends Component {
                                 exit: '',
                                 exitActive: classes.OpenCloseExitActive
                             }}>
-                    <div className={classes.AboutContact}>
+                    <div className={classes.AboutContact} ref={this.aboutContactRef}>
                                 <div className={classes.Contact}>
                                     <div className={classes.Close}>
                                         <CloseButton 
@@ -44,7 +55,10 @@ class AboutContact extends Component {
                                 <div className={classes.About}>
                                     <About  show={this.props.showModal}
                                             clicked={this.props.onShowModal}
-                                            color={this.props.textColor}/>
+                                            color={this.props.textColor}
+                                            color2="#3D9842"
+                                            isMobile={this.props.isMobile}
+                                            inactiveColor="darkgray"/>
                                 </div>
                     </div>
                 </CSSTransition>

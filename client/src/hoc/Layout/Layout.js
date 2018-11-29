@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
@@ -9,34 +9,32 @@ import Footer from '../../containers/Footer/Footer';
 import AboutContact from '../../containers/AboutContact/AboutContact';
 import * as actions from '../../store/actions'; 
 
-class Layout extends Component {
+const layout = (props) => {
 
-    render () {
-        return (
-            <div className={classes.Layout} id="top">
-                
-                <Toolbar
-                    color={this.props.color}
-                    fixedColor={this.props.fixedColor}
-                    bgColor={this.props.riseUpBlue}
-                    borderColor={this.props.riseUpGreen}
-                    clicked={this.props.onDrawerToggle} 
-                    open={this.props.showMobileMenu}/>
-                <SideDrawer
-                    color={this.props.color}
-                    fixedColor={this.props.fixedColor}
-                    open={this.props.showMobileMenu}
-                    closed={this.props.onDrawerToggle} />
-                
-                <main className={classes.Content}>
-                    {this.props.children}
-                    <AboutContact />
-                </main>
-                
-                <Footer color={this.props.color}/>
-            </div>
-        )
-    }
+    return (
+        <div className={classes.Layout} id="top">
+            
+            <Toolbar
+                color={props.color}
+                fixedColor={props.fixedColor}
+                bgColor={props.riseUpBlue}
+                borderColor={props.riseUpGreen}
+                clicked={props.onDrawerToggle}
+                open={props.showMobileMenu}/>
+            <SideDrawer
+                color={props.color}
+                fixedColor={props.fixedColor}
+                open={props.showMobileMenu}
+                closed={props.onDrawerToggle} />
+            
+            <main className={classes.Content}>
+                { props.children }
+                <AboutContact isMobile={props.isMobile}/>
+            </main>
+            
+            <Footer color={props.color}/>
+        </div>
+    );
 }
 
 const mapStateToProps = state => {
@@ -56,4 +54,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Layout));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(layout));

@@ -1,20 +1,19 @@
 import React from 'react';
-import SVG from 'react-inlinesvg';
 
 import classes from './TeamMember.css';
 
-import SkillCircle from '../SkillCircles/SkillCircle/SkillCircle';
+import Sticker from '../Sticker/Sticker';
 
 const teamMember = (props) => {
     return (
-        <div className={classes.TeamMember} style={{color: props.color}}>
+        <div className={classes.TeamMember} style={{color: "white"}}>
             <div className={classes.Person}>
                 <div className={classes.Image}>
-                    <img src={props.image} />
+                    <img src={props.image} alt=''/>
                 </div>
                 <div className={classes.Text}>
                     <h2>{props.name}</h2>
-                    <p>{props.function}</p>
+                    <p style={{fontWeight: 200}}><i>{props.function}</i></p>
                     <p>{props.children}</p>
                 </div>
             </div>
@@ -22,10 +21,16 @@ const teamMember = (props) => {
             <div className={classes.Skills}>
                 {props.skills? props.skills.map(skill => {
                     return (
-                        <div key={skill[1]} color={props.color} className={classes.Skill}>
-                            <div>{skill[1]}</div>
-                            <SVG src={skill[0]} style={{fill: props.color2}}/>
-                        </div>
+                        <Sticker
+                                key={skill[1]}
+                                link={skill[2]}
+                                isMobile={props.isMobile}
+                                image={skill[0]}
+                                title={skill[1]}
+                                color={"white"}
+                                color2={props.color2}
+                                inactiveColor={props.inactiveColor}
+                                className={classes.Skill} />
                     );
                 }) : null}
             </div>

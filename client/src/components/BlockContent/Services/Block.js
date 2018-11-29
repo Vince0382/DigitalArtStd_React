@@ -34,9 +34,9 @@ class BlockContent extends Component {
             
             <div 
                 className={classes.Main} 
-                onMouseEnter={this.onHoverEnter} 
-                onMouseLeave={this.onHoverExit} 
-                onClick={() => scrollTo(this.props.link.slice(this.props.link.indexOf('#')+1),70, false)}>
+                onMouseEnter={this.props.isMobile? !this.props.isMobile()? this.onHoverEnter : null : null} 
+                onMouseLeave={this.props.isMobile? !this.props.isMobile()?this.onHoverExit : null : null} 
+                onClick={(event) => scrollTo(event, this.props.link, 70, false)}>
 
                 <div className={classes.Image}>
                     <SVG src={this.props.image} style={{fill: this.state.fill}} />

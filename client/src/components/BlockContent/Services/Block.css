@@ -22,26 +22,27 @@
 
 .Image svg {
     height: 100%;
-    transition: all 0.3s linear;
+    transition: all 0.2s linear;
 }
 
 .Block {
     width: 90%;
     text-align: center;
     margin: auto;
-    transition: all 0.3s linear;
 }
 
 .Block .Title {
     font-size: 14px;
     padding: 10px;
     border-bottom: 1px solid darkgray;
+    transition: all 0.3s linear;
 }
 
 .Block .Text {
     text-align: center;
     font-size: 14px;
     padding: 10px;
+    transition: all 0.2s linear;
 }
 
 .Arrow{
@@ -62,7 +63,9 @@
 
 @media (max-width: 749px){
     .Main {
-        width: 45%;
-        margin: 2%;
+        width: 95%;
+        margin: 20px auto;
+        position: static;
     }
+
 }

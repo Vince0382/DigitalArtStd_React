@@ -10,6 +10,11 @@
     width: 100%;
     box-sizing: border-box;
     display: block;
+    position: relative;
+}
+
+.NavigationItem .Icon {
+    display: none;
 }
 
 @media (min-width: 750px) {
@@ -24,42 +29,56 @@
     
     .NavigationItem .Link {
         height: 100%;
-        padding: 30px;
+        padding: 10px 30px;
         cursor: pointer;
+        display: block;
     }
 
-    .NavigationItem .Link .After {
+    .NavigationItem .Link::after {
+        content: ""; 
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left:0;
+    }
+
+    .NavigationItem .Icon {
+        text-align: center;
+        display: block;
+    }
+
+    .NavigationItem .Icon svg{
+        height: 25px;
+    }
+
+    .NavigationItem .Line {
         display: block;
         width: 0;
         height: 2px;
         margin-top: 2px;
         transition: width .3s ease-out;
     }
-    
-    .NavigationItem .Link:hover .After{
-        width: 100%;
-    }
 
-    .NavigationItem .Link:active .After,
-    .NavigationItem .Link.active .After {
-        width: 100%;
-    }
-
-/*    .NavigationItem .Link::after {
-        content: '';
+    .NavigationItem .Text {
         display: block;
-        width: 0;
-        height: 2px;
-        transition: width .3s ease-out;
-        background: rgb(7, 87, 119);
+        opacity: 0;
+        transform: translateY(-50%);
+        transition: all .3s ease-out;
     }
     
-    .NavigationItem .Link:hover::after{
+    .NavigationItem .Link:hover .Line{
         width: 100%;
     }
 
-    .NavigationItem .Link:active::after,
-    .NavigationItem .Link.active::after {
+    .NavigationItem .Link:hover .Text{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .NavigationItem .Link:active .Line,
+    .NavigationItem .Link.active .Line {
         width: 100%;
-    } */
+    }
+
 }

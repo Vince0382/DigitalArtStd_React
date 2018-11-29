@@ -50,6 +50,9 @@ class BlockContent extends Component {
 
     render () {
  
+        let offsetMin = -50;
+        if(this.props.isMobile()) offsetMin = -1;
+
         return (
             
             <div className={classes.Block} style={{background: this.props.bgColor, color: this.props.color}}> 
@@ -57,9 +60,9 @@ class BlockContent extends Component {
                     <Parallax
                             className={classes.Title}
                             offsetYMax={0}
-                            offsetYMin={-50}
-                            
-                            tag="figure">
+                            offsetYMin={offsetMin}
+                            tag="figure"
+                            styleInner={{willChange: "transform"}}>
                         
                             <div>
                                 <h1>{this.props.title}</h1>
@@ -67,19 +70,19 @@ class BlockContent extends Component {
                     </Parallax>
                     
                     <div className={classes.ImageLeft}>
-                        <img src={this.props.image[0]}/>
+                        <img src={this.props.image[0]} alt=''/>
                     </div>
 
                     <div className={classes.ImageRight}>
-                        <img src={this.props.image[1]}/>
+                        <img src={this.props.image[1]} alt=''/>
                     </div>
 
                     <Parallax
                             className={classes.OverviewOuter}
                             offsetYMax={0}
-                            offsetYMin={-50}
-                            
-                            tag="figure">
+                            offsetYMin={offsetMin}
+                            tag="figure"
+                            styleInner={{willChange: "transform"}}>
                         <div className={classes.OverviewInner} style={{background: this.props.frameColor}}>
                             {this.props.overviewItems ? 
                                 this.props.overviewItems.map((item, i) => {

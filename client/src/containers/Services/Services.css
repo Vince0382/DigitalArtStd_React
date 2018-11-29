@@ -57,11 +57,31 @@
     }
     .SkillTitle h2 {
         margin: 0;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        font-size: 3vw;
-        transform: translate(-50%, -50%);
+        position: static;
+        font-size: 18px;
+        transform: translate(0);
+        text-align: center;
+        padding: 30px 0 ;
+    }
+
+    .Content {
+        height: auto;
+    }
+
+    .Content:last-child {
+        margin-bottom: 20px;
+    }
+
+    .SkillDiv {
+        height: auto;
+        background: black;
+    }
+
+    .SkillOverview {
+        height: auto;
+        width: 100%;
+        display: block;
+        padding: 20px 0;
     }
 }
 

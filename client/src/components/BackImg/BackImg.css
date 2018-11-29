@@ -1,3 +1,13 @@
+.BackImgFixed {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
 .BackImg {
     height: 100vh;
     width: 100%;
@@ -13,13 +23,19 @@
     height: 100%;
 }
 
-.BackImgParallax img {
+.BackImg img {
+    width: 100%;
+    height: auto;
+}
+
+.BackImgFixed img {
     width: 100%;
     height: auto;
 }
 
 @media (max-width: 749px) {
-    .BackImg img {
+    .BackImg img,
+    .BackImgFixed img {
         width: auto;
         height: 100%;
     }

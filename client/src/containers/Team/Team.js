@@ -8,43 +8,53 @@ import ProjectImg from '../../assets/images/project.svg';
 import ArchitectureImg from '../../assets/images/architecture.svg';
 import WebImg from '../../assets/images/laptop.svg';
 import MobileImg from '../../assets/images/phone.svg';
-import Dummy from '../../assets/images/dummy.png';
+// import Dummy from '../../assets/images/dummy.png';
 import Section from '../../hoc/Section/Section';
+import BackImage from '../../components/BackImg/BackImg';
+import Img from '../../assets/images/img10.jpg';
+import Jerome from '../../assets/images/jerome.png';
+import Vincent from '../../assets/images/vincent.png';
+import Olivier from '../../assets/images/olivier.png';
 
 
 const team = (props) => {
     return (
-        <div className={classes.Team} id="team">
-
-            <div className={classes.Title} style={{color: props.color}}>Our Team</div>
+        <div className={classes.Team} id="team" ref={props.ReactRef}>
+            <BackImage image={Img} isMobile={props.isMobile}/>
+            <div className={classes.Title}>Meet Our Team</div>
 
             <Section link="/#team" mainSection="/#team"/>
 
             <TeamMember color={props.color}
                         color2={props.color2}
+                        inactiveColor="white"
+                        isMobile={props.isMobile}
                         name="Jerome"
                         function="Founder and CEO of RiseUP"
-                        image={Dummy}
-                        skills={[[AgileImg,"Agiles Services"],[ProjectImg, "Project Management"]]}>
+                        image={Jerome}
+                        skills={[[AgileImg,"Agiles Services","/#agiles"],[ProjectImg, "Project Management", "/#project"]]}>
             
-                    
             </TeamMember>
 
             <TeamMember color={props.color}
                         color2={props.color2}
+                        inactiveColor="white"
+                        isMobile={props.isMobile}
                         name="Vincent"
                         function="Freelance developer"
-                        image={Dummy}
-                        skills={[[WebImg, "Web Development"],[MobileImg, "Mobile Development"]]}>
+                        image={Vincent}
+                        skills={[[WebImg, "Web Development", "/#web"],[MobileImg, "Mobile Development", "/#mobile"]]}>
 
             </TeamMember>
 
             <TeamMember color={props.color}
                         color2={props.color2}
-                        name="Marcel"
+                        inactiveColor="white"
+                        isMobile={props.isMobile}
+                        name="Olivier"
                         function="Software architect"
-                        image={Dummy}
-                        skills={[[ArchitectureImg, "Architecture"]]}>
+                        image={Olivier}
+                        skills={[[ArchitectureImg, "Architecture", "/#architecture"]]}>
 
             </TeamMember>
         
