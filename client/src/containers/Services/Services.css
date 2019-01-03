@@ -4,77 +4,49 @@
 }
 
 .SkillDiv {
-    height: calc(100vh - 70px);
     width: 100%;
+    background: white;
 }
 
 .SkillTitle {
-    position: relative;
     width: 100%;
-    height: 20%;
+    padding: 30px 0;
 }
 
-.SkillTitle h2 {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    font-size: 2vw;
-    transform: translate(-50%, -50%);
+.TitleText {
+    width: 70%;
+    font-size: 48px;
+    font-weight: 800;
+    text-align: left;
+    margin: auto;
 }
 
-.SkillTitle * {
-    font-weight: 200;
+.TitleSubText {
+    width: 70%;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+    margin: 50px auto 20px;
 }
 
 .SkillOverview {
-    width: 85%;
-    height: 60%;
+    width: 70%;
+    margin: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin: auto;
-}
-
-.Content {
-    height: 100vh;
-    width: 100%;
-}
-
-.SkillDivCircles {
-    width: 80%;
-    height: 80%;
-    position: absolute;
-    z-index: 200;
-    top: 5%;
 }
 
 @media (max-width: 749px) {
-    .SkillDivCircles {
-        left: 5%;
-    }
-    .SkillTitle h2 {
-        margin: 0;
-        position: static;
-        font-size: 18px;
-        transform: translate(0);
-        text-align: center;
-        padding: 30px 0 ;
-    }
 
-    .Content {
-        height: auto;
-    }
-
-    .Content:last-child {
-        margin-bottom: 20px;
+    .TitleText {
+        font-size: 28px;
     }
 
     .SkillDiv {
         height: auto;
-        background: black;
     }
 
     .SkillOverview {

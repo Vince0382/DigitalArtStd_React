@@ -29,7 +29,7 @@ class SideNavItem extends Component {
     render(){
 
         const changeColorAt = this.props.changeColorAt? this.props.changeColorAt : [[0,0]];
-        const color = isBetween(this.state.navTop, this.state.navBottom, changeColorAt)? this.props.color2 : this.props.color;
+        const color = isBetween(this.state.navTop, this.state.navBottom, changeColorAt, 15, -15)? this.props.color2 : this.props.color;
         
         return (
             <div className={classes.SideNavContainer} ref={this.navRef}>

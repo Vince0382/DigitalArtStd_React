@@ -84,6 +84,13 @@
     color: white;
 }
 
+.OverviewInner .Item svg {
+    stroke: white;
+    fill: white;
+    width: 18px;
+    margin-right: 10px;
+}
+
 .OverviewInner .Item:last-child {
     border: none;
 }

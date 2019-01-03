@@ -7,7 +7,7 @@ import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
 import Footer from '../../containers/Footer/Footer';
 import AboutContact from '../../containers/AboutContact/AboutContact';
-import * as actions from '../../store/actions'; 
+import * as actions from '../../store/actions';
 
 const layout = (props) => {
 
@@ -32,7 +32,7 @@ const layout = (props) => {
                 <AboutContact isMobile={props.isMobile}/>
             </main>
             
-            <Footer color={props.color}/>
+            <Footer color={props.color} clickHandler={props.onShowModal}/>
         </div>
     );
 }
@@ -50,7 +50,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onDrawerToggle: () => dispatch(actions.showMobileMenu())
+        onDrawerToggle: () => dispatch(actions.showMobileMenu()),
+        onShowModal: () => dispatch(actions.showModal())
     }
 }
 

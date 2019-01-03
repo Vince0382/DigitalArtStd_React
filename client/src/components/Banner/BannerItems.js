@@ -18,13 +18,15 @@ const bannerItems = (props) => {
 
     return (
         <div className={classes.BannerItems}>
-            <BannerItem size={size} image={csm}/>
-            <BannerItem size={size} image={csp}/>
-            <BannerItem size={size} image={cspo}/>
-            <BannerItem size={size} image={microsoft}/>
-            <BannerItem size={size} image={dev}/>
-            <BannerItem size={size} image={prince2}/>
-            <BannerItem size={size} image={spc}/>
+            <div className={classes.Content}>
+                <BannerItem size={size} image={csm}/>
+                <BannerItem size={size} image={csp}/>
+                <BannerItem size={size} image={cspo}/>
+                <BannerItem size={size} image={microsoft}/>
+                <BannerItem size={size} image={dev}/>
+                <BannerItem size={size} image={prince2}/>
+                <BannerItem size={size} image={spc}/>
+            </div>
         </div>
     );
 }

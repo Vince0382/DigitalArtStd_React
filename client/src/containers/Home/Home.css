@@ -44,6 +44,9 @@
     width: 100%;
 }
 
+.Container {
+    background: white;
+}
 
 .ColorWhite {
     color: white !important;

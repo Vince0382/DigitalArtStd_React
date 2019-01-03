@@ -9,6 +9,7 @@
     align-items: center;
     justify-content: center;
 }
+
 .btn1 {
     cursor: pointer;
     position: relative;
@@ -25,6 +26,17 @@
     top: 0;
     left: 0;
     position: absolute;
+}
+
+.Disabled:hover .ToolTip{
+    opacity: 1;
+}
+
+.ToolTip{
+    opacity: 0;
+    font-weight: 200;
+    font-size: 12px;
+    transition: opacity 0.3s linear;
 }
 
 

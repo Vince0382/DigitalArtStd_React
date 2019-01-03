@@ -1,4 +1,6 @@
 export const SHOW_MODAL = 'SHOW_MODAL';
+export const SHOW_PRIVACY = 'SHOW_PRIVACY';
+export const SHOW_TERMS = 'SHOW_TERMS';
 export const SHOW_MOBILE_MENU = 'SHOW_MOBILE_MENU';
 export const SEND_MAIL = 'SEND_MAIL';
 export const SEND_MAIL_STARTED = 'SEND_MAIL_STARTED';

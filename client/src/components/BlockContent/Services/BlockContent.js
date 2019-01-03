@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Parallax } from 'react-scroll-parallax';
 import Section from '../../../hoc/Section/Section';
+import SVG from 'react-inlinesvg';
 
 import classes from './BlockContent.css';
+import customDot from '../../../assets/images/dot.svg'
 
 class BlockContent extends Component {
     // state = {
@@ -86,7 +88,10 @@ class BlockContent extends Component {
                         <div className={classes.OverviewInner} style={{background: this.props.frameColor}}>
                             {this.props.overviewItems ? 
                                 this.props.overviewItems.map((item, i) => {
-                                return <div key={i} className={classes.Item}>&#8594; {item}</div> 
+                                return <div key={i} className={classes.Item}>
+                                            <span><SVG src={item.length > 1 ? item[1] : customDot}/></span>
+                                            <span>{item[0]}</span>
+                                        </div> 
                                 })
                                 : null
                             }

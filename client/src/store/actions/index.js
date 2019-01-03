@@ -1,5 +1,7 @@
 export { 
-    showModal, 
+    showModal,
+    showPrivacy, 
+    showTerms,
     showMobileMenu,
     sendMail,
     sendMailStarted,

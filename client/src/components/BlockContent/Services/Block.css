@@ -1,69 +1,43 @@
 .Main {
-    width: calc(20% - 10px);
-    background: rgba(255,255,255,0.95);
-    box-shadow: 0 50px 100px rgba(255,255,255,0.3);
-    height: 100%;
-    margin: 5px;
-    transition: all 0.3s linear;
-    position: relative;
-    cursor: pointer;
-}
-
-.Main:hover {
-    transform: scale(1.03);
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    height: 150px;
 }
 
 .Image {
-    width: auto;
-    height: 100px;
-    text-align: center;
-    padding: 10px 0;
+    width: 40px;
 }
 
 .Image svg {
-    height: 100%;
-    transition: all 0.2s linear;
+    width: 100%;
 }
 
 .Block {
-    width: 90%;
-    text-align: center;
-    margin: auto;
+    width: calc(100% - 40px);
+    padding-left: 20px;
 }
 
 .Block .Title {
-    font-size: 14px;
-    padding: 10px;
-    border-bottom: 1px solid darkgray;
-    transition: all 0.3s linear;
+    font-size: 20px;
+    height: 40px;
+    font-weight: 400;
+    border-bottom: 1px solid;
 }
 
 .Block .Text {
-    text-align: center;
     font-size: 14px;
-    padding: 10px;
-    transition: all 0.2s linear;
+    font-weight: 200;
+    line-height: 1.5;
 }
 
-.Arrow{
-    opacity: 0;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: all 0.3s linear;
-}
-
-.Main:hover .Arrow{
-    opacity: 1;
-    transform: translate(-50%,70%);
-}
 
 
 
 @media (max-width: 749px){
     .Main {
-        width: 95%;
+        width: 70%;
         margin: 20px auto;
         position: static;
     }

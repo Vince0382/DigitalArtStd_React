@@ -58,7 +58,30 @@ export const isBetween = (elTop, elBottom, values, offsetTop, offsetBottom) => {
     return false;
 }
 
+export const getElementsPositions = (...elements) => {
+    let elementsPositions = [];
 
+    for (let i = 0; i < elements.length; i++){ 
+        let element = null;
+        
+        try {
+            element = elements[i].getBoundingClientRect();
+
+        } catch (error) {
+            element = getElementByLink(elements[i]);
+            try {
+                element = element.getBoundingClientRect();
+            } catch (error){
+                element = null; 
+            }
+        }
+
+        if (element) elementsPositions.push([element.top, element.bottom]);
+    } 
+
+    return elementsPositions;
+
+}
 
 
 export const getElementByLink = (hash) => {
@@ -85,14 +108,14 @@ export const getOffsetTop = (el) => {
     return 0;
 }
 
-export const scrollTo = (event, el, offset, toTop, callback) => {
+export const scrollTo = (event, el, offset, toTop) => {
 
     let element = [el];
 
     if(el.includes('#')){
         element = el.split('#');
     }
-console.log(element, window.location.pathname);
+
     if(element[0] === window.location.pathname){
         event.preventDefault();
         event.stopPropagation();
@@ -111,8 +134,6 @@ console.log(element, window.location.pathname);
                 left: 0,
                 behavior: 'smooth'
             });
-
-            if (callback) callback();
 
         }, 0);
 

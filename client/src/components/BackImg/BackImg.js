@@ -10,6 +10,7 @@ const backImg = (props) => {
         <Parallax   offsetYMax={0}
                     offsetYMin={-20}
                     className={classes.BackImgParallax}
+                    slowerScrollRate
                     styleInner={{willChange: "transform"}}>
             <img src={props.image} alt=''/>
         </Parallax>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-name="Layer 1" version="1.1" viewBox="0 0 94.400002 75.400002" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <metadata>
+   <rdf:RDF>
+   <cc:Work rdf:about="">
+   <dc:format>image/svg+xml</dc:format>
+   <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+   </rdf:RDF>
+   </metadata>
+   <title>78</title>
+   <g transform="translate(-2.8,-12.3)" data-name="Group">
+      <path d="m84.2 12.3h-68.4a13 13 0 0 0 -13 13v49.4a13 13 0 0 0 13 13h68.4a13 13 0 0 0 13 -13v-49.4a13 13 0 0 0 -13 -13zm-68.5 6h68.5a7 7 0 0 1 7 7v7.9h-82.4v-7.9a7 7 0 0 1 7 -7zm68.5 63.4h-68.4a7 7 0 0 1 -7 -7v-35.6h82.4v35.6a7 7 0 0 1 -7 7z" data-name="Compound Path"/>
+      <circle cx="18.2" cy="25.7" r="4.8" data-name="Path"/>
+      <circle cx="30.6" cy="25.7" r="4.8" data-name="Path"/>
+      <circle cx="43.6" cy="25.7" r="4.8" data-name="Path"/>
+      <path d="m40.6 47.6a3 3 0 0 0 -4.2 -0.2l-11.7 10.9a3 3 0 0 0 0 4.4l11.7 10.8a3.0071 3.0071 0 0 0 4.1 -4.4l-9.3-8.6 9.3-8.6a3 3 0 0 0 0.1 -4.3z" data-name="Path"/>
+      <path d="m63.6 47.5a3.0071 3.0071 0 0 0 -4.1 4.4l9.3 8.6-9.3 8.6a3.0071 3.0071 0 0 0 4.1 4.4l11.7-10.8a3 3 0 0 0 0 -4.4z" data-name="Path"/>
+      <path d="m54.6 40.4a3 3 0 0 0 -3.6 2.2l-8.9 34.5a3 3 0 0 0 2.2 3.7h0.7a3 3 0 0 0 3 -2.2l8.8-34.6a3 3 0 0 0 -2.2 -3.6z" data-name="Path"/>
+   </g>
+</svg>

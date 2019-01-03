@@ -13,15 +13,13 @@
 } */
 
 .Title {
-    width: auto;
+    width: 100%;
     height: auto;
     position: absolute;
     top: 0;
-    left: 20%;
+    left: 0;
     background: transparent;
     z-index: 10;
-    font-size: 36px;
-    font-weight: 800;
     margin-top: 20px;
 }
 
@@ -32,7 +30,7 @@
     position: absolute;
     top: 10%;
     left: 20%;
-    box-shadow: 0 100px 200px rgba(66,0,5,0.3);
+    box-shadow: 0 100px 200px rgb(211, 211, 211);
     z-index: 1;
     overflow: hidden;
 }
@@ -57,18 +55,25 @@
 }
 
 .Text {
-    width: 40%;
+    width: 300px;
     position: absolute;
     top: 70%;
-    left: 10%;
+    left: 22%;
     z-index: 10;
 }
 
 .OverviewInner .Item {
     text-align: left;
     border-bottom: 1px solid white;
-    padding: 20px;
+    padding: 10px;
     color: white;
+}
+
+.OverviewInner .Item svg {
+    stroke: white;
+    fill: white;
+    width: 18px;
+    margin-right: 10px;
 }
 
 .OverviewInner .Item:last-child {
@@ -83,10 +88,10 @@
     }
 
     .Title {
+        width: 100%;
         position: static;
-        margin-left: 10%;
-        font-size: 18px;
-        font-weight: 600;
+        background: white;
+        margin: 0;
     }
     
     .Image {

@@ -1,6 +1,5 @@
 import { put } from 'redux-saga/effects';
 import axios from 'axios';
-// import nodemailer from 'nodemailer';
 
 import * as actions from '../actions/index';
 
@@ -13,25 +12,18 @@ export function* sendMailSaga(action) {
     const email = action.data.formData.email;
     const subject = action.data.formData.subject;
     const message = action.data.formData.message;
-    console.log(action.data.formData);
+
     try {
-        const response = yield axios({
-            method: "POST", 
-            url:"http://localhost:3001/send", 
-            data: {
+       const response =  yield axios.post("https://us-central1-riseup-3eaf3.cloudfunctions.net/sendEmail", 
+            {
                 firstName: firstName,  
                 lastName: lastName, 
                 email: email,
                 subject: subject,  
                 message: message
             }
-            });
-
-        console.log(response.data.responseCode);
-        if (response.data.responseCode) {
-            throw new Error(response.data);
-        } 
-
+            );
+        console.log(response);
         yield put(actions.sendMailSuccess());
 
     } catch (error) {

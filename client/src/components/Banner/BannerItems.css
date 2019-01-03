@@ -1,5 +1,11 @@
 .BannerItems {
     width: 100%;
+    background: white;
+}
+
+.Content {
+    width: 90%;
+    margin: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

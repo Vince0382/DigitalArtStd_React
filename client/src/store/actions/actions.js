@@ -6,6 +6,18 @@ export const showModal = () => {
     };
 }
 
+export const showPrivacy = () => {
+    return {
+        type: actiontypes.SHOW_PRIVACY
+    };
+}
+
+export const showTerms = () => {
+    return {
+        type: actiontypes.SHOW_TERMS
+    };
+}
+
 export const showMobileMenu = () => {
     return {
         type: actiontypes.SHOW_MOBILE_MENU

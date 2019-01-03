@@ -38,7 +38,7 @@ class SideScroll extends Component{
         const changeColorAt = this.props.changeColorAt? this.props.changeColorAt : [[0,0]];
 
         return (
-            <ScrollTo element={this.props.up? "/" : this.props.element} toTop={this.props.up} className={this.props.className}>
+            <ScrollTo element={this.props.up? window.location.pathname : this.props.element} toTop={this.props.up} className={this.props.className}>
 
                 <div className={classes.ScrollDiv}>
                     <div className={classes.TextDiv} ref={this.textRef}>

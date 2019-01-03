@@ -10,8 +10,7 @@ const selectLogo = (animated) => {
 }
 
  const logo = (props) => {
-     return (
-        
+     return (     
         <div className={classes.Logo} style={{height: props.height}}>
             <object type="image/svg+xml" data={selectLogo(props.animated)} aria-label='Logo'></object>
         </div>

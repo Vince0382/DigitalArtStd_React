@@ -44,6 +44,7 @@
     "react-getscreen": "^1.1.3",
     "react-inlinesvg": "^0.8.2",
     "react-intersection-visible": "^2.0.6",
+    "react-map-gl": "^4.0.2",
     "react-prefixer": "^2.0.1",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
+import { getElementsPositions } from '../../shared/utility';
+
 import classes from './Home.css';
 import Logo from '../../components/Logo/Logo';
 import Button from '../../components/UI/Button/Button';
@@ -16,10 +18,24 @@ import Services from '../Services/Services';
 import SideScroll from '../../components/Navigation/SideScroll/SideScroll';
 import Section from '../../hoc/Section/Section';
 import ScrollHandler from '../../hoc/ScrollHandler';
+import Companies from '../../components/Companies/Companies';
+import Title from '../../components/Title/Title';
 
 
 import * as actions from '../../store/actions';
 import Team from '../Team/Team';
+
+//SVG import 
+import Customer from '../../assets/images/customer.svg';
+import Agile from '../../assets/images/agile_small.svg';
+import Certified from '../../assets/images/certified.svg';
+import Consulting from '../../assets/images/consulting.svg';
+import Coaching from '../../assets/images/coaching.svg';
+import Development from '../../assets/images/development.svg';
+import AgileServices from '../../assets/images/agile.svg';
+import Project from '../../assets/images/project.svg';
+import UXUI from '../../assets/images/uxui.svg';
+import Architecture from '../../assets/images/architecture.svg';
 
 class Home extends Component {
     constructor (props) {
@@ -27,16 +43,12 @@ class Home extends Component {
         this.servicesRef = React.createRef();
         this.teamRef = React.createRef();
     }
+    
     state = {
         scrolled: false,
         sideNavColor: this.props.color,
         sideScrollColor: this.props.color,
-        servicesOffsetTop: 0,
-        servicesOffsetBottom: 0,
-        teamOffsetTop: 0,
-        teamOffsetBottom: 0,
         boundaries: [
-            [0,0],
             [0,0]
         ]
     }
@@ -49,9 +61,7 @@ class Home extends Component {
         }
 
         if(!this.props.isMobile()){
-            const updatedBoundaries = this.state.boundaries.slice();
-            updatedBoundaries[0] = [ this.servicesRef.current.getBoundingClientRect().top, this.servicesRef.current.getBoundingClientRect().bottom ];
-            updatedBoundaries[1] = [ this.teamRef.current.getBoundingClientRect().top, this.teamRef.current.getBoundingClientRect().bottom ];
+            const updatedBoundaries = getElementsPositions(this.servicesRef.current, "footer");
     
             if (this.state.boundaries !== updatedBoundaries){
                 this.setState({
@@ -94,7 +104,7 @@ class Home extends Component {
                                     bgColor2={this.props.color}
                                     bgColor1="#3D9842">About Us</Button>
                         </div>
-                        <Spacer height='100px' />
+                        <Spacer height='100px' noBg/>
                         
                         <div className={classes.Text} style={{color: this.props.color}}>
                             {/* <SVG src={animatedText} style={{fill: this.props.color}} /> */}
@@ -105,73 +115,88 @@ class Home extends Component {
                     </div>
                     
                     <Spacer height="100px" />
+                    <div className={classes.Container}>
+                        <div className={classes.Content} id="whoweare">
+                            <BlockContent 
+                                title={<Title title1="Who We" title2="Are" color1={this.props.color} color2="#3D9842"/>}
+                                hash="/#whoweare"
+                                mainSection="/"
+                                image={Professional}
+                                bgColor="white"
+                                color={this.props.color}
+                                frameColor={this.props.riseUpGreen}
+                                overviewItems={[["Customer Oriented", Customer], ["Agile Expert", Agile], ["Certified Partner", Certified]]}>
+                                
+                                <p style={{fontSize: "24px"}}>RiseUp! A young and innovative start-up at the cutting edge of technology</p>
+                                <p>Our expertise is focused on agile management and development of innovative cross-platform and fully responsive mobile and web applications</p>
+                            </BlockContent>
+                        </div>
+                        
 
-                    <div className={classes.Content} id="whoweare">
-                        <BlockContent 
-                            title="Who We Are"
-                            hash="/#whoweare"
-                            mainSection="/"
-                            image={Professional}
-                            bgColor="white"
-                            color={this.props.color}
-                            frameColor={this.props.riseUpGreen}
-                            overviewItems={["Customer Oriented", "Agile Expert", "Certified Partner"]}>
-                            
-                            <p style={{fontSize: "24px"}}>RiseUp! A young and innovative start-up at the cutting edge of technology</p>
-                            <p>Our expertise is focused on agile management and development of innovative cross-platform and fully responsive mobile and web applications</p>
-                        </BlockContent>
-                    </div>
+                        <Spacer height="50px" />
+
+                        <BannerItems isMobile={this.props.isMobile}/>
+
+                        <Spacer height="50px" />
+
+                        
+                        <div className={classes.Content} id="whatwedo">
+                            <BlockContent 
+                                title={<Title title1="What We" title2="Do" color1={this.props.color} color2="#3D9842"/>}
+                                hash="/#whatwedo"
+                                mainSection="/"
+                                image={Inovative}
+                                bgColor="white"
+                                color={this.props.color}
+                                frameColor={this.props.riseUpGreen}
+                                overviewItems={[
+                                    ["Agile Services", AgileServices], 
+                                    ["Project Management", Project],
+                                    ["UX/UI Design", UXUI],
+                                    ["Software Architecture", Architecture], 
+                                    ["Software Developement", Development]]}>
+                                
+                                <p>Rise Up provides high quality consulting, 
+                                        coaching and training solutions for clients seeking the benefits of agile software development including Lean-UX, 
+                                        DevOps and Continuous Delivery. 
+                                </p>
+                                <p>Its our passion to improve the performance of software development teams and programs 
+                                        while maximizing the delivery of business value through innovative agile technology delivery techniques. 
+                                </p>
+                                <p>No matter what your stage of agile adoption is, just beginning, or needing to take your teams 
+                                        and programs to the next level, we have solutions that will deliver your organizations an improved 
+                                        flow of business value to your customers.
+                                </p>
+                            </BlockContent>
+                        </div>
+
+                        <Spacer height="200px" />
+
+                        <Title  title1="They Trusted"
+                                title2="Us"
+                                color1={this.props.color}
+                                color2="#3D9842"/>
                     
+                        <Companies color={this.props.color} color2="#3D9842" />
 
-                    <Spacer height="50px" />
+                        <Spacer height="200px" />
 
-                    <BannerItems isMobile={this.props.isMobile}/>
+                        <Services 
+                                color={this.props.color} 
+                                ReactRef={this.servicesRef} 
+                                color2="#3D9842" 
+                                gradient1={this.props.riseUpBlue}
+                                gradient2={this.props.riseUpGreen}
+                                isMobile={this.props.isMobile}/>
 
-                    <Spacer height="50px" />
+                        <Spacer height="100px" />
 
-                    
-                    <div className={classes.Content} id="whatwedo">
-                        <BlockContent 
-                            title="What We Do"
-                            hash="/#whatwedo"
-                            mainSection="/"
-                            image={Inovative}
-                            bgColor="white"
-                            color={this.props.color}
-                            frameColor={this.props.riseUpGreen}
-                            overviewItems={["Consulting", "Coaching", "Software Developement", "Agile Services", "Project Management"]}>
-                            
-                            <p>Rise Up provides high quality consulting, 
-                                    coaching and training solutions for clients seeking the benefits of agile software development including Lean-UX, 
-                                    DevOps and Continuous Delivery. 
-                            </p>
-                            <p>Its our passion to improve the performance of software development teams and programs 
-                                    while maximizing the delivery of business value through innovative agile technology delivery techniques. 
-                            </p>
-                            <p>No matter what your stage of agile adoption is, just beginning, or needing to take your teams 
-                                    and programs to the next level, we have solutions that will deliver your organizations an improved 
-                                    flow of business value to your customers.
-                            </p>
-                        </BlockContent>
+                        <Team 
+                                color={this.props.color} 
+                                color2="#3D9842" 
+                                ReactRef={this.teamRef}
+                                isMobile={this.props.isMobile}/>
                     </div>
-
-                    <Spacer height="100px" />
-
-                    <Services 
-                            color={this.props.color} 
-                            ReactRef={this.servicesRef} 
-                            color2="#3D9842" 
-                            gradient={this.props.riseUpGreen}
-                            isMobile={this.props.isMobile}/>
-
-                    <Spacer height="100px" />
-
-                    <Team 
-                            color={this.props.color} 
-                            color2="#3D9842" 
-                            ReactRef={this.teamRef}
-                            isMobile={this.props.isMobile}/>
-
                 </div>
             </ScrollHandler>
         );

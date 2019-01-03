@@ -3,6 +3,8 @@ import * as actionTypes from '../actions/actionTypes';
 const initialState = {
     showModal: false,
     showMobileMenu: false,
+    showPrivacy: false,
+    showTerms: false,
     sending: false,
     sent: null,
     err: null,
@@ -21,6 +23,16 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 showModal: !state.showModal
+            }
+        case actionTypes.SHOW_PRIVACY : 
+            return {
+                ...state,
+                showPrivacy: !state.showPrivacy
+            }
+        case actionTypes.SHOW_TERMS: 
+            return {
+                ...state,
+                showTerms: !state.showTerms
             }
         case actionTypes.SHOW_MOBILE_MENU :
             return {

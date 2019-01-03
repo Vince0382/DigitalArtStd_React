@@ -9,7 +9,8 @@ import ScrollHandler from '../../../hoc/ScrollHandler';
 class Toolbar extends Component {
 
     state = {
-        scrolled: false
+        scrolled: false,
+        bottom: false
     }
 
     scrollHandler = () => {
@@ -17,6 +18,13 @@ class Toolbar extends Component {
             if (!this.state.scrolled) this.setState({scrolled: true});
         } else {
             this.setState({scrolled: false});
+        }
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+            this.setState({bottom: true});
+        } else {
+            if (this.state.bottom){
+                this.setState({bottom: false});
+            }
         }
     }
 
@@ -27,6 +35,10 @@ class Toolbar extends Component {
             attachedClasses.push(classes.bgWhite);
         }
 
+        if (this.state.bottom && !attachedClasses.includes(classes.Collapse)) {
+            attachedClasses.push(classes.Collapse);
+        }
+
         return (
             <ScrollHandler onWindowScroll={this.scrollHandler}>
                 <header className={attachedClasses.join(' ')}>
@@ -34,7 +46,7 @@ class Toolbar extends Component {
                         {window.scrollY > 30 ? <Logo animated={false}/> : null}
                     </div>
                     <nav className={classes.DesktopOnly}>
-                        <NavigationItems color={this.props.color}/>
+                        {!this.state.bottom? <NavigationItems color={this.props.color}/> : null}
                     </nav>
                     <DrawerToggle   color={this.props.color}
                                     open={this.props.open}

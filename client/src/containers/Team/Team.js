@@ -2,6 +2,7 @@ import React from 'react';
 
 import classes from './Team.css';
 import TeamMember from '../../components/TeamMember/TeamMember';
+import Title from '../../components/Title/Title';
 
 import AgileImg from '../../assets/images/agile.svg';
 import ProjectImg from '../../assets/images/project.svg';
@@ -20,44 +21,48 @@ import Olivier from '../../assets/images/olivier.png';
 const team = (props) => {
     return (
         <div className={classes.Team} id="team" ref={props.ReactRef}>
-            <BackImage image={Img} isMobile={props.isMobile}/>
-            <div className={classes.Title}>Meet Our Team</div>
+            
+            <Title  title1="Meet Our"
+                    title2="Team"
+                    color1={props.color}
+                    color2={props.color2}/>
 
             <Section link="/#team" mainSection="/#team"/>
-
-            <TeamMember color={props.color}
-                        color2={props.color2}
-                        inactiveColor="white"
-                        isMobile={props.isMobile}
-                        name="Jerome"
-                        function="Founder and CEO of RiseUP"
-                        image={Jerome}
-                        skills={[[AgileImg,"Agiles Services","/#agiles"],[ProjectImg, "Project Management", "/#project"]]}>
             
-            </TeamMember>
+            <div className={classes.TeamMembers}>
+                <TeamMember color={props.color}
+                            color2={props.color2}
+                            inactiveColor="white"
+                            isMobile={props.isMobile}
+                            name="Jerome"
+                            function="Founder and CEO of RiseUP"
+                            image={Jerome}
+                            skills={["Agiles Services", "Project Management"]}>
+                
+                </TeamMember>
 
-            <TeamMember color={props.color}
-                        color2={props.color2}
-                        inactiveColor="white"
-                        isMobile={props.isMobile}
-                        name="Vincent"
-                        function="Freelance developer"
-                        image={Vincent}
-                        skills={[[WebImg, "Web Development", "/#web"],[MobileImg, "Mobile Development", "/#mobile"]]}>
+                <TeamMember color={props.color}
+                            color2={props.color2}
+                            inactiveColor="white"
+                            isMobile={props.isMobile}
+                            name="Vincent"
+                            function="Freelance"
+                            image={Vincent}
+                            skills={["Web Development", "Mobile Development"]}>
 
-            </TeamMember>
+                </TeamMember>
 
-            <TeamMember color={props.color}
-                        color2={props.color2}
-                        inactiveColor="white"
-                        isMobile={props.isMobile}
-                        name="Olivier"
-                        function="Software architect"
-                        image={Olivier}
-                        skills={[[ArchitectureImg, "Architecture", "/#architecture"]]}>
+                <TeamMember color={props.color}
+                            color2={props.color2}
+                            inactiveColor="white"
+                            isMobile={props.isMobile}
+                            name="Olivier"
+                            function="Freelance"
+                            image={Olivier}
+                            skills={["Software Architecture"]}>
 
-            </TeamMember>
-        
+                </TeamMember>
+            </div>
         </div>
     );
 }

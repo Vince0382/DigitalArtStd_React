@@ -5,7 +5,7 @@ import SVG from 'react-inlinesvg';
 import classes from './Contact.css';
 import ContactImg from '../../assets/images/contact.svg';
 import Input from '../../components/UI/Input/Input';
-import SendButton from '../../components/UI/Button/SendButton/SendButton';
+import Button from '../../components/UI/Button/Button';
 import * as actions from '../../store/actions/index';
 import { updateObject, checkValidity } from '../../shared/utility';
 import ArrowDown from '../../assets/images/arrow_down.svg';
@@ -93,7 +93,7 @@ class Contact extends Component {
         const data = {
             formData: formData
         }
-        console.log(data);
+       // console.log(data);
         this.props.onSendDataHandler(data);
         
     }
@@ -132,7 +132,7 @@ class Contact extends Component {
         }
 
         let form = (
-            <form onSubmit={this.sendHandler}>
+            <form>
                 {formElementsArray.map(formElement => (
                     <Input 
                         key={formElement.id}
@@ -147,7 +147,13 @@ class Contact extends Component {
                 ))}
 
                 <div className={classes.SendButton}>
-                    <SendButton title="Please fill in the form" disabled={!this.state.formIsValid}>{btText}</SendButton>
+                    <Button toolTip="Please fill in the form" 
+                            disabled={!this.state.formIsValid}
+                            clicked={this.state.formIsValid? this.sendHandler : null}
+                            color={this.props.color}
+                            borderColor={this.props.color}
+                            bgColor2={this.props.color}
+                            bgColor1="#3D9842">{btText}</Button>
                 </div>
             </form>
         );
@@ -191,7 +197,8 @@ const mapStateToProps = state => {
     return {
         sending: state.sending,
         error: state.err,
-        sent: state.sent
+        sent: state.sent,
+        color: state.textColor
     }
 }
 

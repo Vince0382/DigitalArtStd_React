@@ -1,8 +1,10 @@
 .TeamMember {
     width: 25%;
-    box-shadow: 0 100px 200px rgba(255,255,255,0.3);
+    height: 200px;
+    box-shadow: 0 100px 200px rgba(255, 255, 255, 0.068);
     background: transparent;
     padding-bottom: 15px;
+    border: 1px solid;
 }
 
 .Person {
@@ -34,15 +36,12 @@
 
 
 .Skill {
-    width: 49%;
+    
     font-size: 12px;
-    text-align: center;
+    text-align: left;
     text-decoration: none;
 }
 
-.Skill:not(:first-child) {
-    border-left: solid 1px darkgray;
-}
 
 .Skill svg {
     width : 40%;
@@ -52,7 +51,7 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: space-around;
     padding-top: 50px;
