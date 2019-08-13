@@ -1,0 +1,57 @@
+.About {
+    width: 100%;
+    height: 100vh;
+    background: black;
+    position: relative;
+    margin: 0;
+}
+
+.Content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Content p {
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: -.01em;
+    line-height: 40px;
+    transition: all 0.5s ease-in;
+}
+
+.Content .Header {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 60px;
+}
+
+.Button {
+    margin-top: 60px;
+}
+
+@media (max-width: 749px){
+    .About {
+        padding: 50px 0;
+    }
+
+    .Content {
+        width: 90%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .Content p {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .Content .Header {
+        font-size: 24px;
+        line-height: 30px;
+    }
+}
+

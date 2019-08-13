@@ -1,0 +1,194 @@
+.Home {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background: black;
+}
+
+.Home .BackImg {
+    width: 100%;
+    opacity: 0.1;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.SocialBar {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition: all 0.5s ease-out; 
+    overflow: hidden;
+}
+
+.SocialBarOpen {
+    height: 500px;
+    opacity: 1;
+}
+
+.SocialBarClose {
+    transform-origin: 50% 50%;
+    height: 0;
+    opacity: 0;
+}
+
+.Home .Content {
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.Home .Logo{
+    transition: all 0.8s ease-out;
+}
+
+.Home .Logo svg {
+    height: 80vh;
+    opacity: 1;
+}
+
+.Home .Services {
+    margin-left: 100px;
+}
+
+.Home .Button {
+    padding-top: 50px;
+    width: 268px;
+}
+
+.Home .ButtonMask {
+    overflow: hidden;
+    width: 0;
+    opacity: 0;
+    transition: all 0.5s ease-out;
+}
+
+.Home .Services .Item {
+    font-size: 74px;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    line-height: 90px;
+    transition: all 0.5s ease-in;
+}
+
+.Item:nth-child(4) {
+    width: 370px;
+    font-size: 20px !important;
+    line-height: 30px !important;
+    font-weight: 200 !important;
+}
+
+@media (min-width: 750px){
+    .Home .Services .Item:hover {
+        color: #646464;
+    }
+}
+
+.ButtonMaskVisible {
+    width: 225px !important;
+    opacity: 1 !important;
+}
+
+.ItemShow {
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.LogoShow{
+    opacity: 1;
+}
+
+.ItemShow:nth-child(1) {
+    animation: ItemMove 0.8s 0.2s ease-in-out forwards;
+}
+
+.ItemShow:nth-child(2) {
+    animation: ItemMove 0.8s 0.3s ease-in-out forwards;
+}
+
+.ItemShow:nth-child(3) {
+    animation: ItemMove 0.8s 0.4s ease-in-out forwards;
+}
+
+.ItemShow:nth-child(4) {
+    animation: ItemMove 0.8s 0.5s ease-in-out forwards;
+}
+
+.LogoHide {
+    opacity: 0;
+}
+
+.ItemHide:nth-child(1) {
+    animation: ItemRemove 0.8s 0.2s ease-in-out forwards;
+}
+
+.ItemHide:nth-child(2) {
+    animation: ItemRemove 0.8s 0.3s ease-in-out forwards;
+}
+
+.ItemHide:nth-child(3) {
+    animation: ItemRemove 0.8s 0.4s ease-in-out forwards;
+}
+
+.ItemHide:nth-child(4) {
+    animation: ItemRemove 0.8s 0.5s ease-in-out forwards;
+}
+
+@keyframes ItemMove {
+    to {transform: translateY(0);
+        opacity: 1;}
+}
+
+@keyframes ItemRemove {
+    to {transform: translateY(-100%);
+        opacity: 0;}
+}
+
+@media (max-width: 749px){
+    .Home .BackImg {
+        height: 100%;
+    }
+
+    .SocialBar {
+        display: none;
+    }
+
+    .Home .Content {
+        height: 100%;
+        width: 85%;
+    }
+
+    .Home .Logo svg {
+        height: 55vh;
+    }
+
+    .Home .Services {
+        margin-left: 25px;
+    }
+
+    .Home .Services .Item {
+        padding: 10px 0;
+        font-size: 24px;
+        line-height: 26px;
+        font-weight: 800;
+        transition: all 0.3s ease-in; 
+    }
+
+    .Item:nth-child(4) {
+        width: 200px;
+        font-size: 14px !important;
+        line-height: 18px !important;
+        font-weight: 200 !important;
+    }
+}

@@ -5,67 +5,39 @@
     top: 0;
     left: 0;
     background-color: transparent;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
     box-sizing: border-box;
     z-index: 399;
     transition: all 0.3s ease-out;
 }
 
-.bgWhite {
-    background: rgba(255,255,255,0.95);
+.DesktopOnly {
+    position: absolute;
+    top: 0;
+    right: 20px;
 }
 
-@media (min-width: 750px) {
-    .Collapse {
-        height: 0;
-    }
-
-    /* .Collapse {
-        height: 27px;
-        padding: 0;
-        background: linear-gradient(to right, rgba(2,163,223,1) 0%,rgba(6,42,82,1) 100%);;
-        border: 4px solid #c2e1f5;
-    }
-
-
-    .Collapse:after, .Collapse:before {
-        top: 100%;
-        left: 50%;
-        border: solid transparent;
-        content: " ";
-        height: 0;
-        width: 0;
-        position: absolute;
-        pointer-events: none;
-    }
-    
-    .Collapse:after {
-        border-color: rgba(255, 255, 255, 0);
-        border-top-color: #ffffff;
-        border-width: 15px;
-        margin-left: -15px;
-    }
-    .Collapse:before {
-        border-color: rgba(194, 225, 245, 0);
-        border-top-color: #c2e1f5;
-        border-width: 21px;
-        margin-left: -21px;
-    } */
-
+.DrawerToggle {
+    stroke: white;
 }
-
 
 .Toolbar nav {
     height: 100%;
 }
 
-
+.bgBlack .Logo {
+    opacity: 1;
+}
 
 .Logo {
-    height: 80%;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+}
+
+.Logo svg{
+    height: 30px;
 }
 
 @media (max-width: 749px) {
@@ -73,11 +45,19 @@
         display: none;
     }
 
-    .Collapse {
-        height: 70px;
-    }
-
     .Toolbar {
         height: 56px;
+    }
+
+    .Logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        opacity: 0;
+        transition: all 0.3s ease-out;
+    }
+    
+    .Logo svg{
+        height: 16px;
     }
 }

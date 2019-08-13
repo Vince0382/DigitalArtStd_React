@@ -1,0 +1,21 @@
+.Main {
+    position: relative;
+    color: white;
+}
+
+.SideScroll {
+    color: white;
+    fill: white;
+}
+
+.ContentFrame {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+@media (max-width: 749px){
+    .ContentFrame {
+        width: 100%;
+    }
+}

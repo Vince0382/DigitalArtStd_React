@@ -26,9 +26,6 @@
     box-sizing: border-box;
 }
 
-.InputElement::placeholder {
-    color: white;
-}
 
 .InputElement:focus {
     outline: none;

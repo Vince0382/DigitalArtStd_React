@@ -1,12 +1,1 @@
-export const SHOW_MODAL = 'SHOW_MODAL';
-export const SHOW_PRIVACY = 'SHOW_PRIVACY';
-export const SHOW_TERMS = 'SHOW_TERMS';
 export const SHOW_MOBILE_MENU = 'SHOW_MOBILE_MENU';
-export const SEND_MAIL = 'SEND_MAIL';
-export const SEND_MAIL_STARTED = 'SEND_MAIL_STARTED';
-export const SEND_MAIL_SUCCESS = 'SEND_MAIL_SUCCESS';
-export const SEND_MAIL_FAILURE = 'SEND_MAIL_FAILURE';
-export const SET_TEXT_COLOR = 'SET_TEXT_COLOR';
-export const LOCK = 'LOCK';
-export const UNLOCK = 'UNLOCK';
-export const SET_CURRENT_MAIN_SECTION = 'SET_CURRENT_MAIN_SECTION';

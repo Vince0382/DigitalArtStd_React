@@ -1,0 +1,98 @@
+.Project{
+    position: relative;
+    width:100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.ImagesWrapper {
+    width: 70%;
+}
+
+.Images {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    align-items: start;
+    -webkit-overflow-scrolling: touch;
+}
+
+.Skin {
+    position: relative;
+    width: 700px;
+    margin: auto;
+    background: black;
+    padding: 10px;
+    border: 2px solid silver;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.Slider {
+    background: rgba(0,0,0, 0.5);
+    width: calc(100% - 20px);
+    position: absolute;
+    bottom: 10px;
+}
+
+.Mobile {
+    width: 300px;
+}
+
+.Mask{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.Image {
+    width: 100%;
+    flex: 0 0 auto;
+    padding-right: 100px;
+}
+
+.Wrapper {
+    position: relative;
+    width: 30%;
+    height: 100%;
+}
+
+@media (max-width: 1200px) {
+    .Skin {
+        width: 400px;
+    }
+
+    .Mobile {
+        width: 200px;
+    }
+}
+
+@media (max-width: 749px){
+    .Project {
+        width: 100%;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+        display: block;
+    }
+
+    .ImagesWrapper {
+        width: 100%;
+        padding-bottom: 100px;
+    }
+
+    .Skin {
+        width:100%;
+    }
+
+    .Mobile {
+        width: 70%;
+    }
+
+    .Wrapper {
+        width: 100%;
+    }
+
+}

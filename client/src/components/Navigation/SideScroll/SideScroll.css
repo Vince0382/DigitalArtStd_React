@@ -1,6 +1,6 @@
 .ScrollDiv {
-    width: 30px;
-    height: 200px;
+    width: 20px;
+    height: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,45 +10,31 @@
     left: 20px;
     cursor: pointer;
     z-index: 100;
+    text-align: center;
 }
 
 .TextDiv {
-    width: 30px;
-    height: 100px;
+    width: 20px;
+    height: 80px;
     font-size: 12px;
     font-weight: 400;
-    position: relative;
-    top: 0;
-    left: 0;
-}
-
-.Text {
-    width: 100px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-90deg);
-    text-align: left;
+    line-height: 20px;
+    writing-mode: vertical-rl;
+    transform-origin: center;
+    transform: rotate(-180deg);
 }
 
 .Arrow {
+    width: 20px;
     height: 100px;
 }
 
 .Arrow svg {
     height: 60px;
-    margin-top: 20px;
-    transition: all 0.3s linear;
 }
 
 @media (max-width: 749px){
     .ScrollDiv {
-        position: absolute;
-        top: calc(100vh - 260px);
-        left: 10px;
-    }
-
-    .Text {
         display: none;
     }
 }

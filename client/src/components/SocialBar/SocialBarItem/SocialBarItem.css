@@ -1,3 +1,13 @@
+.Item {
+    padding: 0 20px;
+}
+
 .Item svg {
     width: 100%;
+    fill: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.Item svg:hover {
+    fill: #646464;
 }

@@ -1,13 +1,13 @@
 .btn {
     position: relative;
     width: 40px;
-    height: 40px;
+    height: 41px;
     background: transparent;
     cursor: pointer;
     border: none;
     outline: none;
   }
-  .btn span {
+  .btn svg {
     position: absolute;
     width: 40px;
     height: 4px;
@@ -15,8 +15,9 @@
     left: 50%;
     overflow: hidden;
     transition: all 0.3s linear;
+    stroke-width: 4px;
   }
-  .btn span::before {
+  .btn svg::before {
     content: "";
     position: absolute;
     width: 0;
@@ -26,40 +27,40 @@
     background: gray;
     transition: all 0.3s linear;
   }
-  .btn span:nth-child(1) {
-    animation: span-first-off 0.5s ease-in-out;
+  .btn svg:nth-child(1) {
+    animation: line-first-off 0.5s ease-in-out;
     animation-fill-mode: forwards;
   }
-  .btn span:nth-child(2) {
-    animation: span-second-off 0.5s ease-in-out;
+  .btn svg:nth-child(2) {
+    animation: line-second-off 0.5s ease-in-out;
     animation-fill-mode: forwards;
   }
-  .btn span:nth-child(3) {
-    animation: span-third-off 0.5s ease-in-out;
+  .btn svg:nth-child(3) {
+    animation: line-third-off 0.5s ease-in-out;
     animation-fill-mode: forwards;
   }
   
   @media (min-width: 750px) {
-    .btn.on:hover span::before {
+    .btn.on:hover svg::before {
       width: 100%;
       transition: all 0.3s linear;
     }
   }
 
-  .btn.on span:nth-child(1) {
-    animation: span-first-on 0.5s ease-in-out;
+  .btn.on svg:nth-child(1) {
+    animation: line-first-on 0.5s ease-in-out;
     animation-fill-mode: forwards;
   }
-  .btn.on span:nth-child(2) {
-    animation: span-second-on 0.5s ease-in-out;
+  .btn.on svg:nth-child(2) {
+    animation: line-second-on 0.5s ease-in-out;
     animation-fill-mode: forwards;
   }
-  .btn.on span:nth-child(3) {
-    animation: span-third-on 0.5s ease-in-out;
+  .btn.on svg:nth-child(3) {
+    animation: line-third-on 0.5s ease-in-out;
     animation-fill-mode: forwards;
   }
   
-  @keyframes span-first-on {
+  @keyframes line-first-on {
     0% {
       transform: translate(-50%, -300%);
     }
@@ -70,7 +71,7 @@
       transform: translate(-50%, -50%) rotate(-45deg);
     }
   }
-  @keyframes span-first-off {
+  @keyframes line-first-off {
     0% {
       transform: translate(-50%, -50%) rotate(-45deg);
     }
@@ -81,12 +82,12 @@
       transform: translate(-50%, -300%);
     }
   }
-  @keyframes span-second-on {
+  @keyframes line-second-on {
     0% {
       transform: translate(-50%, -50%);
     }
     25% {
-      background: gray;
+      fill: gray;
     }
     50% {
       transform: translate(-50%, -50%) scale(1);
@@ -95,12 +96,12 @@
       transform: translate(-150%, -50%) scale(0);
     }
   }
-  @keyframes span-second-off {
+  @keyframes line-second-off {
     0% {
       transform: translate(-150%, -50%) scale(0);
     }
     25% {
-      background: gray;
+      fill: gray;
     }
     50% {
       transform: translate(-50%, -50%) scale(1);
@@ -109,7 +110,7 @@
       transform: translate(-50%, -50%);
     }
   }
-  @keyframes span-third-on {
+  @keyframes line-third-on {
     0% {
       transform: translate(-50%, 200%);
     }
@@ -120,7 +121,7 @@
       transform: translate(-50%, -50%) rotate(45deg);
     }
   }
-  @keyframes span-third-off {
+  @keyframes line-third-off {
     0% {
       transform: translate(-50%, -50%) rotate(45deg);
     }

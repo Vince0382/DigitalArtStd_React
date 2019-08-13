@@ -3,37 +3,16 @@ import React from 'react';
 import classes from './Button.css';
 
 const button = (props) => {
-
-    let attachedClass = null;
-    let style = null;
-
-
-    if (props.disabled) {
-        attachedClass = classes.Disabled;
-        style = {
-            cursor: "not-allowed",
-            background: "darkgray",
-            color: "lightgray",
-            borderColor: "white"
-        }
-    } else {
-        attachedClass = null;
-        style = {
-            borderColor: props.color,
-            color: props.color
-        }
-    }
-
+    const defaultColor = "rgba(49, 49, 52, 0.5)";
     return (
-        <div className={attachedClass}>
-            <div className={classes.buttons} onClick={props.clicked}>
-                <div className={classes.btn1} style={style}>
-                    { !props.disabled? <span className={classes.rect1} style={{background: props.bgColor1}}></span> : null }
-                    { !props.disabled? <span className={classes.rect2} style={{background: props.bgColor2}}></span> : null }
-                    <span className={classes.text}>{props.children}</span>
-                </div>
-            </div>
-            {props.toolTip? <div className={classes.ToolTip}>{props.toolTip}</div> : null}
+        <div className={classes.cta}>
+            <div className={classes.Mask} style={{background: props.bgColor1? props.bgColor1 : defaultColor}}></div>
+                <span>{props.children}</span>
+                <svg width="13px" height="10px" viewBox="0 0 13 10" style={{stroke: props.color? props.color : "white"}}>
+                    <path d="M1,5 L11,5"></path>
+                    <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+            
         </div>
     );
 

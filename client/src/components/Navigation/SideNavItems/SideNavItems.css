@@ -1,5 +1,6 @@
 .SideNav {
     width: 30px;
+    height: 250px;
     position: fixed;
     top: 50%;
     right: 40px;
@@ -9,6 +10,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+}
+
+.SideNav svg {
+    fill: rgb(7, 87, 119);
+    stroke: rgb(7, 87, 119);
 }
 
 @media (max-width: 749px) {

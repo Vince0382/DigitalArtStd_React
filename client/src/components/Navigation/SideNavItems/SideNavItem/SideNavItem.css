@@ -7,7 +7,7 @@
     cursor: pointer;
 }
 
-.SideNavItem {
+/* .SideNavItem {
     width: 2px;
     height: 2px;
     margin: auto;
@@ -15,12 +15,19 @@
     border-radius: 50%;
     transition: all 0.2s linear;
     transform-origin: center center;
+} */
+
+.SideNavItem {
+    width: 6px;
+    height: 6px;
+    shape-rendering: geometricPrecision;
+    transition: all 0.2s linear;
 }
 
 
 .Active .SideNavItem{
     transform: scale(3);
-    background: transparent !important;
+    fill: none !important;
 }
 
 .SideNavContainer:hover .SideNavItem{

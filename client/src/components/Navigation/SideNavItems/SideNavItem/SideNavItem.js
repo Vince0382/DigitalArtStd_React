@@ -1,53 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ScrollTo from '../../../../hoc/scrollToComponent';
-
-import { isBetween } from '../../../../shared/utility';
 
 import classes from './SideNavItem.css';
 
-class SideNavItem extends Component {
-    constructor (props) {
-        super(props);
-        this.navRef = React.createRef();
-    }
+const sideNavItem = (props) => {
 
-    state = {
-        navTop: null,
-        navBottom: null
-    }
+    return (
+        <div className={classes.SideNavContainer}>
+            <ScrollTo 
+                    element={props.link}
+                    exact={props.exact}
+                    fixed={props.fixed}
+                    active={classes.Active} 
+                    toTop={props.toTop}>
+ 
+                    <svg className={classes.SideNavItem}>
+                        <circle
+                            strokeWidth= "1px"
+                            r= "2px"
+                            cx= "3px"
+                            cy= "3px"/>
 
-    componentDidMount (prevState) {
-        if (prevState !== this.state){
-            this.setState({
-                ...prevState,
-                navTop: this.navRef.current.getBoundingClientRect().top,
-                navBottom: this.navRef.current.getBoundingClientRect().bottom,
-            })
-        }
-    }
-
-    render(){
-
-        const changeColorAt = this.props.changeColorAt? this.props.changeColorAt : [[0,0]];
-        const color = isBetween(this.state.navTop, this.state.navBottom, changeColorAt, 15, -15)? this.props.color2 : this.props.color;
-        
-        return (
-            <div className={classes.SideNavContainer} ref={this.navRef}>
-                <ScrollTo 
-                        element={this.props.link}
-                        exact={this.props.exact}
-                        fixed={this.props.fixed}
-                        active={classes.Active} 
-                        toTop={this.props.toTop}>
-                    <div 
-                        className={classes.SideNavItem} 
-                        style={{ 
-                            background: color, borderColor: color}}>
-                    </div>
-                </ScrollTo>
-            </div>
-        );
-    }
+                    </svg>
+            </ScrollTo>
+        </div>
+    );
 }
 
-export default SideNavItem;
+export default sideNavItem;

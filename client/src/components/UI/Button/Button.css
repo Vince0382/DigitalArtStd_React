@@ -1,125 +1,62 @@
-* {
--webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-}
-
-.buttons,
-.btn1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.btn1 {
-    cursor: pointer;
+.cta {
     position: relative;
-    overflow: hidden;
-    border: 1px solid;
-    padding: 1rem 2rem 1rem 2rem;
-    transition: 0.3s;
-}
-
-.btn1 .rect1,
-.btn1 .rect2 {
-    height: 100%;
-    width: 0;
+    padding: 19px 22px;
+    transition: all 0.2s ease;
+    height: 60px;
+    width: fit-content;
+  }
+  .cta .Mask {
+    position: absolute;
     top: 0;
     left: 0;
-    position: absolute;
-}
-
-.Disabled:hover .ToolTip{
-    opacity: 1;
-}
-
-.ToolTip{
-    opacity: 0;
-    font-weight: 200;
+    display: block;
+    border-radius: 28px;
+    background: inherit;
+    width: 60px;
+    height: 60px;
+    transition: all 0.3s ease;
+  }
+  .cta span {
+    position: relative;
     font-size: 12px;
-    transition: opacity 0.3s linear;
-}
+    line-height: 18px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+  .cta svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+  }
 
+  .cta:active {
+    transform: scale(0.96);
+  }
 
- @media (min-width: 750px){
-    .btn1 .rect1 {
-    /* animation: firstRectOut 0.3s ease-in-out forwards;
-        animation-delay: 0.1s; */
-        transition: width 0.3s 0.1s ease-in-out;
-    }
-
-    .btn1 .rect2 {
-    /* animation: secondRectOut 0.3s ease-in-out forwards; */
-        transition: width 0.3s ease-in-out;
-    } 
-
-    .btn1 .text {
-        position: relative;
-        transition: 0.3s linear;
-    }
-
-
-    .btn1:hover .text {
-        color: white !important;
-    }
-
-    .btn1:hover .rect1 {
-    /*  animation: firstRectIn 0.3s ease-in-out forwards; */
-        transition: width 0.3s ease-in-out;
-        width: 100%;
-    } 
-
-    .btn1:hover .rect2 {
-    /*   animation: secondRectIn 0.3s ease-in-out forwards;
-        animation-delay: 0.1s; */
-        transition: width 0.3s 0.1s ease-in-out;
-        width: 100%;
-    }
-}
-
-@keyframes firstRectIn {
-    0% {
-        width: 0;
-    }
-
-    100% {
-        width: 100%;
-    }
-}
-
-@keyframes secondRectIn {
-    0% {
-        width: 0;
-    }
-
-    50% {
-        width: 0;
-    }
-
-    100% {
-        width:100%;
-    }
-}
-
-@keyframes firstRectOut {
-    0% {
+  @media (min-width: 750px) {
+    .cta:hover .Mask {
         width: 100%;
     }
 
-    50% {
+    .cta:hover svg {
+    transform: translateX(0);
+    }
+
+  }
+
+  @media (max-width: 749px){
+    .cta .Mask {
         width: 100%;
     }
+  }
 
-    100% {
-        width:0;
-    }
-}
-
-@keyframes secondRectOut {
-    0% {
-        width: 100%;
-    }
-
-    100% {
-        width:0;
-    }
-}
+  
+  

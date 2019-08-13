@@ -6,7 +6,6 @@ import classes from './Layout.css';
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
 import Footer from '../../containers/Footer/Footer';
-import AboutContact from '../../containers/AboutContact/AboutContact';
 import * as actions from '../../store/actions';
 
 const layout = (props) => {
@@ -15,43 +14,36 @@ const layout = (props) => {
         <div className={classes.Layout} id="top">
             
             <Toolbar
-                color={props.color}
-                fixedColor={props.fixedColor}
-                bgColor={props.riseUpBlue}
-                borderColor={props.riseUpGreen}
+                color={props.textColor}
+                borderColor={props.textColor}
                 clicked={props.onDrawerToggle}
                 open={props.showMobileMenu}/>
+                
             <SideDrawer
-                color={props.color}
-                fixedColor={props.fixedColor}
+                color={props.textColor}
                 open={props.showMobileMenu}
                 closed={props.onDrawerToggle} />
             
-            <main className={classes.Content}>
+            <div className={classes.Content}>
                 { props.children }
-                <AboutContact isMobile={props.isMobile}/>
-            </main>
+                
+            </div>
             
-            <Footer color={props.color} clickHandler={props.onShowModal}/>
+            <Footer color={props.textColor}/>
         </div>
     );
 }
 
 const mapStateToProps = state => {
     return {
-        showModal: state.showModal,
-        showMobileMenu: state.showMobileMenu,
-        color: state.textColor,
-        fixedColor: state.fixedTextColor,
-        riseUpGreen: state.riseUpGreen,
-        riseUpBlue: state.riseUpBlue
+        textColor : state.textColor,
+        showMobileMenu: state.showMobileMenu
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        onDrawerToggle: () => dispatch(actions.showMobileMenu()),
-        onShowModal: () => dispatch(actions.showModal())
+        onDrawerToggle: () => dispatch(actions.showMobileMenu())
     }
 }
 

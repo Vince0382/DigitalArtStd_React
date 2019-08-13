@@ -14,7 +14,7 @@ const socialBarItem = (props) => {
                     clickHandler={props.clickHandler}
                     style={{color: props.color, width: props.size}}>
 
-            <SVG src={props.image} style={{fill: props.color, stroke: props.color}} />
+            <SVG src={props.image} style={{fill: props.color, stroke: props.color, width: props.size}} />
         </ScrollTo>
     );
 }

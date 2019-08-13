@@ -2,8 +2,9 @@
     text-align: center;
     width: 100%;
     padding: 50px 0 25px;
-    background: linear-gradient(to right, rgba(2,163,223,1) 0%,rgba(6,42,82,1) 100%);
+    background: #444444;
     font-size: 16px;
+    position: relative;
 }
 
 .Container {
@@ -89,8 +90,12 @@
 }
 
 .SocialBar {
-    width: 100px;
+    width: 300px;
     margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .Copyright {
@@ -99,6 +104,15 @@
     font-weight: 200;
     margin-top: 20px;
     font-size: 12px;
+}
+
+.SwitchColor {
+    color: white;
+}
+
+.SwitchColor svg {
+    fill: white !important;
+    stroke: white !important;
 }
 
 @media (max-width: 749px) {

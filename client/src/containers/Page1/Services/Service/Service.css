@@ -1,0 +1,90 @@
+.Service {
+    width: 100%;
+    /* height: calc(100vh - 200px); */
+    position: relative;
+    margin-bottom: 300px;
+}
+
+.ImageWrapper {
+    width: 50%;
+    height: 100%;
+    top:0;
+    right: 0;
+    margin: auto;
+    overflow: hidden;
+    position: absolute;
+}
+
+.ImageWrapper img {
+    height: 120%;
+}
+
+.Content {
+    width: 45%;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0;
+}
+
+.Text {
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.Button {
+    padding-top: 30px;
+    padding-left: 0;
+}
+
+
+.TextSVG {
+    font-size: 170px;
+}
+
+.Title svg {
+    width: 100%;
+}
+
+@media (max-width: 749px) {
+    .Service {
+        margin-bottom: 100px;
+    }
+
+    .ImageWrapper {
+        width: 100%;
+        height: 50vh;
+        position: relative;
+    }
+
+    .ImageWrapper img {
+        width: 110%;
+    }
+
+    .Content {
+        width: 95%;
+        position: static;
+        margin: auto;
+    }
+
+    .Text {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .Title {
+        position: absolute;
+        top: 0;
+        Left: 0;
+        width: 100%;
+    }
+
+    .TextSVG {
+        font-size: 80px;
+    }
+
+    .Title svg {
+        width: 100%;
+    }
+
+}

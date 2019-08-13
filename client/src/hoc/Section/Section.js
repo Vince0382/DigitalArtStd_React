@@ -10,7 +10,7 @@ class Section extends Component {
 
     onInViewPort = () => {
         const current = window.location.pathname + window.location.hash ;
-        
+        console.log(this.props.link);
         if (this.props.link !== current) {
             window.history.pushState(this.props.location.state,null,this.props.link);
         }
@@ -37,7 +37,9 @@ class Section extends Component {
                 
                 
                 
-                {this.props.children}
+                <div style={{width:"auto", height:"auto", minWidth: "1px", minHeight:"1px"}}>
+                    {this.props.children}
+                </div>
             </IntersectionVisible>
         );
     }
