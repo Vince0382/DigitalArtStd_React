@@ -1,32 +1,29 @@
-import { Component } from 'react';
+import React, { useEffect } from 'react';
 
-class ScrollHandler extends Component{
+const ScrollHandler = props => {
 
-    scrollTimeout = null;
-    timeOut = 16; // 16ms to allow 60fps rendering
+    let scrollTimeout = null;
+    const timeOut = 16; // 16ms to allow 60fps rendering
 
-    handleScroll = (event) => {
-        if (this.scrollTimeout) {
+    const handleScroll = ( event ) => {
+        if ( scrollTimeout ) {
             // clear the timeout, if one is pending
-            clearTimeout(this.scrollTimeout);
-            this.scrollTimeout = null;
+            clearTimeout( scrollTimeout  );
+            scrollTimeout = null;
         }
-        this.scrollTimeout = setTimeout(() => {
-            if (this.props.onWindowScroll) this.props.onWindowScroll(event);
+        scrollTimeout = setTimeout(() => {
+            if ( props.onWindowScroll ) props.onWindowScroll( event );
         }, 16);
     }
 
-    componentDidMount () {
-        if (this.props.onWindowScroll) window.addEventListener("scroll", this.handleScroll);
-    }
+    useEffect(() => {
+        if (props.onWindowScroll) window.addEventListener( "scroll", handleScroll );
+        return () => {
+            if (props.onWindowScroll) window.removeEventListener( "scroll", handleScroll );
+        }
+    },[]);
 
-    componentWillUnmount () {
-        if (this.props.onWindowScroll) window.removeEventListener("scroll", this.handleScroll);
-    }
-
-    render() {
-        return this.props.children;
-    }
+    return props.children;
 }
 
 export default ScrollHandler;

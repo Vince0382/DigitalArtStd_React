@@ -2,7 +2,7 @@ import React from 'react';
 
 import classes from './Button.css';
 
-const button = (props) => {
+const button = props => {
     const defaultColor = "rgba(49, 49, 52, 0.5)";
     return (
         <div className={classes.cta}>

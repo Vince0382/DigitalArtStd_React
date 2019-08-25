@@ -2,7 +2,7 @@ import React from 'react';
 
 import classes from './Macbook.css';
 
-const macbook = (props) => {
+const macbook = props => {
     return (
         <div class={classes.MdMacbookPro}>
             <div class={classes.MdLid}>

@@ -4,7 +4,7 @@ import ScrollTo from '../../../../hoc/scrollToComponent';
 import classes from './NavigationItem.css';
 
 
-const navigationItem = ( props ) => {
+const navigationItem = props => {
 
     // const icon = (
     //     <span className={classes.Icon}>

@@ -1,42 +1,36 @@
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
 import IntersectionVisible from 'react-intersection-visible';
 
-class AnimatedLine extends PureComponent {
+const AnimatedLine = props => {
 
-    constructor (props) {
-        super(props);
-        this.height = this.props.start? this.props.start : 0
+
+    const currentHeight = props.start ? props.start : 0;
+
+    const [height, setHeight] = useState( currentHeight );
+
+    const onInViewPort = () => {
+        setHeight( currentHeight - 100 );
     }
 
-    state = {
-        height: this.height
+    const onOutViewPort = () => {
+        setHeight( currentHeight );
     }
 
-    onInViewPort = () => {
-        this.setState({height: - (this.height - 100)});
-    }
+    const delay = props.delay ? props.delay : "0.3s";
+    const duration = props.duration ? props.duration : "0.9s";
+    
+    return (
+        <IntersectionVisible 
+        onIntersect={(entries) => console.log(entries)}
+        onShow={onInViewPort} 
+        onHide={onOutViewPort}
+        className={props.className}>
+            
+            <div style={{...props.style, height: height + "% ", transition: duration + " " + delay + " all ease-out"}}>
+            </div>
 
-    onOutViewPort = () => {
-        this.setState({height: this.height});
-    }
-
-    render () {
-        const delay = this.props.delay ? this.props.delay : "0.3s";
-        const duration = this.props.duration ? this.props.duration : "0.9s";
-        
-        return (
-            <IntersectionVisible 
-            onIntersect={(entries) => console.log(entries)}
-            onShow={() => this.onInViewPort()} 
-            onHide={() => this.onOutViewPort()}
-            className={this.props.className}>
-                
-                <div style={{...this.props.style,height: this.state.height + "% ", transition: duration + " " + delay + " all ease-out"}}>
-                </div>
-
-            </IntersectionVisible>
-        );
-    }
+        </IntersectionVisible>
+    );
 }
 
 export default AnimatedLine;

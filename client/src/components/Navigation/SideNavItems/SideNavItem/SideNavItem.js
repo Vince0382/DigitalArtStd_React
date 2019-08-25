@@ -3,7 +3,7 @@ import ScrollTo from '../../../../hoc/scrollToComponent';
 
 import classes from './SideNavItem.css';
 
-const sideNavItem = (props) => {
+const sideNavItem = props => {
 
     return (
         <div className={classes.SideNavContainer}>
