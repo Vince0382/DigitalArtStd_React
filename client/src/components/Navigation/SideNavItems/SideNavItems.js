@@ -4,7 +4,7 @@ import ScrollCollision from 'react-scroll-collision';
 import classes from './SideNavItems.css';
 import SideNavItem from './SideNavItem/SideNavItem';
 
-const sideNav = (props) => {
+const sideNav = props => {
 
     return (
         <ScrollCollision className={classes.SideNav}>

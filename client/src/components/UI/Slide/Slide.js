@@ -2,7 +2,7 @@ import React from 'react';
 
 import classes from './Slide.css';
 
-const slide = ( props ) => {
+const slide = props => {
 
     const color = props.color? props.color : "black";
 

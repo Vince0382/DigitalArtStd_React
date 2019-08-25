@@ -4,7 +4,7 @@ import ScrollCollision from 'react-scroll-collision';
 import classes from './DrawerToggle.css';
 import CloseButton from '../../../UI/Button/CloseButton/CloseButton';
 
-const drawerToggle = (props) => (
+const drawerToggle = props => (
     <ScrollCollision className={classes.DrawerToggle + ' ' + props.className}>   
         <CloseButton 
                     cross={props.open} 

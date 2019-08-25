@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import IntersectionVisible from 'react-intersection-visible';
 import { withRouter } from 'react-router-dom';
@@ -6,43 +6,39 @@ import { withRouter } from 'react-router-dom';
 import * as actions from '../../store/actions';
 
 
-class Section extends Component {
+const section = props => {
 
-    onInViewPort = () => {
+    const onInViewPort = () => {
         const current = window.location.pathname + window.location.hash ;
-        console.log(this.props.link);
-        if (this.props.link !== current) {
-            window.history.pushState(this.props.location.state,null,this.props.link);
+        
+        if ( props.link !== current ) {
+            window.history.pushState(props.location.state,null,props.link);
         }
 
-        if (this.props.currentMainSection !== this.props.mainSection) {
-            this.props.setCurrentMainSection(this.props.mainSection);
+        if ( props.currentMainSection !== props.mainSection ) {
+            props.setCurrentMainSection(props.mainSection);
         }
-       // console.log("IN VIEWPORT" + this.props.link);
     }
 
-    onOutViewPort = () => {
-      //  this.setState({locked: false});
-      //  console.log("OUT VIEWPORT" + this.props.link);
+    const onOutViewPort = () => {
+      //  setState({locked: false});
+      //  console.log("OUT VIEWPORT" + props.link);
     }
-
-    render() {
-
-        return (
-            <IntersectionVisible 
-                                onShow={() => this.onInViewPort()} 
-                                onHide={() => this.onOutViewPort()} 
-                                className={this.props.className}
-                                options={{threshold: [0.3, 0.5]}}>
-                
-                
-                
-                <div style={{width:"auto", height:"auto", minWidth: "1px", minHeight:"1px"}}>
-                    {this.props.children}
-                </div>
-            </IntersectionVisible>
-        );
-    }
+    
+    return (
+        <IntersectionVisible 
+                            onShow={onInViewPort} 
+                            onHide={onOutViewPort} 
+                            className={props.className}
+                            options={{threshold: [0.3, 0.5]}}>
+            
+            
+            
+            <div style={{width:"auto", height:"auto", minWidth: "1px", minHeight:"1px"}}>
+                {props.children}
+            </div>
+        </IntersectionVisible>
+    );
 }
 
 const mapStateToProps = state => {
@@ -53,8 +49,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        setCurrentMainSection: (section) => dispatch(actions.setCurrentMainSection(section))
+        setCurrentMainSection: ( section ) => dispatch(actions.setCurrentMainSection( section ))
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps) (withRouter(Section));
+export default connect( mapStateToProps, mapDispatchToProps ) (withRouter( section ));

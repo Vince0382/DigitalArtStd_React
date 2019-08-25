@@ -5,7 +5,7 @@ import AnimatedText from '../../../components/Animated/Text/AnimatedText';
 
 import classes from './About.css';
 
-const about = ( props ) => {
+const about = props  => {
     return (
         <div className={classes.About}>
             <div className={classes.Content + " " + props.contentStyle}>

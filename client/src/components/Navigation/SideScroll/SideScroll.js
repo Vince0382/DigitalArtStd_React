@@ -9,7 +9,7 @@ import ArrowDown from '../../../assets/images/arrow_down.svg';
 import ArrowUp from '../../../assets/images/arrow_up.svg';
 
 
-const sideScroll = (props) => {
+const sideScroll = props => {
 
     return (
         <ScrollTo element={props.up? window.location.pathname : props.element} toTop={props.up} className={props.className}>

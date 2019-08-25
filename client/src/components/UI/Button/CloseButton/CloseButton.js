@@ -2,7 +2,7 @@ import React from 'react';
 
 import classes from './CloseButton.css';
 
-const closeButton = (props) => {
+const closeButton = props => {
     let attachedClasses = [classes.btn, props.className];
 
     if (props.cross){

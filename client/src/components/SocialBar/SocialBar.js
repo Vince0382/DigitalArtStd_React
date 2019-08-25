@@ -8,7 +8,7 @@ import Facebook from '../../assets/images/facebook.svg';
 import Codepen from '../../assets/images/codepen.svg';
 import Github from '../../assets/images/github.svg';
 
-const socialBar = (props) => {
+const socialBar = props => {
     return (
         <div className={props.className}>
             <SocialBarItem image={LinkedIn} link="https://www.linkedin.com/in/vincent-petrini-a3231355/" type="external" color={props.color} size={props.size}/>

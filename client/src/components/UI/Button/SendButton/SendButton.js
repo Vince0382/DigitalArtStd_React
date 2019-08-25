@@ -2,7 +2,7 @@ import React from 'react';
 
 import classes from './SendButton.css';
 
-const sendButton = (props) => {
+const sendButton = props => {
 
     let attachedClasses = [classes.Button];
     let style = null;

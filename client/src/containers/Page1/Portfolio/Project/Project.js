@@ -6,7 +6,7 @@ import AnimatedMask from '../../../../components/Animated/Mask/AnimatedMask';
 import Slide from '../../../../components/UI/Slide/Slide';
 
 
-const project = ( props ) => {
+const project = props => {
 
     const mobile = props.Mobile? classes.Mobile : null
 

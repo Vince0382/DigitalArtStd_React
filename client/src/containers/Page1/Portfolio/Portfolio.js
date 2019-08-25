@@ -24,7 +24,7 @@ import Departuretime2 from '../../../assets/images/Project/DepartureTime/Departu
 import Departuretime3 from '../../../assets/images/Project/DepartureTime/Departuretime_3.png';
 
 
-const portfolio = ( props ) => {
+const portfolio = props => {
 
     return (
         <div className={classes.Portfolio}>

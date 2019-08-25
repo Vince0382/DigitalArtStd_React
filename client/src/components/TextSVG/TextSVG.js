@@ -1,6 +1,6 @@
 import React from 'react';
 
-const textSVG = (props) => {
+const textSVG = props => {
     const svgColor = props.svgColor? props.svgColor : "gray";
     const id = props.children.replace(/\s+/g, '');
     return (

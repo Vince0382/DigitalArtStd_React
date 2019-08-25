@@ -1,44 +1,37 @@
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
 import IntersectionVisible from 'react-intersection-visible';
 
-class AnimatedMask extends PureComponent {
+const AnimatedMask = props => {
 
-    constructor (props) {
-        super(props);
-        this.width = this.props.start? this.props.start : 0
+    const currentWidth = props.start ? props.start : 0;
+
+    const [width, setWidth] = useState ( currentWidth )
+
+    const onInViewPort = () => {
+        setWidth( - ( currentWidth - 100 ));
     }
 
-    state = {
-        width: this.width
+    const onOutViewPort = () => {
+        setWidth( currentWidth );
     }
 
-    onInViewPort = () => {
-        this.setState({width: - (this.width - 100)});
-    }
-
-    onOutViewPort = () => {
-        this.setState({width: this.width});
-    }
-
-    render () {
-        const delay = this.props.delay ? this.props.delay : "0.3s";
-        const duration = this.props.duration ? this.props.duration : "0.9s";
-        const zIndex = this.props.zIndex ? this.props.zIndex : null;
-        
-        return (
-            <IntersectionVisible 
+    const delay = props.delay ? props.delay : "0.3s";
+    const duration = props.duration ? props.duration : "0.9s";
+    const zIndex = props.zIndex ? props.zIndex : null;
+    
+    return (
+        <IntersectionVisible 
             onIntersect={(entries) => console.log(entries)}
-            onShow={() => this.onInViewPort()} 
-            onHide={() => this.onOutViewPort()}
-            className={this.props.className}>
-                
-                <div style={{...this.props.style,width: this.state.width + "% ", height: "100%", transition: duration + " " + delay + " all cubic-bezier(0.165, 0.840, 0.440, 1.000)", overflow: "hidden",}}>
-                    {this.props.children}
+            onShow={onInViewPort} 
+            onHide={onOutViewPort}
+            className={props.className}>
+            
+                <div style={{...props.style, width: width + "% ", height: "100%", transition: duration + " " + delay + " all cubic-bezier(0.165, 0.840, 0.440, 1.000)", overflow: "hidden",}}>
+                    {props.children}
                 </div>
 
-            </IntersectionVisible>
-        );
-    }
+        </IntersectionVisible>
+    );
 }
 
 export default AnimatedMask;

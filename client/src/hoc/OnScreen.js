@@ -1,33 +1,28 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import IntersectionVisible from 'react-intersection-visible';
 
-class OnScreen  extends Component {
+const OnScreen = props => {
 
-    state = {
-        attachedClass: null
+    const [attachedClass, setAttachedClass] = useState( null );
+
+    const onInViewPort = () => {
+        setAttachedClass( props.OnClass );
     }
 
-    onInViewPort = () => {
-        this.setState({attachedClass: this.props.OnClass});
+    const onOutViewPort = () => {
+        setAttachedClass( null );
     }
 
-    onOutViewPort = () => {
-        this.setState({attachedClass: null});
-    }
-
-    render() {
-
-        return (
-            <IntersectionVisible 
-                                onShow={() => this.onInViewPort()} 
-                                onHide={() => this.onOutViewPort()} 
-                                className={this.props.className + ' ' + this.state.attachedClass}
-                                options={{threshold: [0.3, 0.5]}}>
-                   
-                    {this.props.children}
-            </IntersectionVisible>
-        );
-    }
+    return (
+        <IntersectionVisible 
+                            onShow={onInViewPort} 
+                            onHide={onOutViewPort} 
+                            className={[props.className, attachedClass].join(' ')}
+                            options={{threshold: [0.3, 0.5]}}>
+                
+                {props.children}
+        </IntersectionVisible>
+    );
 }
 
 export default OnScreen;

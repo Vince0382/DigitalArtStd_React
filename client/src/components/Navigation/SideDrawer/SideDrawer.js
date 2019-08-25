@@ -3,7 +3,7 @@ import React from 'react';
 import NavigationItems from '../NavigationItems/NavigationItems';
 import classes from './SideDrawer.css';
 
-const sideDrawer = ( props ) => {
+const sideDrawer = props => {
     let opened = null;
 
     let radius = Math.sqrt(Math.pow(window.innerHeight, 2) + Math.pow(window.innerWidth, 2));

@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
 import {connect} from 'react-redux';
 
 import classes from './Page1.css';
@@ -12,42 +12,37 @@ import Portfolio from './Portfolio/Portfolio';
 
 
 
-class Page1 extends PureComponent {
+const Page1 = props => {
     
-    state = {
-        scrolled: false
-    }
+    const [scrolled, setScrolled] = useState( false );
 
-    scrollHandler = () => {
+    const scrollHandler = () => {
         if(window.pageYOffset > 30) {
-            if(!this.state.scrolled) this.setState({scrolled: true});
+            if(!scrolled) setScrolled( true );
         } else {
-            this.setState({scrolled: false});
+            setScrolled( false );
         }
     }
 
-    render () {
+    return (
+        <ScrollHandler onWindowScroll={scrollHandler}>
+            <div key="home" className={classes.Main}>
+                <SideScroll className={classes.SideScroll}
+                            up={scrolled ? true : false}
+                            element="/#whoweare"
+                            />
+                
+                <Home scrolled={scrolled} />
 
-        return (
-            <ScrollHandler onWindowScroll={this.scrollHandler}>
-                <div key="home" className={classes.Main}>
-                    <SideScroll className={classes.SideScroll}
-                                up={this.state.scrolled ? true : false}
-                                element="/#whoweare"
-                                />
-                    
-                    <Home scrolled={this.state.scrolled} />
+                <About contentStyle={classes.ContentFrame}/>
 
-                    <About contentStyle={classes.ContentFrame}/>
+                <Services contentStyle={classes.ContentFrame}/>
 
-                    <Services contentStyle={classes.ContentFrame}/>
+                <Portfolio contentStyle={classes.ContentFrame}/>
 
-                    <Portfolio contentStyle={classes.ContentFrame}/>
-
-                </div>
-            </ScrollHandler>
-        );
-    }
+            </div>
+        </ScrollHandler>
+    );
         
 }
 
@@ -57,4 +52,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(Page1);
+export default connect( mapStateToProps )( Page1 );

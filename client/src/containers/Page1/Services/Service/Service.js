@@ -8,7 +8,7 @@ import Button from '../../../../components/UI/Button/Button';
 import AnimatedMask from '../../../../components/Animated/Mask/AnimatedMask';
 import ParallaxImage from '../../../../components/ParallaxImage/ParallaxImage';
 
-const service = (props) => {
+const service = props => {
 
     const alpha = .2;
     const defaultColor = "#c8c8c8";

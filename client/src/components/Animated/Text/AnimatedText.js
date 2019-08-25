@@ -1,42 +1,38 @@
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
 import IntersectionVisible from 'react-intersection-visible';
 
-class AnimatedText extends PureComponent {
+const AnimatedText = props => {
 
-    state = {
-        style:{
-            transform: "translateY(100%)",
-            opacity: "0"
-        }
-    }
+    const [style, setStyle] = useState({
+        transform: "translateY(100%)",
+        opacity: "0"
+    });
 
-    onInViewPort = () => {
+    const onInViewPort = () => {
         const newStyle = {transform: "translateY(0)", opacity: "1" }
-        this.setState({style: newStyle});
+        setStyle( newStyle );
     }
 
-    onOutViewPort = () => {
+    const onOutViewPort = () => {
         const newStyle = {transform: "translateY(100%)", opacity: "0" }
-        this.setState({style: newStyle});
+        setStyle( newStyle );
     }
 
-    render () {
-        const delay = this.props.delay ? this.props.delay : "0.2s";
-        const duration = this.props.duration ? this.props.duration : "0.8s";
+    const delay = props.delay ? props.delay : "0.2s";
+    const duration = props.duration ? props.duration : "0.8s";
 
-        return (
-            <IntersectionVisible 
-            onShow={() => this.onInViewPort()} 
-            onHide={() => this.onOutViewPort()}
-            className={this.props.className}>
-                
-                <div style={{...this.state.style, ...this.props.style, transition: duration + " " + delay + " all ease-out"}}>
-                    {this.props.children}
-                </div>
+    return (
+        <IntersectionVisible 
+        onShow={onInViewPort} 
+        onHide={onOutViewPort}
+        className={props.className}>
+            
+            <div style={{...style, ...props.style, transition: duration + " " + delay + " all ease-out"}}>
+                {props.children}
+            </div>
 
-            </IntersectionVisible>
-        );
-    }
+        </IntersectionVisible>
+    );
 }
 
 export default AnimatedText;

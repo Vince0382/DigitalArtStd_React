@@ -9,7 +9,7 @@ import classes from './Footer.css';
 import SocialBar from '../../components/SocialBar/SocialBar';
 
 
-const footer = (props) => {
+const footer = props => {
     const color = "white";
 
     return (

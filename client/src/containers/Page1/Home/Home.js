@@ -9,7 +9,7 @@ import Button from '../../../components/UI/Button/Button';
 import backImg from '../../../assets/images/back.jpg';
 import logo from '../../../assets/images/Digital_small_reverse.svg';
 
-const home = ( props ) => {
+const home = props  => {
 
     let logoClass = classes.LogoShow;
     let itemClass = classes.ItemShow;

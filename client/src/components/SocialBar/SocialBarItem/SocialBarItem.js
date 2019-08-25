@@ -5,7 +5,7 @@ import ScrollTo from '../../../hoc/scrollToComponent';
 
 import classes from './SocialBarItem.css';
 
-const socialBarItem = (props) => {
+const socialBarItem = props => {
     return (
         <ScrollTo   className={classes.Item}
                     type={props.type}

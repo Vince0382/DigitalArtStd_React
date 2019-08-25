@@ -12,7 +12,7 @@ import Service_Mobile from '../../../assets/images/services_mobile.jpg';
 import Service_Design from '../../../assets/images/services_design.jpg';
 import Service_marketing from '../../../assets/images/services_marketing.jpg';
 
-const services = ( props ) => {
+const services = props => {
     return (
         <div className={classes.Services} data-clippath={classes.SwitchColor}>
             
