@@ -21,8 +21,8 @@ const project = props => {
             <AnimatedMask className={classes.ImagesWrapper} delay="1.2s">
                 <div className={classes.Skin + " " + mobile}>
                     <div className={classes.Images}>
-                            {props.images ? props.images.map(image => {
-                                return <img className={classes.Image} src={image}/> 
+                            {props.images ? props.images.map(( image, index ) => {
+                                return <img key={`project-${image}-${index}`} className={classes.Image} src={image}/> 
                             }) : null}
                                         
                     </div>
