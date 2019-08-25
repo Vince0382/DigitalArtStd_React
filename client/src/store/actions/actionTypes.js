@@ -1,1 +1,5 @@
 export const SHOW_MOBILE_MENU = 'SHOW_MOBILE_MENU';
+export const SEND_EMAIL = 'SEND_EMAIL';
+export const ACTION_STARTED = 'ACTION_STARTED';
+export const ACTION_SUCCESS = 'ACTION_SUCCESS';
+export const ACTION_FAILED = 'ACTION_FAILED';

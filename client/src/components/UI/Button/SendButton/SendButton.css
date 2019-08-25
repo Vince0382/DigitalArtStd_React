@@ -1,10 +1,10 @@
-.Button{
+.Wrapper {
     width: auto;
     height: auto;
     text-align: center;
 }
 
-.Button button {
+.Button {
     width: 150px;
     height: 50px;
     text-align: center;
@@ -14,11 +14,11 @@
     opacity: 0.9;
 }
 
-.Disabled:hover .ToolTip{
+.Disabled:hover .ToolTip {
     opacity: 1;
 }
 
-.ToolTip{
+.ToolTip {
     opacity: 0;
     font-weight: 200;
     font-size: 12px;

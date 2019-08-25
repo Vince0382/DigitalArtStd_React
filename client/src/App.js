@@ -1,13 +1,19 @@
 import React from 'react';
 import {Route, Switch, withRouter} from 'react-router-dom';
+import { IntlProvider, addLocaleData } from "react-intl";
+import enLocaleData from "react-intl/locale-data/en";
+import itLocaleData from "react-intl/locale-data/fr";
+import translations from "./languages/locales";
 
 import Layout from './hoc/Layout/Layout';
 import Page1 from './containers/Page1/Page1';
 
 import TransitionWrapper from './hoc/TransitionWrapper/TransitionWrapper';
 
+addLocaleData(enLocaleData);
+addLocaleData(itLocaleData);
 
-const App = ({ location, isMobile }) => {
+const App = props => {
 
     const main = () => (
       // <TransitionWrapper location={location}>
@@ -30,7 +36,7 @@ const App = ({ location, isMobile }) => {
 
 
     let routes = (
-      <Switch location={location}>
+      <Switch location={props.location}>
           <Route path='/' exact component={Page1} />
 {/* 
           <Route path='/terms' component={terms} />
@@ -41,12 +47,15 @@ const App = ({ location, isMobile }) => {
       </Switch>
     );
 
+    const locale = props.language;
+    const messages = translations[locale];
+
     return (
-      <div>
+      <IntlProvider locale={locale} key={locale} messages={messages}>
         <Layout>
             {routes}
         </Layout>
-      </div>
+      </IntlProvider>
     );
       
 }

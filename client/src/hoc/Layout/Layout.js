@@ -36,8 +36,8 @@ const layout = (props) => {
 
 const mapStateToProps = state => {
     return {
-        textColor : state.textColor,
-        showMobileMenu: state.showMobileMenu
+        textColor : state.main.textColor,
+        showMobileMenu: state.main.showMobileMenu
     }
 }
 

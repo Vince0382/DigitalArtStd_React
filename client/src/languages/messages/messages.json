@@ -1,0 +1,12 @@
+[
+  {
+    "id": "about.presentation",
+    "defaultMessage": "about",
+    "filepath": "src/containers/About/About.js"
+  },
+  {
+    "id": "landing.msg1",
+    "defaultMessage": "Landing",
+    "filepath": "src/containers/Landing/Landing.js"
+  }
+]

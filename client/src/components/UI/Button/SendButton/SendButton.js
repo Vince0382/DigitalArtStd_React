@@ -4,7 +4,7 @@ import classes from './SendButton.css';
 
 const sendButton = props => {
 
-    let attachedClasses = [classes.Button];
+    let attachedClasses = [classes.Wrapper];
     let style = null;
 
 
@@ -26,9 +26,9 @@ const sendButton = props => {
 
     return (
         <div className={attachedClasses.join(' ')}>
-            <button disabled={props.disabled} type="submit" style={style}>
+            <div className={classes.Button} style={style} onClick={!props.disabled ? props.onClick : null}>
                 {props.children}
-            </button>
+            </div>
             <div className={classes.ToolTip}>Please fill in the form</div>
         </div>
 

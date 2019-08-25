@@ -1,0 +1,40 @@
+.Contact {
+    width: 100%;
+    background: black;
+    position: relative;
+    z-index: 500;
+}
+
+.Wrapper {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    padding: 170px 0;
+    max-width: 1200px;
+}
+
+.Form {
+    width: 60%;
+}
+
+.Info {
+    width: 40%;
+    font-size: 32px;
+    line-height: 32px;
+}
+
+@media (max-width: 549px){
+    .Contact {
+        width: 100%;
+        display: block;
+    }
+    .Form{
+        width: 90%;
+        margin: auto;
+    }
+    .Info {
+        width: 90%;
+        margin: auto;
+        padding-bottom: 50px;
+    }
+}

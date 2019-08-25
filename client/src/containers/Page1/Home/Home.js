@@ -5,6 +5,7 @@ import classes from './Home.css';
 
 import SocialBar from '../../../components/SocialBar/SocialBar';
 import Button from '../../../components/UI/Button/Button';
+import ScrollTo from '../../../hoc/scrollToComponent';
 
 import backImg from '../../../assets/images/back.jpg';
 import logo from '../../../assets/images/Digital_small_reverse.svg';
@@ -37,10 +38,12 @@ const home = props  => {
                         <div className={classes.Item + ' ' + itemClass}>We are creative, passionated and innovative designers and developpers</div>
                         <div className={classes.ButtonMask + ' ' + buttonClass}>
                             <div className={classes.Button}>
-                                <Button clicked={props.clicked}
-                                    color={"white"}
-                                    bgColor1="#1E1D1C">See who we are
-                                </Button> 
+                                <ScrollTo element="#whoweare">
+                                    <Button clicked={props.clicked}
+                                        color={"white"}
+                                        bgColor1="#1E1D1C">See who we are
+                                    </Button> 
+                                </ScrollTo>
                             </div>
                         </div>
                 </div>

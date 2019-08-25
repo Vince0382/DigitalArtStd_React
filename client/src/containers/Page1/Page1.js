@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 import classes from './Page1.css';
 
@@ -9,6 +9,7 @@ import Home from './Home/Home';
 import About from './About/About';
 import Services from './Services/Services';
 import Portfolio from './Portfolio/Portfolio';
+import Contact from './Contact/Contact';
 
 
 
@@ -39,6 +40,8 @@ const Page1 = props => {
                 <Services contentStyle={classes.ContentFrame}/>
 
                 <Portfolio contentStyle={classes.ContentFrame}/>
+
+                <Contact />
 
             </div>
         </ScrollHandler>
