@@ -1,31 +1,26 @@
 import React, { useState } from 'react';
 import IntersectionVisible from 'react-intersection-visible';
 
-const AnimatedMask = props => {
+const AnimatedScale = props => {
 
-    const currentWidth = props.start ? props.start : 0;
-
-    const [width, setWidth] = useState ( currentWidth )
+    const [scale, setScale] = useState ( 0 )
 
     const onInViewPort = () => {
-        setWidth( - ( currentWidth - 100 ));
+        setScale( 1 );
     }
 
     const onOutViewPort = () => {
-        setWidth( currentWidth );
+        setScale( 0 );
     }
-
-    const delay = props.delay ? props.delay : "0.3s";
-    const duration = props.duration ? props.duration : "0.9s";
 
     const style = {
         ...props.style, 
-        width: `${width}%`, 
+        width: "100% ", 
         height: "100%", 
-        transition: `${duration} ${delay} all cubic-bezier(0.165, 0.840, 0.440, 1.000)`, 
+        transform: `scale(${scale})`,
+        transition: "all .5s cubic-bezier(0.165, 0.840, 0.440, 1.000)", 
         overflow: "hidden",
     }
-
     
     return (
         <IntersectionVisible 
@@ -42,4 +37,4 @@ const AnimatedMask = props => {
     );
 }
 
-export default AnimatedMask;
+export default AnimatedScale;

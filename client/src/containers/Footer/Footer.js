@@ -7,6 +7,7 @@ import * as actions from '../../store/actions';
 
 import classes from './Footer.css';
 import SocialBar from '../../components/SocialBar/SocialBar';
+import logo from '../../assets/images/Digital_small.svg';
 
 
 const footer = props => {
@@ -16,13 +17,13 @@ const footer = props => {
         <div className={classes.Footer} style={{color: color}} id="footer">
 
             <div className={classes.Logo}>
-                
+                <SVG src={logo} />
             </div>
             <div className={classes.Container}>
                
             </div>
             
-            <SocialBar className={classes.SocialBar} size="25px"/>
+            <SocialBar className={classes.SocialBar} size="20px"/>
 
             <div className={classes.MobileNav}>
                 <Link style={{color: color }} to="/terms">Terms and Services</Link>

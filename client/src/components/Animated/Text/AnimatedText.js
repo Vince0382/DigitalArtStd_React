@@ -27,7 +27,7 @@ const AnimatedText = props => {
         onHide={onOutViewPort}
         className={props.className}>
             
-            <div style={{...style, ...props.style, transition: duration + " " + delay + " all ease-out"}}>
+            <div style={{...style, ...props.style, transition: `${duration} ${delay} all ease-out`}}>
                 {props.children}
             </div>
 

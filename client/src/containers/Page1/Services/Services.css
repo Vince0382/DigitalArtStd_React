@@ -2,7 +2,6 @@
     width: 100%;
     background: white;
     position: relative;
-    padding-bottom: 200px;
     color: black;
 }
 
@@ -44,28 +43,7 @@
     width: 100%;
 }
 
-.ServicesItems p {
-    font-size: 18px;
-    font-weight: 200;
-}
 
-.ServicesItems .ItemHeader {
-    font-size: 50px;
-    font-weight: 700;
-}
-
-@media (max-width: 1200px) {
-        
-    .ServicesItems .ItemHeader {
-        font-size: 30px;
-        font-weight: 700;
-    }
-
-    .ServicesItems p {
-        font-size: 14px;
-    }
-
-}
 
 @media (max-width: 749px){
     .About {
@@ -74,16 +52,6 @@
 
     .ServicesItems {
         width: 100%;
-    }
-
-    .ServicesItems p {
-        font-size: 14px;
-        font-weight: 200;
-    }
-    
-    .ServicesItems .ItemHeader {
-        font-size: 24px;
-        font-weight: 700;
     }
 
     .Header {

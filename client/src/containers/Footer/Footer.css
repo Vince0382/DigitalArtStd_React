@@ -39,6 +39,9 @@
     width: 100%;
     height: 100px;
 }
+.Logo svg {
+    width: 200px;
+}
 
 .Nav {
     width: 17%;

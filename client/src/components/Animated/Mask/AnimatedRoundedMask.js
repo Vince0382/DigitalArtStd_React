@@ -28,8 +28,8 @@ const AnimatedRoundedMask = props => {
             
             <div style={{
                     ...props.style, 
-                    transform: "scaleY(" + style.scale + ")" , 
-                    transition: duration + " " + delay + " all cubic-bezier(0.550, 0.085, 0.680, 0.530)", 
+                    transform: `scaleY(${style.scale})` , 
+                    transition: `${duration} ${delay} all cubic-bezier(0.550, 0.085, 0.680, 0.530)`, 
                     transformOrigin: "center",
                     width: "100%",
                     height: "100%",
