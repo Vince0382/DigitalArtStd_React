@@ -4,6 +4,7 @@
     transition: all 0.2s ease;
     height: 60px;
     width: fit-content;
+    cursor: pointer;
   }
   .cta .Mask {
     position: absolute;

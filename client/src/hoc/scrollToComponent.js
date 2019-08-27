@@ -20,7 +20,7 @@ const scrollToComponent = props => {
       if (props.clickHandler) props.clickHandler();
       if (props.callBack) props.callBack();
     }
-
+console.log(props.callBack)
     let navlink = null;
 
     switch (props.type) {

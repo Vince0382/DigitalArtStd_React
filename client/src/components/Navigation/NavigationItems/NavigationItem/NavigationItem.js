@@ -21,7 +21,7 @@ const navigationItem = props => {
     );
 
     return (
-        <li className={classes.NavigationItem} onClick={props.callBack}>
+        <li className={classes.NavigationItem}>
             <ScrollTo
                     className={classes.Link}
                     type={props.type}

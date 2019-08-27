@@ -43,7 +43,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onDrawerToggle: () => dispatch(actions.showMobileMenu())
+        onDrawerToggle: () => dispatch( actions.showMobileMenu() )
     }
 }
 

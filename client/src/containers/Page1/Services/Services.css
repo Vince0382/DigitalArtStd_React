@@ -43,7 +43,34 @@
     width: 100%;
 }
 
+.FlexRow {
+    display: flex;
+}
 
+.Right {
+    /* position: sticky;
+    top: 0;
+    right: 0; */
+    width: 60%;
+    height: 100%;
+    transition: background-color 3s linear;
+}
+
+
+.ImageWrapper {
+    width: 40%;
+    height: calc(100vh - 160px);
+    top: 160px;
+    right: 0;
+    margin-left: auto;
+    overflow: hidden;
+    position: sticky;
+    transition: all .3s ease-out;
+}
+
+.ImageWrapper img {
+    height: calc(100vh - 160px);
+}
 
 @media (max-width: 749px){
     .About {
@@ -59,5 +86,13 @@
         margin-left: 2.5%;
         position: static;
         padding: 50px 0;
+    }
+
+    .Right {
+        width: 100%;
+    }
+
+    .ImageWrapper {
+        display: none;
     }
 }

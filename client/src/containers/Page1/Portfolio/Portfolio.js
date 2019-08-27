@@ -27,7 +27,7 @@ import Departuretime3 from '../../../assets/images/Project/DepartureTime/Departu
 const portfolio = props => {
 
     return (
-        <div className={classes.Portfolio}>
+        <div className={classes.Portfolio} id="portfolio">
             <AnimatedRoundedMask className={classes.Mask} style={{background: "White", position: "absolute", zIndex: "300"}} delay="0.5s">
                 
                 <div className={classes.Header}>

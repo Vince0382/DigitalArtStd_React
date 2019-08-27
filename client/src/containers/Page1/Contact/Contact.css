@@ -2,7 +2,6 @@
     width: 100%;
     background: rgba(0, 0, 0, 0.9);
     position: relative;
-    z-index: 500;
 }
 
 .Wrapper {
@@ -23,12 +22,17 @@
     line-height: 32px;
 }
 
-@media (max-width: 549px){
+@media (max-width: 749px){
     .Contact {
-        width: 100%;
-        display: block;
+        height: auto;
     }
-    .Form{
+
+    .Wrapper {
+        display: block;
+        width: 90%;
+    }
+
+    .Form {
         width: 90%;
         margin: auto;
     }

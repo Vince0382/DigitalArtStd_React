@@ -1,10 +1,12 @@
 import React from 'react';
+import ScrollTo from '../../../hoc/scrollToComponent';
 
 import classes from './Button.css';
 
 const button = props => {
     const defaultColor = "rgba(49, 49, 52, 0.5)";
-    return (
+
+    const body = (
         <div className={classes.cta}>
             <div className={classes.Mask} style={{background: props.bgColor1? props.bgColor1 : defaultColor}}></div>
                 <span style={{color: props.color, textDecoration: 'none'}}>{props.children}</span>
@@ -15,6 +17,16 @@ const button = props => {
             
         </div>
     );
+
+    const wrapper = () => {
+
+        switch ( props.type ) {
+            case 'link' : return <ScrollTo element={props.element ? props.element : '/'}>{body}</ScrollTo>;
+            default : return <div onClick={props.onClick}>{body}</div>
+        }
+    }
+
+    return wrapper();
 
 };
 
