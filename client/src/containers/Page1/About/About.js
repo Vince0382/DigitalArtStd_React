@@ -16,7 +16,7 @@ const about = props  => {
                 <AnimatedText delay="0.5s"><p>All our final products are cross-platform and fully responsive!</p></AnimatedText>
                 <AnimatedText delay="0.6s">
                     <div className={classes.Button}>  
-                        <ScrollTo element="#contact">
+                        <ScrollTo element="#contact-us">
                             <Button clicked=""
                                 color="white"
                                 bgColor1="#1E1D1C">Contact Us

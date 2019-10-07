@@ -8,7 +8,7 @@ const navigationItems = props => (
         <NavigationItem color={props.color} callBack={props.callBack} link="/" exact toTop fixed >Home</NavigationItem>
         <NavigationItem color={props.color} callBack={props.callBack} link="#services" fixed >Services</NavigationItem>
         <NavigationItem color={props.color} callBack={props.callBack} link="#portfolio" fixed >Portfolio</NavigationItem>
-        <NavigationItem color={props.color} callBack={props.callBack} link="#contact" fixed>Contact</NavigationItem>
+        <NavigationItem color={props.color} callBack={props.callBack} link="#contact-us" fixed>Contact</NavigationItem>
     </ul>
 );
 

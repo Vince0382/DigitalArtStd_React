@@ -1,4 +1,4 @@
-.Services {
+/* .Services {
     width: 100%;
     background: white;
     position: relative;
@@ -36,7 +36,7 @@
     z-index: 100;
     /*writing-mode: vertical-rl;
     transform-origin: center;
-    transform: rotate(-180deg); */
+    transform: rotate(-180deg);
 }
 
 .ServicesItems {
@@ -48,9 +48,6 @@
 }
 
 .Right {
-    /* position: sticky;
-    top: 0;
-    right: 0; */
     width: 60%;
     height: 100%;
     transition: background-color 3s linear;
@@ -95,4 +92,24 @@
     .ImageWrapper {
         display: none;
     }
+} */
+
+.Overlay {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transform: scaleY(0);
+    transition: all 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    background: rgba(0,0,0,0.7);
+}
+
+.Main:hover .Overlay {
+    transform: scaleY(1);
+    transition: all 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940);
 }

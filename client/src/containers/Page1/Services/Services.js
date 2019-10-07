@@ -1,130 +1,104 @@
-import React, { useState } from 'react';
-import tinycolor from 'tinycolor2';
+import React from "react";
 
-import classes from './Services.css';
+// reactstrap components
+import {
+  Button,
+  Container,
+  Row,
+  Col
+} from "reactstrap";
 
-import AnimatedMask from '../../../components/Animated/Mask/AnimatedMask';
-import AnimatedText from '../../../components/Animated/Text/AnimatedText';
-import AnimatedImages from '../../../components/Animated/Image/AnimatedImages';
-import Service from './Service/Service';
-import AnimatedScale from '../../../components/Animated/Scale/AnimatedScale';
-import ParallaxImage from '../../../components/ParallaxImage/ParallaxImage';
+import classes from "./Services.css";
 
-import Service_Web from '../../../assets/images/services_website.jpg';
-import Service_Mobile from '../../../assets/images/services_mobile.jpg';
-import Service_Design from '../../../assets/images/services_design.jpg';
-import Service_marketing from '../../../assets/images/services_marketing.jpg';
+// core components
 
-const Services = props => {
-
-    const defaultAlpha = .4;
-    const defaultColor = "#c8c8c8";
-    const images = [Service_Web, Service_Mobile, Service_Design, Service_marketing];
-
-
-    const [currentColor, setCurrentColor] = useState( defaultColor );
-    const [currentImage, setCurrentImage] = useState( Service_Web );
-
-    const getRGBAColor = ( color, alpha ) => {
-        const shadowColor = tinycolor(color ? color : defaultColor);
-        return shadowColor.setAlpha( alpha? alpha : defaultAlpha );
-    }
-
-    const setServiceCallBack = ( color, image ) => {
-        // requestAnimationFrame(() =>setCurrentColor( color ));
-        // requestAnimationFrame(() => setCurrentImage( image ));
-        setCurrentColor( color );
-        setCurrentImage( image );
-    }
-
-    return (
-        <div className={classes.Services} data-clippath={classes.SwitchColor} id="services">
-            
-            <AnimatedMask className={classes.Mask} style={{background: "black", position: "absolute", zIndex: "300"}} delay="0.5s" start="100"/>
-            
-            <AnimatedText className={classes.Header}>
-                <div className={props.contentStyle}>What We Do</div>
-            </AnimatedText>
-
-            <div className={classes.Content}>
-
-                <div className={classes.FlexRow}>
-
-                    <div className={classes.Right} style={{backgroundColor: getRGBAColor( currentColor, 0.5 )}}>
-            
-                        <div className={classes.ServicesItems}>
-                            <Service    image={Service_Web}
-                                        buttonText={"Start your website"}
-                                        title="WebSites"
-                                        header="Empowering your web identity"
-                                        content={[
-                                            "It's how the world sees you!",
-                                            "We build modern responsive websites with great design that ignite your business.",
-                                            "Intelligent websites. Real results."
-                                        ]}
-                                        svgColor="#3778C2"
-                                        callBack={setServiceCallBack}
-                                        shadowColor={getRGBAColor( "#3778C2" )}>
-                                        
-                            </Service>
-                            <Service    image={Service_Mobile}
-                                        buttonText={"Get your Application"}
-                                        title="Mobile"
-                                        header="Experience digital innovation"
-                                        content={[
-                                            "It's how the world sees you!",
-                                            "We build modern responsive websites with great design to provide the best user experience and conversion rate as possible.",
-                                            "Intelligent websites. Real results."
-                                        ]}
-                                        svgColor="#293E56"
-                                        callBack={setServiceCallBack}
-                                        shadowColor={getRGBAColor( "#293E56" )}>
-                                        
-                            </Service>
-                            <Service    image={Service_Design}
-                                        buttonText={"Improve your business"}
-                                        title="Design"
-                                        header="Design is intelligence made visible"
-                                        content={[
-                                            "It's how the world sees you!",
-                                            "We build modern responsive websites with great design to provide the best user experience and conversion rate as possible.",
-                                            "Intelligent websites. Real results."
-                                        ]}
-                                        svgColor="#d46935"
-                                        callBack={setServiceCallBack}
-                                        shadowColor={getRGBAColor( "#d46935" )}>
-                                        
-                            </Service>
-                            <Service    image={Service_marketing}
-                                        buttonText={"Get Results Now"}
-                                        title="Marketing"
-                                        header="Revenue through results"
-                                        content={[
-                                            "It's how the world sees you!",
-                                            "We build modern responsive websites with great design to provide the best user experience and conversion rate as possible.",
-                                            "Intelligent websites. Real results."
-                                        ]}
-                                        svgColor="#BECB73"
-                                        callBack={setServiceCallBack}
-                                        shadowColor={getRGBAColor( "#BECB73" )}>
-                            </Service>
-                            
-                        </div>
-                    </div>
-                
-                    <div className={classes.ImageWrapper} style={{boxShadow: "0 100px 200px " + getRGBAColor( currentColor ).toRgbString(), background: currentColor}}>
-                        <div>
-                            <ParallaxImage>
-                                <AnimatedImages images={images} currentImage={currentImage} />
-                            </ParallaxImage>
-                        </div>
-                    </div>
-
+const SectionHeader = props => {
+  return (
+      <div style={{background: 'black', padding: '70px 0 0'}} className="section section-feature cd-section" id="services">
+        {/* ********* FEATURES 5 ********* */}
+        <div
+          className="features-5 section-image"
+          style={{
+            backgroundImage:
+              "url(" +
+              require("../../../assets/img/sections/luke-chesser-copy.jpg") +
+              ")"
+          }}
+        >
+          <Container>
+            <Row>
+              <div className="ml-auto mr-auto">
+                <h2 className="title text-center">
+                  Your life will be much easier
+                </h2>
+              </div>
+            </Row>
+            <Row>
+              <Col className={`ml-auto ${classes.Main}`} sm="5">
+                <div className={classes.Overlay}>
+                    <Button color={'primary'}>Read more</Button>
                 </div>
-            </div>
-            
+                <div className="info">
+                  <div className="icon">
+                    <i aria-hidden={true} className="nc-icon nc-laptop" />
+                  </div>
+                  <h4 className="title"> Web Development</h4>
+                  <p>
+                    We provide fully responsive, professional and elegant web sites to empower your web identity.
+                  </p>
+                </div>
+              </Col>
+              <Col className={`mr-auto ${classes.Main}`} sm="5">
+                <div className={classes.Overlay}>
+                    <Button color={'primary'}>Read more</Button>
+                </div>
+                <div className="info">
+                  <div className="icon">
+                    <i aria-hidden={true} className="nc-icon nc-mobile" />
+                  </div>
+                  <h4 className="title">Mobile Application</h4>
+                  <p>
+                    You have an idea of a great product ? We will assist you through all steps of your project and build with you your multi-platform mobile application.
+                  </p>
+                </div>
+              </Col>
+            </Row>
+            <Row className="bottom-line">
+              <Col className={`ml-auto ${classes.Main}`} sm="5">
+                <div className={classes.Overlay}>
+                    <Button color={'primary'}>Read more</Button>
+                </div>
+                <div className="info">
+                  <div className="icon">
+                    <i aria-hidden={true} className="nc-icon nc-tile-56" />
+                  </div>
+                  <h4 className="title">UX/UI Design</h4>
+                  <p>
+                    Design is intelligence made visible. Ignite your business with a clear, instinctive and user friendly interface and maximize your users experience.
+                  </p>
+                </div>
+              </Col>
+              <Col className={`mr-auto ${classes.Main}`} sm="5">
+                <div className={classes.Overlay}>
+                    <Button color={'primary'}>Read more</Button>
+                </div>
+                <div className="info">
+                  <div className="icon">
+                    <i aria-hidden={true} className="nc-icon nc-chart-pie-36" />
+                  </div>
+                  <h4 className="title">Digital Marketing</h4>
+                  <p>
+                    Improve your revenue with digital advertisement. We are able to support you with Facebook Ads, Google Ads, Instagram, linkedIn to help you reaching more and more customers.
+                  </p>
+                </div>
+              </Col>
+            </Row>
+          </Container>
         </div>
-    );
+        {/* ********* END FEATURES 5 ********* */}
+
+      </div>
+  );
 }
 
-export default Services;
+export default SectionHeader;

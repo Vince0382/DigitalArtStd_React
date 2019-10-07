@@ -1,8 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { injectIntl, defineMessages } from 'react-intl';
-import { Form, Input, TextArea, Message } from 'semantic-ui-react';
+//import { Form, Input, TextArea, Message } from 'semantic-ui-react';
 import { checkValidity } from '../../../shared/utility';
+import {
+    Button,
+    Card,
+    CardHeader,
+    CardBody,
+    CardTitle,
+    Label,
+    FormGroup,
+    Form,
+    Input,
+    Container,
+    Row,
+    Col
+  } from "reactstrap";
 
 
 import * as actions from '../../../store/actions';
@@ -152,7 +166,9 @@ const Contact = props => {
         return valid;
     }
 
-    const sendHandler = () => {
+    const sendHandler = ( event ) => {
+        event.preventDefault();
+
         const data = {
             replyTo: formData.email.value,
             subject: formData.subject.value,
@@ -164,81 +180,228 @@ const Contact = props => {
                         <div> message: ${formData.message.value} </div>
                         `
         }
-        
-        props.onSendEmail( data );
+        console.log('Sending')
+        //props.onSendEmail( data );
         setSent( true );
     }
 
-    const formElement = ( identifier, type ) => {
+    // const formElement = ( identifier, type ) => {
+    //     const data = formData[identifier];
+    //     return data ?
+    //     <Form.Field 
+    //         required={data.required}
+    //         control={type}
+    //         value={data.value}
+    //         onChange={( event ) => localChangeHandler( event, identifier)}
+    //         onBlur={( event ) => isValidHandler( event, identifier)}
+    //         label={data.placeholder} 
+    //         placeholder={data.placeholder} 
+    //         error={!data.valid} />
+    //         : null
+    // };
+
+        const formElement = ( identifier, type ) => {
         const data = formData[identifier];
         return data ?
-        <Form.Field 
-            required={data.required}
-            control={type}
-            value={data.value}
-            onChange={( event ) => localChangeHandler( event, identifier)}
-            onBlur={( event ) => isValidHandler( event, identifier)}
-            label={data.placeholder} 
-            placeholder={data.placeholder} 
-            error={!data.valid} />
-            : null
+            <Form.Field 
+                required={data.required}
+                control={type}
+                value={data.value}
+                onChange={( event ) => localChangeHandler( event, identifier)}
+                onBlur={( event ) => isValidHandler( event, identifier)}
+                label={data.placeholder} 
+                placeholder={data.placeholder} 
+                error={!data.valid} />
+                : null
     };
 
-    const form = (
-        <Form inverted>
-            <Form.Group widths='equal'>
-                {formElement( 'firstName', Input )}
-                {formElement( 'lastName', Input )}
-             </Form.Group>
-             <Form.Group widths='equal'>
-                {formElement( 'email', Input )}
-                {formElement( 'phone', Input )}
-             </Form.Group>
-            {formElement( 'subject', Input )}
-            {formElement( 'message', TextArea )}
-            <SendButton disabled={!isAllValidHandler()} style={{marginTop: '20px'}} onClick={sendHandler}>{formatMessage(messages.btSend)}</SendButton>
-        </Form>
-    );
+    // const form = (
+    //     <Form inverted>
+    //         <Form.Group widths='equal'>
+    //             {formElement( 'firstName', Input )}
+    //             {formElement( 'lastName', Input )}
+    //          </Form.Group>
+    //          <Form.Group widths='equal'>
+    //             {formElement( 'email', Input )}
+    //             {formElement( 'phone', Input )}
+    //          </Form.Group>
+    //         {formElement( 'subject', Input )}
+    //         {formElement( 'message', TextArea )}
+    //         <SendButton disabled={!isAllValidHandler()} style={{marginTop: '20px'}} onClick={sendHandler}>{formatMessage(messages.btSend)}</SendButton>
+    //     </Form>
+    // );
 
-    const formSuccess = (
-        <Form success>
-            <Message 
-                success 
-                header={formatMessage(messages.successHeader)}
-                content={formatMessage(messages.successMessage)} />
-        </Form>
-    );
+    // const formSuccess = (
+    //     <Form success>
+    //         <Message 
+    //             success 
+    //             header={formatMessage(messages.successHeader)}
+    //             content={formatMessage(messages.successMessage)} />
+    //     </Form>
+    // );
 
-    const formError = (
-        <Form error>
-            <Message 
-                error 
-                header={formatMessage(messages.errorHeader)} 
-                content={formatMessage(messages.errorMessage)} />
-        </Form>
-    );
+    // const formError = (
+    //     <Form error>
+    //         <Message 
+    //             error 
+    //             header={formatMessage(messages.errorHeader)} 
+    //             content={formatMessage(messages.errorMessage)} />
+    //     </Form>
+    // );
 
 
     return (
-        <div className={classes.Contact} id='contact'>
-            <div className={classes.Wrapper}>
-                <div className={classes.Info}>
-                    {formatMessage(messages.title)}
-                </div>
-                <div className={classes.Form}>
-                    {
-                        !sent 
-                            ? form
-                            : props.loading 
-                                ? <Spinner />
-                                : props.email === 'Sended'
-                                    ? formSuccess
-                                    : formError
-                    }
-                    
-                </div>
+
+        <div className="section section-contactus cd-section" id="contact-us" style={{background: '#282725'}}>
+        {/* ********* CONTACT US 1 ********* */}
+            <div
+            className="contactus-1 section-image"
+            style={{
+                backgroundImage:
+                "url(" + require("../../../assets/img/sections/rawpixel-comm.jpg") + ")"
+            }}
+            >
+            <Container>
+                <Row>
+                <Col className="ml-auto mr-auto" md="10">
+                    <Card className="card-contact no-transition">
+                    <CardTitle className="text-center" tag="h3">
+                        Contact Us
+                    </CardTitle>
+                    <Row>
+                        <Col className="ml-auto" md="5">
+                        <CardBody>
+                            <div className="info info-horizontal">
+                            <div className="icon icon-info">
+                                <i className="nc-icon nc-pin-3" />
+                            </div>
+                            <div className="description">
+                                <h4 className="info-title">
+                                Find us at the office
+                                </h4>
+                                <p>
+                                Via Annia Faustina, 56  <br />
+                                00153 Rome, <br />
+                                Italy
+                                </p>
+                            </div>
+                            </div>
+                            <div className="info info-horizontal">
+                            <div className="icon icon-danger">
+                                <i className="nc-icon nc-badge" />
+                            </div>
+                            <div className="description">
+                                <h4 className="info-title">Give us a ring</h4>
+                                <p>
+                                Vincent PETRINI<br />
+                                +39 331 305 6476 <br />
+                                Mon - Fri, 8:00-18:00
+                                </p>
+                            </div>
+                            </div>
+                        </CardBody>
+                        </Col>
+                        <Col className="mr-auto" md="5">
+                        <Form id="contact-form" method="post" role="form">
+                            <CardBody>
+                            <Row>
+                                <Col md="6">
+                                <FormGroup className="label-floating">
+                                    <label className="control-label">
+                                    First name
+                                    </label>
+                                    <Input
+                                    name="name"
+                                    placeholder="First Name"
+                                    type="text"
+                                    />
+                                </FormGroup>
+                                </Col>
+                                <Col md="6">
+                                <FormGroup className="label-floating">
+                                    <label className="control-label">
+                                        Last name
+                                    </label>
+                                    <Input
+                                    name="name"
+                                    placeholder="Last Name"
+                                    type="text"
+                                    />
+                                </FormGroup>
+                                </Col>
+                            </Row>
+                            <FormGroup className="label-floating">
+                                <label className="control-label">
+                                Email address
+                                </label>
+                                <Input
+                                name="email"
+                                placeholder="Email"
+                                type="email"
+                                />
+                            </FormGroup>
+                            <FormGroup className="label-floating">
+                                <label className="control-label">
+                                Your message
+                                </label>
+                                <Input
+                                id="message"
+                                name="message"
+                                placeholder="Message"
+                                type="textarea"
+                                rows="6"
+                                />
+                            </FormGroup>
+                            <Row>
+                                <Col md="6">
+                                <FormGroup check>
+                                    <Label check>
+                                    <Input defaultValue="" type="checkbox" />
+                                    I'm not a robot !{" "}
+                                    <span className="form-check-sign" />
+                                    </Label>
+                                </FormGroup>
+                                </Col>
+                                <Col md="6">
+                                <Button
+                                    className="pull-right"
+                                    color="primary"
+                                    type="button"
+                                    onClick={sendHandler}
+                                >
+                                    Send Message
+                                </Button>
+                                </Col>
+                            </Row>
+                            </CardBody>
+                        </Form>
+                        </Col>
+                    </Row>
+                    </Card>
+                </Col>
+                </Row>
+            </Container>
             </div>
         </div>
+        // <div className={classes.Contact} id='contact'>
+        //     <div className={classes.Wrapper}>
+        //         <div className={classes.Info}>
+        //             {formatMessage(messages.title)}
+        //         </div>
+        //         <div className={classes.Form}>
+        //             {
+        //                 !sent 
+        //                     ? form
+        //                     : props.loading 
+        //                         ? <Spinner />
+        //                         : props.email === 'Sended'
+        //                             ? formSuccess
+        //                             : formError
+        //             }
+                    
+        //         </div>
+        //     </div>
+        // </div>
     );
 }
 

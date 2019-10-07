@@ -11,6 +11,11 @@ import 'babel-polyfill';
 import smoothScroll from 'smoothscroll-polyfill';
 import { store } from './store/store';
 
+import "./assets/css/bootstrap.min.css?raw";
+import "./assets/css/paper-kit.css?raw";
+import "./assets/demo/demo.css?raw";
+import "./assets/demo/react-demo.css?raw";
+
 // kick off the polyfill!
 smoothScroll.polyfill();
 

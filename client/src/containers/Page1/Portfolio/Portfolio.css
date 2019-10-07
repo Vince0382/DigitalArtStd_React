@@ -9,6 +9,11 @@
     
 }
 
+.DarkIcon {
+    color: #808080;
+    border-color: #808080;
+}
+
 .Mask{
     position: relative;
     height: 100%;
