@@ -1,20 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import {CSSTransition} from 'react-transition-group';
+import React from 'react';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import classes from './TransitionWrapper.css';
 
-const TransitionWrapper = props => {
-
-    const [active, setActive] = useState( false );
-
-    useEffect(() => {
-        setActive( true );
-    },[]);
+const transitionWrapper = props => {   
 
     return (
+        <TransitionGroup>
             <CSSTransition 
-                            in={active}
-                            timeout={{ enter: 700, exit: 700 }}
+                            key={props.location.key}
+                            timeout={{ enter: 500, exit: 500 }}
                             classNames={{
                             enter: classes.Enter,
                             enterActive: classes.EnterActive,
@@ -26,7 +21,8 @@ const TransitionWrapper = props => {
 
                     { props.children }
             </CSSTransition>
+        </TransitionGroup>
     );
 }
 
-export default TransitionWrapper;
+export default transitionWrapper;

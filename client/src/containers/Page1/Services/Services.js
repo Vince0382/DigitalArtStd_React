@@ -8,9 +8,13 @@ import {
   Col
 } from "reactstrap";
 
+import SeeMoreButton from '../../../components/UI/Button/SeeMoreButton/SeeMoreButton';
+
 import classes from "./Services.css";
 
 // core components
+
+
 
 const SectionHeader = props => {
   return (
@@ -35,23 +39,18 @@ const SectionHeader = props => {
             </Row>
             <Row>
               <Col className={`ml-auto ${classes.Main}`} sm="5">
-                <div className={classes.Overlay}>
-                    <Button color={'primary'}>Read more</Button>
-                </div>
                 <div className="info">
                   <div className="icon">
                     <i aria-hidden={true} className="nc-icon nc-laptop" />
                   </div>
                   <h4 className="title"> Web Development</h4>
                   <p>
-                    We provide fully responsive, professional and elegant web sites to empower your web identity.
+                    We provide fully responsive, professional and elegant web sites / web applications to empower your web identity and bring your projects to life.
                   </p>
+                  <SeeMoreButton link='/web' />
                 </div>
               </Col>
               <Col className={`mr-auto ${classes.Main}`} sm="5">
-                <div className={classes.Overlay}>
-                    <Button color={'primary'}>Read more</Button>
-                </div>
                 <div className="info">
                   <div className="icon">
                     <i aria-hidden={true} className="nc-icon nc-mobile" />
@@ -60,14 +59,12 @@ const SectionHeader = props => {
                   <p>
                     You have an idea of a great product ? We will assist you through all steps of your project and build with you your multi-platform mobile application.
                   </p>
+                  <SeeMoreButton link='/mobile' />
                 </div>
               </Col>
             </Row>
             <Row className="bottom-line">
               <Col className={`ml-auto ${classes.Main}`} sm="5">
-                <div className={classes.Overlay}>
-                    <Button color={'primary'}>Read more</Button>
-                </div>
                 <div className="info">
                   <div className="icon">
                     <i aria-hidden={true} className="nc-icon nc-tile-56" />
@@ -79,9 +76,9 @@ const SectionHeader = props => {
                 </div>
               </Col>
               <Col className={`mr-auto ${classes.Main}`} sm="5">
-                <div className={classes.Overlay}>
+                {/* <div className={classes.Overlay}>
                     <Button color={'primary'}>Read more</Button>
-                </div>
+                </div> */}
                 <div className="info">
                   <div className="icon">
                     <i aria-hidden={true} className="nc-icon nc-chart-pie-36" />

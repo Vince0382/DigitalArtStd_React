@@ -3,5 +3,6 @@ export {
     sendEmail,
     actionStarted,
     actionSuccess,
-    actionFailed
+    actionFailed,
+    changeControlsColor
 } from './actions'; 

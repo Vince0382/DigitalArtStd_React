@@ -1,149 +1,51 @@
-.Service {
-    width: 100%;
-    height: 100vh;
-    position: relative;
+.SwitchColor {
+    color: black;
+    fill: black;
 }
 
-
+.Back {
+    width: 100%;
+    padding: 20px;
+    margin: 80px 20px 0;
+    cursor: pointer;
+    position: fixed;
+    top: 70px;
+    z-index: 300;
+}
 
 .Content {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    top: 0;
-    left: 0;
+    margin-top: 80px;
 }
 
-.Text {
-    width: 50%;
-    font-size: 30px;
-    font-weight: 400;
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translateX(-50%);
+@media (min-width: 576px)
+{
+    .Back {
+        max-width: 540px;
+    }
 }
 
-.Header {
-    font-size: 50px;
-    font-weight: 700;
-    width: 55%;
-    line-height: 56px;
-    margin-bottom: 20px !important;
+@media (min-width: 768px)
+{
+    .Back {
+        max-width: 720px;
+    }
 }
 
-.ItemsRight {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 100%;
+@media (min-width: 992px)
+{
+    .Back {
+        max-width: 960px;
+    }
 }
 
-.Paragraph {
-    font-size: 18px;
-    font-weight: 200;
-}
-
-.Button {
-    padding-top: 30px;
-    padding-left: 0;
+@media (min-width: 1200px)
+{
+    .Back {
+        max-width: 1140px;
+    }
 }
 
 
-/* .TextSVG {
-    font-size: 4vw;
-    font-weight: 900;
-    writing-mode: vertical-lr;
-    text-orientation: upright;
-    position: absolute;
-    top: 50%;
-    right: 10%;
-    transform: translateY(-50%);
-    color: white;
-} */
 
-.TextSVG {
-    font-size: 10vw;
-    font-weight: 900;
-    opacity: 0.15;
-}
 
-.Title {
-    position: absolute;
-    top: 100px;
-    right: 5px;
-}
 
-.ImageWrapper {
-    display: none;
-}
-
-@media (max-width: 1200px) {
-        
-    .Header {
-        font-size: 30px;
-        font-weight: 700;
-    }
-
-    .Paragraph {
-        font-size: 14px;
-    }
-
-}
-
-@media (max-width: 749px) {
-    .Service {
-        margin-bottom: 100px;
-    }
-
-    .ImageWrapper {
-        display: block;
-        width: 100%;
-        height: 50vh;
-        position: static;
-        overflow: hidden;
-    }
-
-    .ImageWrapper img {
-        width: 120%;
-    }
-
-    .Content {
-        width: 100%;
-        height: auto;
-        position: static;
-    }
-
-    .Text {
-        width: 90%;
-        font-size: 18px;
-        margin: auto;
-        position: static;
-        transform: translate(0);
-        padding-bottom: 30px;
-    }
-
-    .Paragraph {
-        font-size: 14px;
-        font-weight: 200;
-    }
-    
-    .Header {
-        font-size: 24px;
-        font-weight: 700;
-        width: 100%
-    }
-
-    .Title {
-        display: none;
-    }
-
-    /* .TextSVG {
-        font-size: 80px;
-    }
-
-    .Title svg {
-        width: 100%;
-    } */
-
-}

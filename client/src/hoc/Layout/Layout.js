@@ -5,7 +5,8 @@ import { withRouter } from 'react-router-dom';
 import classes from './Layout.css';
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
-import Footer from '../../containers/Footer/Footer';
+import Footer from '../../containers/Page1/Footer/Footer';
+import CookieBanner from '../../components/CookieBanner/CookieBanner';
 import * as actions from '../../store/actions';
 
 const layout = (props) => {
@@ -13,14 +14,15 @@ const layout = (props) => {
     return (
         <div className={classes.Layout} id="top">
             
+            <CookieBanner language={props.language}/>
+
             <Toolbar
-                color={props.textColor}
-                borderColor={props.textColor}
+                color={props.controlsColor}
                 clicked={props.onDrawerToggle}
                 open={props.showMobileMenu}/>
                 
             <SideDrawer
-                color={props.textColor}
+                color={props.controlsColor}
                 open={props.showMobileMenu}
                 closed={props.onDrawerToggle} />
             
@@ -29,15 +31,16 @@ const layout = (props) => {
                 
             </div>
             
-            <Footer color={props.textColor}/>
+            <Footer />
         </div>
     );
 }
 
 const mapStateToProps = state => {
     return {
-        textColor : state.main.textColor,
-        showMobileMenu: state.main.showMobileMenu
+        controlsColor : state.main.controlsColor,
+        showMobileMenu: state.main.showMobileMenu,
+        language: state.main.language
     }
 }
 

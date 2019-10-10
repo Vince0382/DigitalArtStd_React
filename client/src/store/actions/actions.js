@@ -35,3 +35,10 @@ export const actionFailed = ( target, error ) => {
         error: error
     };
 }
+
+export const changeControlsColor = ( color ) => {
+    return {
+        type: actiontypes.CHANGE_CONTROLS_COLOR,
+        color: color
+    };
+}

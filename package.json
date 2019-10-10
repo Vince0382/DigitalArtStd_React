@@ -39,6 +39,7 @@
     "raf": "3.4.0",
     "react": "^16.8.6",
     "react-addons-css-transition-group": "^15.6.2",
+    "react-cookie-banner": "^4.0.0",
     "react-dev-utils": "^5.0.3",
     "react-dom": "^16.8.6",
     "react-google-maps": "^9.4.5",

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { injectIntl, defineMessages } from 'react-intl';
 //import { Form, Input, TextArea, Message } from 'semantic-ui-react';
@@ -6,7 +6,6 @@ import { checkValidity } from '../../../shared/utility';
 import {
     Button,
     Card,
-    CardHeader,
     CardBody,
     CardTitle,
     Label,
@@ -20,10 +19,6 @@ import {
 
 
 import * as actions from '../../../store/actions';
-import classes from './Contact.css';
-import SendButton from '../../../components/UI/Button/SendButton/SendButton';
-import Spinner from '../../../components/UI/Spinner/Spinner';
-
 
 const Contact = props => {
 
@@ -180,7 +175,7 @@ const Contact = props => {
                         <div> message: ${formData.message.value} </div>
                         `
         }
-        console.log('Sending')
+        console.log(data)
         //props.onSendEmail( data );
         setSent( true );
     }
@@ -266,7 +261,7 @@ const Contact = props => {
                 <Col className="ml-auto mr-auto" md="10">
                     <Card className="card-contact no-transition">
                     <CardTitle className="text-center" tag="h3">
-                        Contact Us
+                        You have an idea, a project or just want to meet us ?
                     </CardTitle>
                     <Row>
                         <Col className="ml-auto" md="5">

@@ -58,7 +58,6 @@ const SectionProject = props => {
                     <div className="space-top" />
                     <Row>
                         <Col className="ml-auto" md="5">
-                        <a href={RiseUpLink} target={'_blank'} rel={'noopener'}>
                             <Card
                                 data-background="image"
                                 style={{
@@ -72,30 +71,29 @@ const SectionProject = props => {
                                     <i className="nc-icon nc-laptop" style={{color: '#c8c8c8', borderColor: '#c8c8c8'}} />
                                     </div>
                             </Card>
-                        </a>
                         </Col>
                         <Col className="mr-auto" md="5">
                         <Card className="card-plain">
                             <CardBody>
-                            <h6 className="card-category">Web Site</h6>
-                            <a href={RiseUpLink} target={'_blank'} rel={'noopener'} onClick={e => e.preventDefault()}>
+                            <h6 className="card-category">Web Site - Design</h6>
                                 <CardTitle tag="h3">
                                     RiseUp - Consultancy services company
                                 </CardTitle>
-                            </a>
                             <p className="card-description">
                                 A young and innovative start-up at the cutting edge of technology.
-                                Their expertise is focused on agile management, coaching and project management 
+                                Their expertise is focused on agile services, coaching and project management. 
                             </p>
                             <CardFooter>
-                                <Button
-                                className="btn-neutral mr-1"
-                                color="link"
-                                onClick={e => e.preventDefault()}
-                                >
-                                    <i className="fa fa-book mr-1" />
-                                    Read More
-                                </Button>
+                                <a href={RiseUpLink} target={'_blank'} rel={'noopener'}>
+                                    <Button
+                                        className="btn-neutral mr-1"
+                                        color="link"
+                                        onClick={e => e.preventDefault()}
+                                        >
+                                            <i className="fa fa-book mr-1" />
+                                            Visit website
+                                    </Button>
+                                </a>
 
                                 <ButtonWithTooltip id='bt_react_1' tooltip='React'>
                                     <i className="fab fa-react" />
@@ -118,25 +116,25 @@ const SectionProject = props => {
                         <Col className="ml-auto" md="5">
                             <Card className="card-plain">
                                 <CardBody>
-                                    <h6 className="card-category">Web Site</h6>
-                                    <a href={AndreaLink} target={'_blank'} rel={'noopener'} onClick={e => e.preventDefault()}>
+                                    <h6 className="card-category">Web Site - ReDesign - Digital Marketing</h6>
                                         <CardTitle tag="h3">
                                             Andrea Sorrentino - Costume designer
                                         </CardTitle>
-                                    </a>
                                     <p className="card-description">
                                         Over the years he has endorsed many projects, including international ones, from cinema to opera, from theatre to television commercials. He is also the creator of costumes for many exhibitions in prestigious museums. 
                                     </p>
                                     <CardFooter>
-                                        <Button
-                                            className="btn-neutral mr-1"
-                                            color="link"
-                                            data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom"
-                                            onClick={e => e.preventDefault()}
-                                            >
-                                            <i className="fa fa-book mr-1" />
-                                            Read More
-                                        </Button>
+                                        <a href={AndreaLink} target={'_blank'} rel={'noopener'}>
+                                            <Button
+                                                className="btn-neutral mr-1"
+                                                color="link"
+                                                data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom"
+                                                onClick={e => e.preventDefault()}
+                                                >
+                                                    <i className="fa fa-book mr-1" />
+                                                    Visit website
+                                            </Button>
+                                        </a>
                                         <ButtonWithTooltip id='bt_react_2' tooltip='React'>
                                             <i className="fab fa-react" />
                                         </ButtonWithTooltip>
@@ -151,7 +149,6 @@ const SectionProject = props => {
                             </Card>
                         </Col>
                         <Col className="mr-auto" md="5">
-                            <a href={AndreaLink} target={'_blank'} rel={'noopener'}>
                                 <Card
                                     data-background="image"
                                     style={{
@@ -165,7 +162,6 @@ const SectionProject = props => {
                                         <i className="nc-icon nc-laptop" />
                                         </div>
                                 </Card>
-                            </a>
                         </Col>
                     </Row>
                     <br />
@@ -173,7 +169,6 @@ const SectionProject = props => {
                     <br />
                     <Row>
                         <Col className="ml-auto" md="5">
-                            <a href={rusTaxiRomaLink} target={'_blank'} rel={'noopener'}>
                                 <Card
                                     data-background="image"
                                     style={{
@@ -187,41 +182,40 @@ const SectionProject = props => {
                                         <i className="nc-icon nc-laptop" />
                                         </div>
                                 </Card>
-                            </a>
                         </Col>
                         <Col className="mr-auto" md="5">
                         <Card className="card-plain">
                             <CardBody>
-                            <h6 className="card-category">Web Site</h6>
-                            <a href={rusTaxiRomaLink} target={'_blank'} rel={'noopener'} onClick={e => e.preventDefault()}>
-                                <CardTitle tag="h3">
-                                    RusTaxiRoma - Transport services company
-                                </CardTitle>
-                            </a>
-                            <p className="card-description">
-                                Russian TAXI AND EXCURSIONS in Rome.
-                                Passenger transportation, organization of tourism in Rome and Italy
-                            </p>
-                            <CardFooter>
-                                <Button
-                                className="btn-neutral mr-1"
-                                color="link"
-                                data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom"
-                                onClick={e => e.preventDefault()}
-                                >
-                                <i className="fa fa-book mr-1" />
-                                Read More
-                                </Button>
-                                <ButtonWithTooltip id='bt_react_3' tooltip='React'>
-                                    <i className="fab fa-react" />
-                                </ButtonWithTooltip>
-                                <ButtonWithTooltip id='bt_node_3' tooltip='Node.Js'>
-                                    <i className="fab fa-node" />
-                                </ButtonWithTooltip>
-                                <ButtonWithTooltip id='bt_firebase_3' tooltip='Hosted on Google Cloud'>
-                                    <i className="fas fa-cloud" />
-                                </ButtonWithTooltip>
-                            </CardFooter>
+                                <h6 className="card-category">Web Site - ReDesign - Digital Marketing</h6>
+                                    <CardTitle tag="h3">
+                                        RusTaxiRoma - Transport services company
+                                    </CardTitle>
+                                <p className="card-description">
+                                    Russian TAXI AND EXCURSIONS in Rome.
+                                    Passenger transportation, organization of tourism in Rome and Italy.
+                                </p>
+                                <CardFooter>
+                                    <a href={rusTaxiRomaLink} target={'_blank'} rel={'noopener'}>
+                                        <Button
+                                            className="btn-neutral mr-1"
+                                            color="link"
+                                            data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom"
+                                            onClick={e => e.preventDefault()}
+                                            >
+                                                <i className="fa fa-book mr-1" />
+                                                Visit website
+                                        </Button>
+                                    </a>
+                                    <ButtonWithTooltip id='bt_react_3' tooltip='React'>
+                                        <i className="fab fa-react" />
+                                    </ButtonWithTooltip>
+                                    <ButtonWithTooltip id='bt_node_3' tooltip='Node.Js'>
+                                        <i className="fab fa-node" />
+                                    </ButtonWithTooltip>
+                                    <ButtonWithTooltip id='bt_firebase_3' tooltip='Hosted on Google Cloud'>
+                                        <i className="fas fa-cloud" />
+                                    </ButtonWithTooltip>
+                                </CardFooter>
                             </CardBody>
                         </Card>
                         </Col>

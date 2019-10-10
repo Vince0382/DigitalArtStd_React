@@ -1,69 +1,32 @@
-import React from 'react';
-import IntersectionVisible from 'react-intersection-visible';
-import tinycolor from 'tinycolor2';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import classes from './Service.css';
+import * as actions from '../../../../store/actions';
 
-import TextSVG from '../../../../components/TextSVG/TextSVG';
-import Button from '../../../../components/UI/Button/Button';
-import AnimatedMask from '../../../../components/Animated/Mask/AnimatedMask';
-import AnimatedScale from '../../../../components/Animated/Scale/AnimatedScale';
-import AnimatedText from '../../../../components/Animated/Text/AnimatedText';
-import ParallaxImage from '../../../../components/ParallaxImage/ParallaxImage';
+const CONTROLS_COLOR = 'black';
 
-const service = props => {
+const Service = props => {
+
+    useEffect(() => {
+        props.onChangeColor();
+    }, []);
 
     return (
-        <div className={classes.Content}>
-
-            {/* Mobile Only */}
-            <div className={classes.ImageWrapper} style={{background: props.shadowColor}}>
-                <div>
-                    <ParallaxImage>
-                        <img src={props.image} />
-                    </ParallaxImage>
-                </div>
+        <div data-clippath={classes.SwitchColor}>
+            <div className={classes.Back} onClick={() => props.history.goBack()}>&#8592; Go back</div>
+            <div className={classes.Content}>   
+                {props.children}
             </div>
-            
-            <div className={classes.Text}>
-
-                <IntersectionVisible onShow={() => props.callBack( props.svgColor, props.image )}> 
-                    <AnimatedText>
-                        <div>
-                            <p className={classes.Header}>{props.header}</p>
-                        </div>
-                    </AnimatedText>
-                </IntersectionVisible>
-
-                {
-                    props.content 
-                        ?   props.content.map( paragraph => (
-                                <AnimatedText>
-                                    <p className={classes.Paragraph}>
-                                        {paragraph}
-                                    </p>
-                                </AnimatedText>
-                        ))
-                        :   null
-                }
-                <div className={classes.Button}>
-                    <Button type={"link"}
-                            element={"#contact"}
-                            color={"black"}
-                            bgColor1={props.shadowColor}>{props.buttonText}</Button>
-                </div>
-                
-            </div>
-            <div className={classes.Title}>
-                <div className={classes.TextSVG} style={{color: props.svgColor}}>
-                    {props.title}
-                </div>
-            </div>
-            
         </div>
-
-
     );
 }
 
-export default service;
+const mapDispatchToProps = dispatch => {
+    return {
+        onChangeColor: () => dispatch( actions.changeControlsColor( CONTROLS_COLOR ) )
+    }
+}
+
+export default connect( null, mapDispatchToProps)( withRouter( Service ));

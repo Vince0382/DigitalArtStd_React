@@ -1,0 +1,16 @@
+.SeeMoreButton {
+    padding: 10px;
+    border-radius : 8px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    width: fit-content;
+    margin: 20px auto auto;
+}
+
+@media (min-width: 550px) {
+    .SeeMoreButton:hover {
+        background: white;
+        color: black !important;
+        transition: all 0.3s ease;
+    }
+}

@@ -2,7 +2,8 @@ import * as actionTypes from '../actions/actionTypes';
 import { updateObject } from '../../shared/utility';
 
 const initialState = {
-    textColor: 'white',
+    controlsColor: 'white',
+    language: 'en',
     showMobileMenu: false,
     email: null,
     loading : {},
@@ -39,6 +40,10 @@ const reducer = (state = initialState, action) => {
         case actionTypes.ACTION_STARTED : return startedHandler( state, action );
         case actionTypes.ACTION_SUCCESS : return successHandler( state, action );
         case actionTypes.ACTION_FAILED : return failureHandler( state, action );
+        case actionTypes.CHANGE_CONTROLS_COLOR : return {
+            ...state,
+            controlsColor: action.color
+        }
         default : {
             return state;
         }

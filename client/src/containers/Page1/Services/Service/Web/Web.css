@@ -1,0 +1,17 @@
+.Image img{
+    width: auto;
+}
+
+@media (min-width: 900px){
+    .CustomCol {
+        width: 50%;
+        margin-left: auto;
+    }
+}
+
+
+@media (max-width: 749px) {
+    .Image img{
+        width: 100%;
+    }
+}

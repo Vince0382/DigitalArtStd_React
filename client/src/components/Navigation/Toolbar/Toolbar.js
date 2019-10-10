@@ -13,7 +13,7 @@ const Toolbar = props => {
     const [scrolled, setScrolled] = useState( false );
 
     const scrollHandler = () => {
-        if (window.pageYOffset > 30) {
+        if (window.pageYOffset > 30 || window.location.pathname !== '/') {
             if (!scrolled) setScrolled( true );
         } else {
             setScrolled( false );
@@ -37,7 +37,7 @@ const Toolbar = props => {
                     {!bottom? <NavigationItems color={props.color}/> : null}
                 </nav> */}
                 
-                <DrawerToggle   className={classes.DrawerToggle}
+                <DrawerToggle   style={{stroke: props.color}}
                                 open={props.open}
                                 clicked={props.clicked}/>
             </header>
