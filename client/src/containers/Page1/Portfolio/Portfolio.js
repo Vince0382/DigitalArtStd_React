@@ -128,7 +128,6 @@ const SectionProject = props => {
                                             <Button
                                                 className="btn-neutral mr-1"
                                                 color="link"
-                                                data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom"
                                                 onClick={e => e.preventDefault()}
                                                 >
                                                     <i className="fa fa-book mr-1" />
@@ -199,7 +198,6 @@ const SectionProject = props => {
                                         <Button
                                             className="btn-neutral mr-1"
                                             color="link"
-                                            data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom"
                                             onClick={e => e.preventDefault()}
                                             >
                                                 <i className="fa fa-book mr-1" />

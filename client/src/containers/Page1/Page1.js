@@ -12,6 +12,7 @@ import Services from './Services/Services';
 import Portfolio from './Portfolio/Portfolio';
 import Contact from './Contact/Contact';
 import Promo1 from './Promo1/Promo1';
+import TestParralax from '../TestParralax';
 
 const CONTROLS_COLOR = 'white';
 
