@@ -26,7 +26,7 @@ const home = props  => {
 
     return (
         <div className={classes.Home}>
-            <img className={classes.BackImg} src={backImg} />
+            <img className={classes.BackImg} src={backImg} alt=''/>
 
             <div className={classes.Content}>
                 <div className={classes.Logo + ' ' + logoClass}><SVG src={logo} /></div>

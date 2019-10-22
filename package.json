@@ -46,6 +46,8 @@
     "react-inlinesvg": "^0.8.4",
     "react-intersection-visible": "^2.1.0",
     "react-intl": "^2.9.0",
+    "react-intl-cra": "^0.3.4",
+    "react-intl-translations-manager": "^5.0.3",
     "react-prefixer": "^2.0.1",
     "react-redux": "^5.1.1",
     "react-router-dom": "^4.3.1",
@@ -75,6 +77,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "deploy": "npm run build && firebase deploy",
+    "extract:messages": "react-intl-cra 'src/**/*.{js,jsx}' -o 'src/languages/messages/messages.json'",
+    "manage:translations": "node src/translationRunner.js",
     "test": "node scripts/test.js --env=jsdom"
   },
   "jest": {
@@ -85,8 +89,8 @@
       "<rootDir>/config/polyfills.js"
     ],
     "testMatch": [
-      "<rootDir>/client/src/**/__tests__/**/*.{js,jsx,mjs}",
-      "<rootDir>/client/src/**/?(*.)(spec|test).{js,jsx,mjs}"
+      "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
+      "<rootDir>src/**/?(*.)(spec|test).{js,jsx,mjs}"
     ],
     "testEnvironment": "node",
     "testURL": "http://localhost",

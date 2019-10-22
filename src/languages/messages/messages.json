@@ -1,0 +1,102 @@
+[
+  {
+    "id": "cookieBanner.message",
+    "defaultMessage": "We use cookies to guarantee users the employment of its site features and offering a better user experience. By continuing to browse the site you're agreeing to our use of cookies.",
+    "filepath": "src/components/CookieBanner/CookieBanner.js"
+  },
+  {
+    "id": "cookieBanner.moreInfo",
+    "defaultMessage": "More information on our use of cookies",
+    "filepath": "src/components/CookieBanner/CookieBanner.js"
+  },
+  {
+    "id": "cookieBanner.accept",
+    "defaultMessage": "Accept",
+    "filepath": "src/components/CookieBanner/CookieBanner.js"
+  },
+  {
+    "id": "cookieBanner.modalTitle",
+    "defaultMessage": "Cookie Policy",
+    "filepath": "src/components/CookieBanner/CookieBanner.js"
+  },
+  {
+    "id": "contact.firstName",
+    "defaultMessage": "First Name",
+    "filepath": "src/containers/Page1/Contact/Contact.js"
+  },
+  {
+    "id": "contact.lastName",
+    "defaultMessage": "Last Name",
+    "filepath": "src/containers/Page1/Contact/Contact.js"
+  },
+  {
+    "id": "contact.email",
+    "defaultMessage": "Email",
+    "filepath": "src/containers/Page1/Contact/Contact.js"
+  },
+  {
+    "id": "contact.subject",
+    "defaultMessage": "Subject",
+    "filepath": "src/containers/Page1/Contact/Contact.js"
+  },
+  {
+    "id": "contact.message",
+    "defaultMessage": "Message",
+    "filepath": "src/containers/Page1/Contact/Contact.js"
+  },
+  {
+    "id": "contact.btSend",
+    "defaultMessage": "Send Message",
+    "filepath": "src/containers/Page1/Contact/Contact.js"
+  },
+  {
+    "id": "contact.title",
+    "defaultMessage": "You have an idea, a project or just want to meet us ?",
+    "filepath": "src/containers/Page1/Contact/Contact.js"
+  },
+  {
+    "id": "contact.option1",
+    "defaultMessage": "Find us at the office",
+    "filepath": "src/containers/Page1/Contact/Contact.js"
+  },
+  {
+    "id": "contact.option2",
+    "defaultMessage": "Give us a ring",
+    "filepath": "src/containers/Page1/Contact/Contact.js"
+  },
+  {
+    "id": "contact.successHeader",
+    "defaultMessage": "Email successfully sent!",
+    "filepath": "src/containers/Page1/Contact/Contact.js"
+  },
+  {
+    "id": "contact.successMessage",
+    "defaultMessage": "Thank you very much for contacting us. We will answer you shortly",
+    "filepath": "src/containers/Page1/Contact/Contact.js"
+  },
+  {
+    "id": "contact.errorHeader",
+    "defaultMessage": "Something went wrong",
+    "filepath": "src/containers/Page1/Contact/Contact.js"
+  },
+  {
+    "id": "contact.errorMessage",
+    "defaultMessage": "Please accept our apologize - We invite you to refresh the page and try again",
+    "filepath": "src/containers/Page1/Contact/Contact.js"
+  },
+  {
+    "id": "footer.rights",
+    "defaultMessage": "All Rights Reserved",
+    "filepath": "src/containers/Page1/Footer/Footer.js"
+  },
+  {
+    "id": "footer.privacyPolicy",
+    "defaultMessage": "Privacy Policy",
+    "filepath": "src/containers/Page1/Footer/Footer.js"
+  },
+  {
+    "id": "footer.cookiePolicy",
+    "defaultMessage": "Cookie Policy",
+    "filepath": "src/containers/Page1/Footer/Footer.js"
+  }
+]

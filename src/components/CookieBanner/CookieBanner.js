@@ -2,9 +2,8 @@ import React, { useState, Suspense } from 'react';
 import Banner from 'react-cookie-banner';
 import { injectIntl, defineMessages } from 'react-intl';
 import cookiePolicy from '../CookiePolicy/CookiePolicy';
-import {  Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import {  Modal, ModalHeader, ModalBody } from 'reactstrap';
 import { Loader } from'semantic-ui-react';
-import { callbackify } from 'util';
 
 const CookieBanner = props => {
 

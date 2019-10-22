@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 const ScrollHandler = props => {
 
@@ -13,7 +13,7 @@ const ScrollHandler = props => {
         }
         scrollTimeout = setTimeout(() => {
             if ( props.onWindowScroll ) props.onWindowScroll( event );
-        }, 16);
+        }, timeOut);
     }
 
     useEffect(() => {

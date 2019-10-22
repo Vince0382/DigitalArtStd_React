@@ -1,0 +1,22 @@
+{
+  "contact.btSend": "Send Message",
+  "contact.email": "Email",
+  "contact.errorHeader": "Something went wrong",
+  "contact.errorMessage": "Please accept our apologize - We invite you to refresh the page and try again",
+  "contact.firstName": "First Name",
+  "contact.lastName": "Last Name",
+  "contact.message": "Message",
+  "contact.option1": "Find us at the office",
+  "contact.option2": "Give us a ring",
+  "contact.subject": "Subject",
+  "contact.successHeader": "Email successfully sent!",
+  "contact.successMessage": "Thank you very much for contacting us. We will answer you shortly",
+  "contact.title": "You have an idea, a project or just want to meet us ?",
+  "cookieBanner.accept": "Accept",
+  "cookieBanner.message": "We use cookies to guarantee users the employment of its site features and offering a better user experience. By continuing to browse the site you're agreeing to our use of cookies.",
+  "cookieBanner.modalTitle": "Cookie Policy",
+  "cookieBanner.moreInfo": "More information on our use of cookies",
+  "footer.cookiePolicy": "Cookie Policy",
+  "footer.privacyPolicy": "Privacy Policy",
+  "footer.rights": "All Rights Reserved"
+}

@@ -21,7 +21,6 @@ const AndreaLink = 'https://andreasorrentino-fbac1.firebaseapp.com';
 const rusTaxiRomaLink = 'https://rustaxiroma.it';
 
 const ButtonWithTooltip = props => {
-console.log(props)
 
     return (
         <React.Fragment>

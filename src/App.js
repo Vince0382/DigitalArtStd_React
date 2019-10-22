@@ -1,9 +1,11 @@
 import React, { Suspense } from 'react';
 import {Route, Switch, withRouter, Redirect} from 'react-router-dom';
+import { connect } from 'react-redux';
 import { Loader } from 'semantic-ui-react';
 import { IntlProvider, addLocaleData } from "react-intl";
 import enLocaleData from "react-intl/locale-data/en";
-import itLocaleData from "react-intl/locale-data/fr";
+import frLocaleData from "react-intl/locale-data/fr";
+import itLocaleData from "react-intl/locale-data/it";
 import translations from "./languages/locales";
 
 import ScrollToTop from './hoc/ScrollToTop';
@@ -14,6 +16,7 @@ import TransitionWrapper from './hoc/TransitionWrapper/TransitionWrapper';
 import Service from './containers/Page1/Services/Service/Service';
 
 addLocaleData(enLocaleData);
+addLocaleData(frLocaleData);
 addLocaleData(itLocaleData);
 
 const Web = React.lazy(() => {
@@ -25,19 +28,6 @@ const Mobile = React.lazy(() => {
 });
 
 const App = props => {
-
-    // const terms = () => (
-    //   <TransitionWrapper location={location}>
-    //     <Terms isMobile={() => isMobile()}/>
-    //   </TransitionWrapper>
-    // );
-
-    // const privacy = () => (
-    //   <TransitionWrapper location={location}>
-    //     <Privacy isMobile={() => isMobile()}/>
-    //   </TransitionWrapper>
-    // );
-
 
     const routes = (
       <Switch location={props.location}>
@@ -71,4 +61,10 @@ const App = props => {
       
 }
 
-export default withRouter(App);
+const mapStateToprops = state => {
+  return {
+    language: state.main.language
+  }
+}
+
+export default connect( mapStateToprops )( withRouter( App ));
