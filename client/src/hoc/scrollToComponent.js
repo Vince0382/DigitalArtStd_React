@@ -56,7 +56,7 @@ console.log(props.callBack)
                       location={{pathname: props.element}}
                       isActive={() => activeLinkHandler(props.fixed)}
                       onClick={(event) => {
-                                            scrollTo(event, props.element, 70, props.toTop);
+                                            scrollTo(event, props.element, 0, props.toTop);
                                             functionHandler();
                                           }
                       }

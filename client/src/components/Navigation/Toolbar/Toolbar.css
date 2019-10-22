@@ -10,6 +10,24 @@
     transition: all 0.3s ease-out;
 }
 
+.Controls {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 40px;
+    align-items: center;
+}
+
+.Controls > div {
+    margin-left : 40px;
+}
+
+.BackButton {
+    font-weight: 700;
+    cursor: pointer;
+    color: black;
+}
+
 .DesktopOnly {
     position: absolute;
     top: 0;
@@ -24,8 +42,16 @@
     height: 100%;
 }
 
-.bgBlack .Logo {
+.Active .Logo {
     opacity: 1;
+}
+
+.Active {
+    background: transparent;
+}
+
+.BgWhite {
+    background: rgba(255, 255, 255, 0.8);
 }
 
 .Logo {
@@ -47,6 +73,14 @@
 
     .Toolbar {
         height: 56px;
+    }
+
+    .Active {
+        background: rgba( 0, 0, 0, 0.8);
+    }
+
+    .BgWhite {
+        background: rgba(255, 255, 255, 0.8);
     }
 
     .Logo {

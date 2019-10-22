@@ -1,4 +1,4 @@
-.NavigationItems {
+/* .NavigationItems {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -14,4 +14,12 @@
     .NavigationItems {
         font-size: 2rem;
     }
-}
+} */
+
+
+
+
+.IconHome::before { content: "\e601" }
+.IconNews::before { content: "\e600" }
+.IconImage::before { content: "\e602" }
+.IconMail::before { content: "\e605" }

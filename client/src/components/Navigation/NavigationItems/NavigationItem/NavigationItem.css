@@ -1,4 +1,4 @@
-.NavigationItem {
+/* .NavigationItem {
     margin: 10px 0;
     box-sizing: border-box;
     display: block;
@@ -112,6 +112,7 @@
     .NavigationItem .Link:active .Line,
     .NavigationItem .Link.active .Line {
         width: 100%;
-    } */
+    } 
+    
+}*/
 
-}

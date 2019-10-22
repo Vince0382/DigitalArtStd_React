@@ -12,32 +12,29 @@ const navigationItem = props => {
     //     </span>
     // );
 
-    const line = (
-        <span className={classes.Line} style={{background: props.color}}></span>
-    );
+    // const line = (
+    //     <span className={classes.Line} style={{background: props.color}}></span>
+    // );
 
-    const text = (
-        <span className={classes.Text}>{props.children}</span>
-    );
+    // const text = (
+    //     <span className={classes.Text}>{props.children}</span>
+    // );
 
     return (
-        <li className={classes.NavigationItem}>
-            <ScrollTo
-                    className={classes.Link}
-                    type={props.type}
-                    toTop={props.toTop}
-                    element={props.link}
-                    exact={props.exact}
-                    fixed={props.fixed}
-                    clickHandler={props.clickHandler}
-                    active={classes.active}
-                    callBack={props.callBack}
-                    style={{color: props.color}}>   
-                {/* {icon} */}
-                {text}
-                {line}
-            </ScrollTo>
-        </li>
+        <ScrollTo
+                className={props.className}
+                type={props.type}
+                toTop={props.toTop}
+                element={props.link}
+                exact={props.exact}
+                fixed={props.fixed}
+                clickHandler={props.clickHandler}
+                active={classes.active}
+                callBack={props.callBack}
+                style={{color: props.color}}>
+            {/* {icon} */}
+            {props.children}
+        </ScrollTo>
     );
 
 };

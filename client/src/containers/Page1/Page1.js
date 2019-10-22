@@ -1,18 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import classes from './Page1.css';
 import * as actions from '../../store/actions';
 
-import ScrollHandler from '../../hoc/ScrollHandler';
-import SideScroll from '../../components/Navigation/SideScroll/SideScroll';
 import Home from './Home/Home';
 import About from './About/About';
 import Services from './Services/Services';
 import Portfolio from './Portfolio/Portfolio';
 import Contact from './Contact/Contact';
 import Promo1 from './Promo1/Promo1';
-import TestParralax from '../TestParralax';
+
+import { ScrolledContext } from '../../hoc/Layout/Layout';
 
 const CONTROLS_COLOR = 'white';
 
@@ -21,26 +20,16 @@ const Page1 = props => {
     useEffect(() =>{
         props.onChangeColor();
     }, []);
-    
-    const [scrolled, setScrolled] = useState( false );
-
-    const scrollHandler = () => {
-        if(window.pageYOffset > 30) {
-            if(!scrolled) setScrolled( true );
-        } else {
-            setScrolled( false );
-        }
-    }
 
     return (
-        <ScrollHandler onWindowScroll={scrollHandler}>
+        
             <div key="home" className={classes.Main}>
-                <SideScroll style={{color: props.controlsColor, fill: props.controlsColor}}
-                            up={scrolled ? true : false}
-                            element="/#whoweare"
-                            />
-                
-                <Home scrolled={scrolled} />
+
+                <ScrolledContext.Consumer>
+                    {
+                        value => ( <Home scrolled={value} /> )
+                    }
+                </ScrolledContext.Consumer>
 
                 <About contentStyle={classes.ContentFrame}/>
 
@@ -53,7 +42,6 @@ const Page1 = props => {
                 <Contact />
 
             </div>
-        </ScrollHandler>
     );
         
 }

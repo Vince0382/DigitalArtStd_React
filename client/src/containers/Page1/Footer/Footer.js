@@ -59,8 +59,10 @@ const Footer = props => {
         setShowModal( true );
     }
 
+    const hiddenStyle = props.showMobileMenu ? { display: 'none'} : null 
+
     return (
-        <div className={classes.Footer} style={{color: color}} id="footer">
+        <div className={classes.Footer} style={{color: color, ...hiddenStyle}} id="footer">
 
             <Modal isOpen={showModal} size={'lg'} scrollable toggle={() => setShowModal( false )}>
                 <ModalHeader toggle={() => setShowModal( false )}>{modalContent.title}</ModalHeader>
@@ -95,7 +97,8 @@ const Footer = props => {
 
 const mapStateToProps = state => {
     return {
-        language : state.main.language
+        language : state.main.language,
+        showMobileMenu : state.main.showMobileMenu
     }
 }
 export default connect( mapStateToProps )( injectIntl( Footer ));

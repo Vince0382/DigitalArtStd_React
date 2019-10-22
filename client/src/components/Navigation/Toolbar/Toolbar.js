@@ -1,48 +1,46 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { withRouter } from 'react-router-dom';
 import SVG from 'react-inlinesvg';
 
 import classes from './Toolbar.css';
 import Logo from '../../../assets/images/Digital_small.svg';
-import NavigationItems from '../NavigationItems/NavigationItems';
 import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle';
-import ScrollHandler from '../../../hoc/ScrollHandler';
 
 
 const Toolbar = props => {
 
-    const [scrolled, setScrolled] = useState( false );
+    let attachedClasses = [classes.Toolbar];
 
-    const scrollHandler = () => {
-        if (window.pageYOffset > 30 || window.location.pathname !== '/') {
-            if (!scrolled) setScrolled( true );
-        } else {
-            setScrolled( false );
+    if (props.scrolled && !attachedClasses.includes(classes.Active)) {
+        attachedClasses.push(classes.Active);
+        if (window.location.pathname !== '/')
+        {
+            attachedClasses.push(classes.BgWhite);
         }
     }
 
-    let attachedClasses = [classes.Toolbar];
-
-    if (scrolled && !attachedClasses.includes(classes.bgBlack)) {
-        attachedClasses.push(classes.bgBlack);
-    }
-
-
     return (
-        <ScrollHandler onWindowScroll={scrollHandler}>
-            <header className={attachedClasses.join(' ')}>
-                <div className={classes.Logo}>
-                    <SVG src={Logo}/>
-                </div>
-                {/* <nav className={classes.DesktopOnly}>
-                    {!bottom? <NavigationItems color={props.color}/> : null}
-                </nav> */}
-                
+        <header className={attachedClasses.join(' ')}>
+            <div className={classes.Logo}>
+                <SVG src={Logo}/>
+            </div>
+            {/* <nav className={classes.DesktopOnly}>
+                {!bottom? <NavigationItems color={props.color}/> : null}
+            </nav> */}
+            <div className={classes.Controls}>
+                {
+                    window.location.pathname !== '/' 
+                        ?   <div className={classes.BackButton} onClick={() => props.history.goBack()}>&#8592; Go back</div>
+                        :   null
+                }
+
                 <DrawerToggle   style={{stroke: props.color}}
                                 open={props.open}
                                 clicked={props.clicked}/>
-            </header>
-        </ScrollHandler>
+            </div>
+
+        </header>
     );
 }
 
-export default Toolbar;
+export default withRouter( Toolbar );

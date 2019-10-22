@@ -3,3 +3,11 @@
     fill:black;
     stroke: black;
 }
+
+@media screen and (max-width: 549px){
+    .SwitchColor {
+        color: white;
+        fill:white;
+        stroke: white;
+    }
+}
