@@ -1,6 +1,5 @@
 import React from 'react';
 
-import classes from './SocialBar.css';
 import SocialBarItem from './SocialBarItem/SocialBarItem';
 
 import LinkedIn from '../../assets/images/linkedin.svg';

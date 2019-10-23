@@ -38,7 +38,7 @@ const home = props  => {
                         <div className={classes.Item + ' ' + itemClass}>We are creative, passionated and innovative designers and developpers</div>
                         <div className={classes.ButtonMask + ' ' + buttonClass}>
                             <div className={classes.Button}>
-                                <ScrollTo element="#whoweare">
+                                <ScrollTo element="/#whoweare">
                                     <Button clicked={props.clicked}
                                         color={"white"}
                                         bgColor1="#1E1D1C">See who we are

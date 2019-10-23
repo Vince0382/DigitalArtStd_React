@@ -4,7 +4,6 @@ import { withRouter } from 'react-router-dom';
 
 import classes from './Layout.css';
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
-import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
 import Footer from '../../containers/Page1/Footer/Footer';
 import CookieBanner from '../../components/CookieBanner/CookieBanner';
 import ScrollHandler from '../ScrollHandler';
@@ -90,7 +89,6 @@ const mapStateToProps = state => {
         controlsColor : state.main.controlsColor,
         showMobileMenu: state.main.showMobileMenu,
         language: state.main.language,
-        controlsColor: state.main.controlsColor
     }
 }
 

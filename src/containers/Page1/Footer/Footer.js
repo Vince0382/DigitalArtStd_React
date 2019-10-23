@@ -6,8 +6,6 @@ import { Loader } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import SVG from 'react-inlinesvg';
 
-import * as actions from '../../../store/actions';
-
 import classes from './Footer.css';
 import SocialBar from '../../../components/SocialBar/SocialBar';
 import logo from '../../../assets/images/Digital_small.svg';

@@ -20,6 +20,7 @@
 
 
 .IconHome::before { content: "\e601" }
+.IconAbout::before { content: "\e091" }
 .IconNews::before { content: "\e600" }
 .IconImage::before { content: "\e602" }
 .IconMail::before { content: "\e605" }

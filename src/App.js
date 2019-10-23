@@ -14,6 +14,9 @@ import Page1 from './containers/Page1/Page1';
 
 import TransitionWrapper from './hoc/TransitionWrapper/TransitionWrapper';
 import Service from './containers/Page1/Services/Service/Service';
+// import Web from './containers/Page1/Services/Service/Web/Web';
+// import Mobile from './containers/Page1/Services/Service/Mobile/Mobile';
+
 
 addLocaleData(enLocaleData);
 addLocaleData(frLocaleData);

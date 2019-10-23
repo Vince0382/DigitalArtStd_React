@@ -1,11 +1,11 @@
-
-/* .TransitionGroup {
+/* 
+.OuterDiv {
     position: relative;
     top: 0;
     left: 0;
 }
 
-.SectionRoute {
+.InnerDiv {
     position: absolute;
     width: 100%;
 } */
@@ -17,7 +17,7 @@
 
 .EnterActive {
     opacity: 1;
-    transition: all 0.25s cubic-bezier(0.311, 0.441, 0.444, 1.649);
+    transition: all 0.3s cubic-bezier(0.311, 0.441, 0.444, 1.649);
 }
 
 .Exit{
@@ -26,6 +26,6 @@
 
 .ExitActive {
     opacity: 0;
-    transition: all 0.25s cubic-bezier(0.311, 0.441, 0.444, 1.649);
+    transition: all 0.3s cubic-bezier(0.311, 0.441, 0.444, 1.649);
 }
 

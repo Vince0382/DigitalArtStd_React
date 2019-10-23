@@ -24,48 +24,59 @@ const scrollToComponent = props => {
     let navlink = null;
 
     switch (props.type) {
-      case "function" : {
-          if (props.clickHandler) {
-              navlink = ( 
-                  <span   className={props.className} 
-                          onClick={functionHandler}
-                          style={{...props.style, cursor: "pointer"}}>
-                      {props.children}
-                  </span>
-              );
-          }
-          break;
-      }
-      case "external" : {
-          navlink = ( 
-              <a      className={props.className}
-                      target="_blank"
-                      href={props.element}
-                      onClick={functionHandler}
-                      style={props.style}>
-                  {props.children}
-              </a>
-          );
-          break;
-      }
-      default: {
-          navlink = (
-            <NavLink  className={props.className}
-                      activeClassName={props.active}
-                      to={props.element}
-                      location={{pathname: props.element}}
-                      isActive={() => activeLinkHandler(props.fixed)}
-                      onClick={(event) => {
-                                            scrollTo(event, props.element, 0, props.toTop);
-                                            functionHandler();
-                                          }
-                      }
-                      style={props.style}>
+        case "function" : {
+            if (props.clickHandler) {
+                navlink = ( 
+                    <span   className={props.className} 
+                            onClick={functionHandler}
+                            style={{...props.style, cursor: "pointer"}}>
+                        {props.children}
+                    </span>
+                );
+            }
+            break;
+        }
+        case "external" : {
+            navlink = ( 
+                <a      className={props.className}
+                        target="_blank"
+                        href={props.element}
+                        onClick={functionHandler}
+                        style={props.style}>
+                    {props.children}
+                </a>
+            );
+            break;
+        }
+        default: {
 
-                  {props.children}
-          </NavLink>
-          );
-          break;
+            let pathName = props.element;
+            let hash = '';
+
+            if (props.element.includes('#'))
+            {
+                const element = props.element.split('#');
+                pathName = element[0];
+                hash= element[1];
+            }
+
+            navlink = (
+                <NavLink  className={props.className}
+                        activeClassName={props.active}
+                        to={pathName}
+                        location={{pathname: pathName, hash: hash}}
+                        isActive={() => activeLinkHandler(props.fixed)}
+                        onClick={(event) => {
+                                                scrollTo(event, props.element, 0, props.toTop);
+                                                functionHandler();
+                                            }
+                        }
+                        style={props.style}>
+
+                    {props.children}
+            </NavLink>
+            );
+            break;
       }
     } 
   
