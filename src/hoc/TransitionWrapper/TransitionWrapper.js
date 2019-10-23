@@ -1,15 +1,15 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import classes from './TransitionWrapper.css';
 
 const transitionWrapper = props => {   
 
-    let childElement = useRef( false );
+    // let childElement = useRef( false );
 
-    useEffect(() => {
-        console.log(childElement.current.offsetHeight)
-    }, [props.location.pathname]);
+    // useEffect(() => {
+    //     console.log(childElement.current.offsetHeight)
+    // }, [props.location.pathname]);
 
     return (
         <TransitionGroup className={classes.OuterDiv}>
@@ -24,12 +24,7 @@ const transitionWrapper = props => {
                             }}
                             >
 
-                    <div 
-                        ref={childElement}
-                        className={classes.InnerDiv}>
-                        
-                        { props.children }
-                    </div>
+                    <div className={classes.InnerDiv}>{ props.children }</div>
             </CSSTransition>
         </TransitionGroup>
     );
