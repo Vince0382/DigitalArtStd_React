@@ -30,7 +30,7 @@ const Toolbar = props => {
             <div className={classes.Controls}>
                 {
                     window.location.pathname !== '/' 
-                        ?   <div className={classes.BackButton} onClick={() => props.history.goBack()}>&#8592; Go back</div>
+                        ?   <div className={classes.BackButton} onClick={() => props.history.push('/')}>&#8592; Go back</div>
                         :   null
                 }
 

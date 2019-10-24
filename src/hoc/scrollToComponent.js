@@ -61,20 +61,20 @@ const scrollToComponent = props => {
             }
 
             navlink = (
-                <NavLink  className={props.className}
-                        activeClassName={props.active}
-                        to={pathName}
-                        location={{pathname: pathName, hash: hash}}
-                        isActive={() => activeLinkHandler(props.fixed)}
-                        onClick={(event) => {
-                                                scrollTo(event, props.element, 0, props.toTop);
-                                                functionHandler();
-                                            }
-                        }
-                        style={props.style}>
+                <NavLink    className={props.className}
+                            activeClassName={props.active}
+                            to={pathName}
+                            location={{pathname: pathName, hash: hash}}
+                            isActive={() => activeLinkHandler(props.fixed)}
+                            onClick={(event) => {
+                                                    scrollTo(event, props.element, 0, props.toTop);
+                                                    functionHandler();
+                                                }
+                            }
+                            style={props.style}>
 
-                    {props.children}
-            </NavLink>
+                        {props.children}
+                </NavLink>
             );
             break;
       }

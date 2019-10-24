@@ -21,7 +21,7 @@ smoothScroll.polyfill();
 
 const app = (
     <Provider store={store}>
-        <BrowserRouter>
+        <BrowserRouter forceRefresh>
             <ParallaxProvider>
                 <App />
             </ParallaxProvider>

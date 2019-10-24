@@ -51,8 +51,6 @@
     "react-prefixer": "^2.0.1",
     "react-redux": "^5.1.1",
     "react-router-dom": "^4.3.1",
-    "react-router-hash-link": "^1.2.1",
-    "react-router-transition": "^1.3.0",
     "react-scroll-collision": "^1.0.5",
     "react-scroll-parallax": "^1.3.5",
     "react-transition-group": "^2.8.0",
