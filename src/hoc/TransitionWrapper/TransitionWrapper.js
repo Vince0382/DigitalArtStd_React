@@ -1,5 +1,6 @@
 import React from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { Spinner } from 'reactstrap';
 
 import classes from './TransitionWrapper.css';
 
@@ -12,10 +13,10 @@ const transitionWrapper = props => {
     // }, [props.location.pathname]);
 
     return (
-        <TransitionGroup className={classes.OuterDiv}>
+        <TransitionGroup>
             <CSSTransition 
                             key={props.location.pathname}
-                            timeout={300}
+                            timeout={1200}
                             classNames={{
                             enter: classes.Enter,
                             enterActive: classes.EnterActive,
@@ -23,8 +24,16 @@ const transitionWrapper = props => {
                             exitActive: classes.ExitActive
                             }}
                             >
-
-                    <div className={classes.InnerDiv}>{ props.children }</div>
+                <div className={classes.Wrapper}>
+                    <div className={classes.Spinner}>
+                        <Spinner style={{ width: '25rem', height: '25rem' }} type="grow" />
+                    </div>
+                    {/* <div className={`${classes.LeftLayer} ${classes.LeftLayer2}`}></div>
+                    <div className={`${classes.LeftLayer} ${classes.LeftLayer3}`}></div>
+                    <div className={`${classes.LeftLayer} ${classes.LeftLayer4}`}></div>
+                    <div className={`${classes.LeftLayer} ${classes.LeftLayer5}`}></div> */}
+                    {props.children}
+                </div>
             </CSSTransition>
         </TransitionGroup>
     );

@@ -31,7 +31,7 @@ const Mobile = React.lazy(() => {
 });
 
 const App = props => {
-
+console.log(props.location)
     const routes = (
       <Switch location={props.location}>
           <Route path='/' exact component={Page1} />
@@ -70,4 +70,4 @@ const mapStateToprops = state => {
   }
 }
 
-export default connect( mapStateToprops )( withRouter( App ));
+export default withRouter( connect( mapStateToprops )( App ));

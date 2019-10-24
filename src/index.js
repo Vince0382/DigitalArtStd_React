@@ -6,7 +6,6 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { ParallaxProvider } from 'react-scroll-parallax';
 import 'babel-polyfill';
 import smoothScroll from 'smoothscroll-polyfill';
 import { store } from './store/store';
@@ -21,10 +20,8 @@ smoothScroll.polyfill();
 
 const app = (
     <Provider store={store}>
-        <BrowserRouter forceRefresh>
-            <ParallaxProvider>
-                <App />
-            </ParallaxProvider>
+        <BrowserRouter>
+            <App />
         </BrowserRouter>
     </Provider>
 
