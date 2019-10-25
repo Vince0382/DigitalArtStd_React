@@ -13,7 +13,7 @@ import Layout from './hoc/Layout/Layout';
 import Page1 from './containers/Page1/Page1';
 
 import TransitionWrapper from './hoc/TransitionWrapper/TransitionWrapper';
-import Service from './containers/Page1/Services/Service/Service';
+import ServiceWrapper from './containers/Page1/Services/Service/ServiceWrapper/ServiceWrapper';
 // import Web from './containers/Page1/Services/Service/Web/Web';
 // import Mobile from './containers/Page1/Services/Service/Mobile/Mobile';
 
@@ -35,8 +35,8 @@ console.log(props.location)
     const routes = (
       <Switch location={props.location}>
           <Route path='/' exact component={Page1} />
-          <Route path='/web' render={props => <Service {...props}><Web /></Service>} />
-          <Route path='/mobile' render={props => <Service {...props}><Mobile /></Service>} />
+          <Route path='/web' render={props => <ServiceWrapper {...props}><Web /></ServiceWrapper>} />
+          <Route path='/mobile' render={props => <ServiceWrapper {...props}><Mobile /></ServiceWrapper>} />
           <Redirect to="/" />
       </Switch>
     );

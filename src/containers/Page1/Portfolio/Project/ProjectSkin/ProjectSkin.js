@@ -1,23 +1,36 @@
 import React from 'react';
 
-import classes from './Project.css';
+import classes from './ProjectSkin.css';
 
-import AnimatedMask from '../../../../components/Animated/Mask/AnimatedMask';
-import Slide from '../../../../components/UI/Slide/Slide';
+import AnimatedMask from '../../../../../components/Animated/Mask/AnimatedMask';
+import Slide from '../../../../../components/UI/Slide/Slide';
 
 
 const project = props => {
 
-    const mobile = props.Mobile? classes.Mobile : null
 
     return (
         <div className={classes.Project + " " + props.className} style={props.style}>
 
-            <div className={classes.Wrapper}>
+            <div className={classes.HeaderImage}>
+                
+            </div>
+
+            <div className={classes.Header}>
+                <p className={classes.Title}></p>
+                <p className={classes.Text}></p>
+            </div>
+
+            <div className={classes.MiddleLine}></div>
+
+            <div className={classes.Section}>
+                <div className={classes.Title}></div>
+
+            </div>
+            {/* <div className={classes.Wrapper}>
                 {props.children}
             </div>  
 
-            {/* <div className={classes.ProjectView}></div> */}
             <AnimatedMask className={classes.ImagesWrapper} delay="1.2s">
                 <div className={classes.Skin + " " + mobile}>
                     <div className={classes.Images}>
@@ -29,7 +42,7 @@ const project = props => {
                     <div className={classes.Slider}><Slide /></div>
                 </div>
                 
-            </AnimatedMask>
+            </AnimatedMask> */}
         </div>
     );
 }

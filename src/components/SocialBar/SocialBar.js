@@ -2,10 +2,10 @@ import React from 'react';
 
 import SocialBarItem from './SocialBarItem/SocialBarItem';
 
-import LinkedIn from '../../assets/images/linkedin.svg';
-import Facebook from '../../assets/images/facebook.svg';
-import Codepen from '../../assets/images/codepen.svg';
-import Github from '../../assets/images/github.svg';
+import LinkedIn from '../../assets/img/shared/linkedin.svg';
+import Facebook from '../../assets/img/shared/facebook.svg';
+import Codepen from '../../assets/img/shared/codepen.svg';
+import Github from '../../assets/img/shared/github.svg';
 
 const socialBar = props => {
     return (

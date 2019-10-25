@@ -31,6 +31,7 @@
 
 .Arrow svg {
     height: 60px;
+    stroke-width: 0;
 }
 
 @media (max-width: 749px){

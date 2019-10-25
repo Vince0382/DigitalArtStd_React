@@ -1,9 +1,12 @@
 import React from "react";
-
-// reactstrap components
 import { Card, Container, Row, Col, CardBody, CardTitle } from "reactstrap";
+
 import classes from './Web.css';
 
+import ipad from '../../../../../assets/img/sections/ipad3.png';
+import analyse from '../../../../../assets/img/sections/analyse.jpg';
+import validation from '../../../../../assets/img/sections/validation.jpg';
+import reception from '../../../../../assets/img/sections/jeremy-yap.jpg';
 // core components
 
 const Web = () => {
@@ -57,7 +60,7 @@ const Web = () => {
               </Col>
               <Col md="6">
                 <div className={classes.Image}>
-                  <img alt="..." src={require("../../../../../assets/img/sections/ipad3.png")}></img>
+                  <img alt="..." src={ipad}></img>
                 </div>
               </Col>
             </Row>
@@ -76,7 +79,7 @@ const Web = () => {
                         <img
                           alt="..."
                           className="img"
-                          src={require("../../../../../assets/img/sections/analyse.jpg")}
+                          src={analyse}
                         />
                       </div>
                     </Col>
@@ -123,7 +126,7 @@ const Web = () => {
                           <img
                             alt="..."
                             className="img"
-                            src={require("../../../../../assets/img/sections/validation.jpg")}
+                            src={validation}
                           />
                       </div>
                     </Col>
@@ -136,7 +139,7 @@ const Web = () => {
                           <img
                             alt="..."
                             className="img"
-                            src={require("../../../../../assets/img/sections/jeremy-yap.jpg")}
+                            src={reception}
                           />
                       </div>
                     </Col>

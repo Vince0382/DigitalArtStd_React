@@ -1,16 +1,16 @@
 import React, { useState, Suspense } from 'react';
 import { connect } from 'react-redux';
 import { injectIntl, defineMessages } from 'react-intl';
-import { Modal, ModalHeader, ModalBody } from 'reactstrap';
-import { Loader } from 'semantic-ui-react';
+import { Modal, ModalHeader, ModalBody, Spinner } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import SVG from 'react-inlinesvg';
 
 import classes from './Footer.css';
 import SocialBar from '../../../components/SocialBar/SocialBar';
-import logo from '../../../assets/images/Digital_small.svg';
 import privacyPolicy from '../../../components/PrivacyPolicy/PrivacyPolicy';
 import cookiePolicy from '../../../components/CookiePolicy/CookiePolicy';
+
+import logo from '../../../assets/img/shared/Digital_small.svg';
 
 const Footer = props => {
     const color = "white";
@@ -52,7 +52,7 @@ const Footer = props => {
         const ContentComponent = React.lazy(() => cmp )
         setModalContent({
             title : message,
-            content: <Suspense fallback={<Loader active />}><ContentComponent /></Suspense>
+            content: <Suspense fallback={<Spinner type="grow" color="secondary" />}><ContentComponent /></Suspense>
         });
         setShowModal( true );
     }

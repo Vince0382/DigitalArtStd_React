@@ -16,7 +16,7 @@ const transitionWrapper = props => {
         <TransitionGroup>
             <CSSTransition 
                             key={props.location.pathname}
-                            timeout={1200}
+                            timeout={1100}
                             classNames={{
                             enter: classes.Enter,
                             enterActive: classes.EnterActive,

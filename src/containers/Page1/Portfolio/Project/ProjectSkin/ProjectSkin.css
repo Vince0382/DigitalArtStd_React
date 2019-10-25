@@ -1,6 +1,13 @@
 .Project{
     position: relative;
     width:100%;
+    padding-top: 80px;
+}
+
+
+/* .Project{
+    position: relative;
+    width:100%;
     display: flex;
     justify-content: space-evenly;
 }
@@ -95,4 +102,4 @@
         width: 100%;
     }
 
-}
+} */

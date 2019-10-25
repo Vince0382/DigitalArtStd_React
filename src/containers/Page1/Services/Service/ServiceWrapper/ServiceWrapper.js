@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
-import classes from './Service.css';
-import * as actions from '../../../../store/actions';
+import classes from './ServiceWrapper.css';
+import * as actions from '../../../../../store/actions';
 
 const CONTROLS_COLOR = 'black';
 
-const Service = props => {
+const ServiceWrapper = props => {
 
     useEffect(() => {
         props.onChangeColor();
@@ -27,4 +27,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect( null, mapDispatchToProps)( Service );
+export default connect( null, mapDispatchToProps)( ServiceWrapper );

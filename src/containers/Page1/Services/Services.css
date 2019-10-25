@@ -92,7 +92,7 @@
     .ImageWrapper {
         display: none;
     }
-} */
+} 
 
 .Overlay {
     position: absolute;
@@ -112,5 +112,5 @@
 .Main:hover .Overlay {
     transform: scaleY(1);
     transition: all 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940);
-}
+}*/
 

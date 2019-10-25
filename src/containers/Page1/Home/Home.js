@@ -7,8 +7,8 @@ import SocialBar from '../../../components/SocialBar/SocialBar';
 import Button from '../../../components/UI/Button/Button';
 import ScrollTo from '../../../hoc/scrollToComponent';
 
-import backImg from '../../../assets/images/back.jpg';
-import logo from '../../../assets/images/Digital_small_reverse.svg';
+import backImg from '../../../assets/img/home/back.jpg';
+import logo from '../../../assets/img/home/Digital_small_reverse.svg';
 
 const home = props  => {
 

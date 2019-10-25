@@ -3,8 +3,9 @@ import { withRouter } from 'react-router-dom';
 import SVG from 'react-inlinesvg';
 
 import classes from './Toolbar.css';
-import Logo from '../../../assets/images/Digital_small.svg';
 import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle';
+
+import Logo from '../../../assets/img/shared/Digital_small.svg';
 
 
 const Toolbar = props => {

@@ -3,10 +3,10 @@ import SVG from 'react-inlinesvg';
 import ScrollTo from '../../../hoc/scrollToComponent';
 import ScrollCollision from 'react-scroll-collision';
 
-
 import classes from './SideScroll.css';
-import ArrowDown from '../../../assets/images/arrow_down.svg';
-import ArrowUp from '../../../assets/images/arrow_up.svg';
+
+import ArrowDown from '../../../assets/img/shared/arrow_down.svg';
+import ArrowUp from '../../../assets/img/shared/arrow_up.svg';
 
 
 const sideScroll = props => {

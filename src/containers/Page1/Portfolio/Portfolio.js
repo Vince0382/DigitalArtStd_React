@@ -1,226 +1,78 @@
 /*eslint-disable*/
 import React from "react";
+import { Container, Row, Col } from "reactstrap";
 
-// reactstrap components
-import {
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  UncontrolledTooltip,
-  CardTitle,
-  Container,
-  Row,
-  Col
-} from "reactstrap";
+import ProjectListItem from './ProjectListItem/ProjectListItem';
 
-// core components
+import riseUpImage from '../../../assets/img/sections/riseup.jpg';
+import andreaImage from '../../../assets/img/sections/andrea.jpg';
+import rusTaxiRomaImage from '../../../assets/img/sections/leonard-cotte.jpg';
 
-const RiseUpLink = 'https://riseup.lu';
-const AndreaLink = 'https://andreasorrentino-fbac1.firebaseapp.com';
+
+const riseUpLink = 'https://riseup.lu';
+const andreaLink = 'https://andreasorrentino-fbac1.firebaseapp.com';
 const rusTaxiRomaLink = 'https://rustaxiroma.it';
 
-const ButtonWithTooltip = props => {
 
-    return (
-        <React.Fragment>
-            <Button
-                className="btn-just-icon btn-neutral mr-1"
-                id={props.id}
-                color="link"
-                onClick={e => e.preventDefault()}>
-                
-                {props.children}
-            </Button>
-            <UncontrolledTooltip placement={'bottom'} target={props.id}>
-                {props.tooltip}
-            </UncontrolledTooltip>
-        </React.Fragment>
-    );
-}
+
 
 const SectionProject = props => {
 
+    const projects = [
+        {
+            title: 'RiseUp - Consultancy services company',
+            description: 'A young and innovative start-up at the cutting edge of technology. Their expertise is focused on agile services, coaching and project management.',
+            works: 'Web Site - Design',
+            website: riseUpLink,
+            image: riseUpImage,
+            style: {color: '#c8c8c8', borderColor: '#c8c8c8'}
+        },
+        {
+            title: 'Andrea Sorrentino - Costume designer',
+            description: 'Over the years he has endorsed many projects, including international ones, from cinema to opera, from theatre to television commercials. He is also the creator of costumes for many exhibitions in prestigious museums.',
+            works: 'Web Site - ReDesign - Digital Marketing',
+            website: andreaLink,
+            image: andreaImage,
+        },
+        {
+            title: 'RusTaxiRoma - Transport services company',
+            description: 'Russian TAXI AND EXCURSIONS in Rome. Passenger transportation, organization of tourism in Rome and Italy.',
+            works: 'Web Site - ReDesign - Digital Marketing',
+            website: rusTaxiRomaLink,
+            image: rusTaxiRomaImage,
+        }
+    ];
+
     return (
         <div className="section section-project cd-section" id="portfolio" style={{background: '#282725', padding: '0'}}>
-            {/* ********* PROJECTS 4 ********* */}
             <div className="project-4 section section-dark" style={{background: '#282725', paddingTop: '170px', paddingBottom: '100px'}}>
                 <Container>
                     <Row>
                         <Col className="ml-auto mr-auto text-center" md="8">
-                        <h2 className="title">Some of Our Work</h2>
-                        <h5 className="description">
-
-                        </h5>
+                        <h2 style={{paddingBottom: '30px'}} className="title">Some of Our Work</h2>
                         </Col>
                     </Row>
                     <div className="space-top" />
-                    <Row>
-                        <Col className="ml-auto" md="5">
-                            <Card
-                                data-background="image"
-                                style={{
-                                backgroundImage:
-                                    "url(" +
-                                    require("../../../assets/img/sections/riseup.jpg") +
-                                    ")"
-                                }}>
-
-                                    <div className="card-icon">
-                                    <i className="nc-icon nc-laptop" style={{color: '#c8c8c8', borderColor: '#c8c8c8'}} />
-                                    </div>
-                            </Card>
-                        </Col>
-                        <Col className="mr-auto" md="5">
-                        <Card className="card-plain">
-                            <CardBody>
-                            <h6 className="card-category">Web Site - Design</h6>
-                                <CardTitle tag="h3">
-                                    RiseUp - Consultancy services company
-                                </CardTitle>
-                            <p className="card-description">
-                                A young and innovative start-up at the cutting edge of technology.
-                                Their expertise is focused on agile services, coaching and project management. 
-                            </p>
-                            <CardFooter>
-                                <a href={RiseUpLink} target={'_blank'} rel={'noopener'}>
-                                    <Button
-                                        className="btn-neutral mr-1"
-                                        color="link"
-                                        onClick={e => e.preventDefault()}
-                                        >
-                                            <i className="fa fa-book mr-1" />
-                                            Visit website
-                                    </Button>
-                                </a>
-
-                                <ButtonWithTooltip id='bt_react_1' tooltip='React'>
-                                    <i className="fab fa-react" />
-                                </ButtonWithTooltip>
-                                <ButtonWithTooltip id='bt_node_1' tooltip='Node.Js'>
-                                    <i className="fab fa-node" />
-                                </ButtonWithTooltip>
-                                <ButtonWithTooltip id='bt_firebase_1' tooltip='Hosted on Google Cloud'>
-                                    <i className="fas fa-cloud" />
-                                </ButtonWithTooltip>
-                            </CardFooter>
-                            </CardBody>
-                        </Card>
-                        </Col>
-                    </Row>
-                    <br />
-                    <hr />
-                    <br />
-                    <Row>
-                        <Col className="ml-auto" md="5">
-                            <Card className="card-plain">
-                                <CardBody>
-                                    <h6 className="card-category">Web Site - ReDesign - Digital Marketing</h6>
-                                        <CardTitle tag="h3">
-                                            Andrea Sorrentino - Costume designer
-                                        </CardTitle>
-                                    <p className="card-description">
-                                        Over the years he has endorsed many projects, including international ones, from cinema to opera, from theatre to television commercials. He is also the creator of costumes for many exhibitions in prestigious museums. 
-                                    </p>
-                                    <CardFooter>
-                                        <a href={AndreaLink} target={'_blank'} rel={'noopener'}>
-                                            <Button
-                                                className="btn-neutral mr-1"
-                                                color="link"
-                                                onClick={e => e.preventDefault()}
-                                                >
-                                                    <i className="fa fa-book mr-1" />
-                                                    Visit website
-                                            </Button>
-                                        </a>
-                                        <ButtonWithTooltip id='bt_react_2' tooltip='React'>
-                                            <i className="fab fa-react" />
-                                        </ButtonWithTooltip>
-                                        <ButtonWithTooltip id='bt_node_2' tooltip='Node.Js'>
-                                            <i className="fab fa-node" />
-                                        </ButtonWithTooltip>
-                                        <ButtonWithTooltip id='bt_firebase_2' tooltip='Hosted on Google Cloud'>
-                                            <i className="fas fa-cloud" />
-                                        </ButtonWithTooltip>
-                                    </CardFooter>
-                                </CardBody>
-                            </Card>
-                        </Col>
-                        <Col className="mr-auto" md="5">
-                                <Card
-                                    data-background="image"
-                                    style={{
-                                    backgroundImage:
-                                        "url(" +
-                                        require("../../../assets/img/sections/andrea.jpg") +
-                                        ")"
-                                    }}>
-
-                                        <div className="card-icon">
-                                        <i className="nc-icon nc-laptop" />
-                                        </div>
-                                </Card>
-                        </Col>
-                    </Row>
-                    <br />
-                    <hr />
-                    <br />
-                    <Row>
-                        <Col className="ml-auto" md="5">
-                                <Card
-                                    data-background="image"
-                                    style={{
-                                    backgroundImage:
-                                        "url(" +
-                                        require("../../../assets/img/sections/leonard-cotte.jpg") +
-                                        ")"
-                                    }}>
-
-                                        <div className="card-icon">
-                                        <i className="nc-icon nc-laptop" />
-                                        </div>
-                                </Card>
-                        </Col>
-                        <Col className="mr-auto" md="5">
-                        <Card className="card-plain">
-                            <CardBody>
-                                <h6 className="card-category">Web Site - ReDesign - Digital Marketing</h6>
-                                    <CardTitle tag="h3">
-                                        RusTaxiRoma - Transport services company
-                                    </CardTitle>
-                                <p className="card-description">
-                                    Russian TAXI AND EXCURSIONS in Rome.
-                                    Passenger transportation, organization of tourism in Rome and Italy.
-                                </p>
-                                <CardFooter>
-                                    <a href={rusTaxiRomaLink} target={'_blank'} rel={'noopener'}>
-                                        <Button
-                                            className="btn-neutral mr-1"
-                                            color="link"
-                                            onClick={e => e.preventDefault()}
-                                            >
-                                                <i className="fa fa-book mr-1" />
-                                                Visit website
-                                        </Button>
-                                    </a>
-                                    <ButtonWithTooltip id='bt_react_3' tooltip='React'>
-                                        <i className="fab fa-react" />
-                                    </ButtonWithTooltip>
-                                    <ButtonWithTooltip id='bt_node_3' tooltip='Node.Js'>
-                                        <i className="fab fa-node" />
-                                    </ButtonWithTooltip>
-                                    <ButtonWithTooltip id='bt_firebase_3' tooltip='Hosted on Google Cloud'>
-                                        <i className="fas fa-cloud" />
-                                    </ButtonWithTooltip>
-                                </CardFooter>
-                            </CardBody>
-                        </Card>
-                        </Col>
-                    </Row>
-
+                    
+                    {
+                        projects.map(( project, index ) => {
+                            const line = (
+                                <React.Fragment>
+                                    <br />
+                                    <hr />
+                                    <br />
+                                </React.Fragment>
+                            )
+                            return (
+                                <React.Fragment>
+                                    <ProjectListItem project={project} index={index} align={ index % 2 === 0 ? 'left' : 'right' } />
+                                    { index < projects.length - 1 ? line : null}
+                                </React.Fragment>
+                            )
+                        })
+                    }
                 </Container>
             </div>
-        {/* ********* END PROJECTS 4 ********* */}
         </div>
     );
 }
