@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Container, Row, Col, CardBody, CardTitle } from "reactstrap";
+import { Helmet } from 'react-helmet';
 
 import classes from './Web.css';
 
@@ -12,6 +13,13 @@ import reception from '../../../../../assets/img/sections/jeremy-yap.jpg';
 const Web = () => {
   return (
       <div className="cd-section" id="features">
+
+        <Helmet>
+          <title>Web site and application development with responsive design</title>
+          <meta name="description" content="Web site and application development with responsive design. UI/UX design to provide the best user experience. React.Js | HTML | CSS" />
+        </Helmet>
+
+
         <div>
           <Col className="mr-auto ml-auto text-center" md="8">
             <h2 className="title">All you need for your web site</h2>

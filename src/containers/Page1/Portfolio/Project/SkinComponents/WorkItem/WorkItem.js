@@ -4,8 +4,10 @@ import classes from './WorkItem.css';
 
 const WorkItem = props => {
     return (
-        <div>
-
+        <div className={classes.Wrapper}>
+            <div className={classes.Work}>
+                {props.children}
+            </div>
         </div>
     );
 }

@@ -3,7 +3,6 @@ import Banner from 'react-cookie-banner';
 import { injectIntl, defineMessages } from 'react-intl';
 import cookiePolicy from '../CookiePolicy/CookiePolicy';
 import {  Modal, ModalHeader, ModalBody } from 'reactstrap';
-import { Loader } from'semantic-ui-react';
 
 const CookieBanner = props => {
 
@@ -75,15 +74,15 @@ const CookieBanner = props => {
     <div>
         <Modal isOpen={showModal} scrollable size={'lg'} toggle={() => setShowModal( false )}>
             <ModalHeader>{formatMessage( messages.modalTitle )}</ModalHeader>
-            <ModalBody><Suspense fallback={<Loader active />}><CookieComponent /></Suspense></ModalBody>
+            <ModalBody><Suspense fallback={<p></p>}><CookieComponent /></Suspense></ModalBody>
         </Modal>
         <Banner
-        styles={styles}
-        message={formatMessage( messages.message )}
-        link={<span onClick={() => setShowModal( true )}>{formatMessage( messages.moreInfo )}</span>}
-        buttonMessage={formatMessage( messages.btAccept )}
-        dismissOnScroll={false}
-        dismissOnClick={false}
+            styles={styles}
+            message={formatMessage( messages.message )}
+            link={<span onClick={() => setShowModal( true )}>{formatMessage( messages.moreInfo )}</span>}
+            buttonMessage={formatMessage( messages.btAccept )}
+            dismissOnScroll={false}
+            dismissOnClick={false}
         />
     </div>
     );

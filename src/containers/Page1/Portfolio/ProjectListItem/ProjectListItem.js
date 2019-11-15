@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from 'react-router-dom';
 
 // reactstrap components
 import {
@@ -12,11 +13,24 @@ import {
 } from "reactstrap";
 
 import ButtonWithTooltip from '../../../../components/UI/Button/ButtonWithTooltip/ButtonWithTooltip';
+import ScrollTo from "../../../../hoc/scrollToComponent";
 
 const ProjectListItem = props => {
 
     const imageSection = (
-        <Card data-background="image" style={{backgroundImage: `url(${props.project.image})`}}>
+        <Card 
+            data-background="image" 
+            style={
+                {
+                    backgroundImage: `url(${props.project.images[0]})`,
+                    cursor: 'pointer'
+                }
+            } 
+            onClick={() => props.history.push({
+                pathname: '/projectDetailed', 
+                state: { project: {...props.project}}
+            })}
+            >
             <div className="card-icon">
                 <i className="nc-icon nc-laptop" style={props.project.style} />
             </div>
@@ -26,19 +40,19 @@ const ProjectListItem = props => {
     const descSection = (
         <Card className="card-plain">
             <CardBody>
-                <h6 className="card-category">{props.project.works}</h6>
+                <h6 className="card-category">{`${props.project.type} - ${props.project.works}`}</h6>
 
                 <CardTitle tag="h3">{props.project.title}</CardTitle>
 
                 <p className="card-description">{props.project.description}</p>
 
                 <CardFooter>
-                    <a href={props.project.website} target={'_blank'} rel={'noopener'}>
+                    <ScrollTo type='external' element={props.project.website}>
                         <Button className="btn-neutral mr-1" color="link">
                             <i className="fa fa-book mr-1" />
                             Visit website
                         </Button>
-                    </a>
+                    </ScrollTo>
 
                     <ButtonWithTooltip id={`bt_react_${props.index}`} tooltip='React'>
                         <i className="fab fa-react" />
@@ -69,4 +83,4 @@ const ProjectListItem = props => {
     );
 }
 
-export default ProjectListItem;
+export default withRouter( ProjectListItem );

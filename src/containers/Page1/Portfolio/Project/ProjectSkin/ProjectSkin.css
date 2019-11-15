@@ -1,105 +1,248 @@
 .Project{
     position: relative;
     width:100%;
-    padding-top: 80px;
+    top: 0;
+    padding-top: 120px;
 }
 
-
-/* .Project{
+.Header {
+    width: 100%;
     position: relative;
-    width:100%;
+    height: 100vh;
+}
+
+.HeaderImage {
+    width: 70%;
+    transform: rotate(10deg);
+    margin: auto;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.HeaderImage img {
+    width: 100%;
+}
+
+.HeaderBanner {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    background: rgba(0,0,0,0.3);
+}
+
+.HeaderBanner .Title {
+    font-weight: 900;
+    font-size: 100px;
+}
+
+.HeaderBanner .Text {
+    width: 50%;
+    margin: auto;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.MiddleLine {
+    width: 1px;
+    height: calc(100% - 150px);
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: darkgray;
+    z-index: -1;
+}
+
+.Button {
+    margin: auto;
+    width: fit-content;
+    padding-top: 100px;
+}
+
+.SectionWork,
+.SectionDesign {
+    width: 60%;
+    margin: auto;
+}
+
+.SectionDesign {
+    padding-bottom: 100px;
+}
+
+.SectionWork .Title,
+.SectionDesign .Title {
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    color: #282725;
+    font-size: 60px;
+    background: white;
+    padding-top: 20px;
+}
+
+.SectionWork .Works {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
 }
 
-
-.ImagesWrapper {
-    width: 70%;
-}
-
-.Images {
+.DesignBox {
     width: 100%;
+    height: 600px;
     display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    align-items: start;
-    -webkit-overflow-scrolling: touch;
+    margin: 50px 0;
+    background: transparent;
+    padding: 0;
 }
 
-.Skin {
-    position: relative;
-    width: 700px;
-    margin: auto;
-    background: black;
-    padding: 10px;
-    border: 2px solid silver;
-    border-radius: 20px;
+.DesignBox .Text {
+    padding-right: 10px;
+    width: 50%;
     box-sizing: border-box;
 }
 
-.Slider {
-    background: rgba(0,0,0, 0.5);
+.DesignBox .Text h4 {
+    font-weight: 700;
+    font-size: 28px;
+    position: relative;
+    text-align: left;
+}
+
+.DesignBox .Text .Line{
+    width: 40%;
+    height: 2px;
+    background: #005983;
+    margin: 20px 0;
+}
+
+.DesignBox .Text p{
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.DesignBox .Images {
+    padding-left: 10px;
+    width: 50%;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.DesignBox .Images .Image {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px #ccc;
+    margin: 10px;
+    height: fit-content;
+}
+
+.DesignBox .Images .Image img {
+    width: 100%;
+}
+
+.DesignBox .Images .Image:nth-child(1) {
+    top: 0;
+    left: 10px;
     width: calc(100% - 20px);
-    position: absolute;
-    bottom: 10px;
 }
 
-.Mobile {
-    width: 300px;
+.DesignBox .Images .Image:nth-child(2) {
+    width: calc(50% - 20px);
 }
 
-.Mask{
-    position: relative;
-    height: 100%;
-    width: 100%;
+.DesignBox .Images .Image:nth-child(3) {
+    width: calc(50% - 20px);
 }
 
-.Image {
-    width: 100%;
-    flex: 0 0 auto;
-    padding-right: 100px;
-}
-
-.Wrapper {
-    position: relative;
-    width: 30%;
-    height: 100%;
-}
-
-@media (max-width: 1200px) {
-    .Skin {
-        width: 400px;
-    }
-
-    .Mobile {
-        width: 200px;
-    }
-}
-
-@media (max-width: 749px){
+@media screen and (max-width: 749px){
+    
     .Project {
-        width: 100%;
-        border: none;
-        border-radius: 0;
-        padding: 0;
+        padding-top: 90px;
+    }
+
+    .HeaderBanner {
+        position: static;
+        transform: translateY(20%);
+    }
+
+    .HeaderBanner .Title {
+        font-weight: 700;
+        font-size: 50px;
+    }
+    
+    .HeaderBanner .Text {
+        width: 90%;
+        font-size: 12px;
+    }
+    
+    .SectionWork,
+    .SectionDesign {
+        width: 90%;
+    }
+    
+    .DesignBox {
+        height: auto;
         display: block;
+        background: white;
+        padding: 20px 0;
     }
-
-    .ImagesWrapper {
-        width: 100%;
-        padding-bottom: 100px;
-    }
-
-    .Skin {
-        width:100%;
-    }
-
-    .Mobile {
-        width: 70%;
-    }
-
-    .Wrapper {
+    
+    .DesignBox .Text {
         width: 100%;
     }
+    
+    .DesignBox .Text h4 {
+        text-align: center;
+    }
 
-} */
+    .DesignBox .Text .Line{
+        margin: 20px auto;
+    }
+    
+    .DesignBox .Text p{
+        margin: 10px 0;
+        font-size: 20px;
+        font-weight: 200;
+    }
+    
+    .DesignBox .Images {
+        width: 100%;
+    }
+    
+    .DesignBox .Images .Image {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px #ccc;
+        margin: 10px;
+        height: fit-content;
+    }
+    
+    .DesignBox .Images .Image img {
+        width: 100%;
+    }
+    
+    .DesignBox .Images .Image:nth-child(1) {
+        top: 0;
+        left: 10px;
+        width: calc(100% - 20px);
+    }
+    
+    .DesignBox .Images .Image:nth-child(2) {
+        width: calc(50% - 20px);
+    }
+    
+    .DesignBox .Images .Image:nth-child(3) {
+        width: calc(50% - 20px);
+    }
+    
+    
+}

@@ -5,7 +5,7 @@ import SeeMoreButton from '../../../../../components/UI/Button/SeeMoreButton/See
 
 const ServiceComponent = props => {
     return (
-        <Col className='ml-auto' sm="5">
+        <Col className={!props.align || props.align === 'left' ? 'ml-auto' : 'mr-auto'} sm="5">
             <div className="info">
                 <div className="icon">
                     <i aria-hidden={true} className={`nc-icon ${props.iconClass}`} />

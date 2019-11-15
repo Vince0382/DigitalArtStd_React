@@ -1562,8 +1562,7 @@ License - nucleoapp.com/license/
 -------------------------------- */
 @font-face {
   font-family: 'nucleo-icons';
-  src: url("../fonts/nucleo-icons.eot");
-  src: url("../fonts/nucleo-icons.eot") format("embedded-opentype"), url("../fonts/nucleo-icons.woff2") format("woff2"), url("../fonts/nucleo-icons.woff") format("woff"), url("../fonts/nucleo-icons.ttf") format("truetype");
+  src: url("/fonts/nucleo-icons.woff2") format("woff2"), url("/fonts/nucleo-icons.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 
@@ -10888,14 +10887,15 @@ License - nucleoapp.com/license/
 -------------------------------- */
 @font-face {
   font-family: 'nucleo-icons';
-  src: url("../fonts/nucleo-icons.eot");
-  src: url("../fonts/nucleo-icons.eot") format("embedded-opentype"), url("../fonts/nucleo-icons.woff2") format("woff2"), url("../fonts/nucleo-icons.woff") format("woff"), url("../fonts/nucleo-icons.ttf") format("truetype");
+  src: url("/fonts/nucleo-icons.woff2") format("woff2"), url("/fonts/nucleo-icons.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
+
 
 /*------------------------
 	base class definition
 -------------------------*/
+
 .nc-icon {
   display: inline-block;
   font: normal normal normal 14px/1 'nucleo-icons';

@@ -25,9 +25,7 @@ const Toolbar = props => {
             <div className={classes.Logo}>
                 <SVG src={Logo}/>
             </div>
-            {/* <nav className={classes.DesktopOnly}>
-                {!bottom? <NavigationItems color={props.color}/> : null}
-            </nav> */}
+
             <div className={classes.Controls}>
                 {
                     window.location.pathname !== '/' 

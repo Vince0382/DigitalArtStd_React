@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { injectIntl, defineMessages } from 'react-intl';
-//import { Form, Input, TextArea, Message } from 'semantic-ui-react';
 import { checkValidity } from '../../../shared/utility';
 import {
     Button,
@@ -16,10 +15,12 @@ import {
     Col,
     Alert,
     Spinner
-  } from "reactstrap";
-
+} from "reactstrap";
+import { Parallax } from 'react-parallax';
 
 import * as actions from '../../../store/actions';
+
+import bgImage from '../../../assets/img/sections/contact-back.jpg';
 
 const Contact = props => {
 
@@ -272,13 +273,7 @@ const Contact = props => {
 
         <div className="section section-contactus cd-section" id="contact-us" style={{background: '#282725'}}>
         {/* ********* CONTACT US 1 ********* */}
-            <div
-            className="contactus-1 section-image"
-            style={{
-                backgroundImage:
-                "url(" + require("../../../assets/img/sections/rawpixel-comm.jpg") + ")"
-            }}
-            >
+            <Parallax contentClassName="contactus-1 section-image" bgImage={bgImage} strength={-300}>
                 <Container>
                     <Row>
                         <Col className="ml-auto mr-auto" md="10">
@@ -337,7 +332,7 @@ const Contact = props => {
                         </Col>
                     </Row>
                 </Container>
-            </div>
+            </Parallax>
         </div>
     );
 }

@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import {Route, Switch, withRouter, Redirect} from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Loader } from 'semantic-ui-react';
+import { Spinner } from 'reactstrap';
 import { IntlProvider, addLocaleData } from "react-intl";
 import enLocaleData from "react-intl/locale-data/en";
 import frLocaleData from "react-intl/locale-data/fr";
@@ -30,13 +30,18 @@ const Mobile = React.lazy(() => {
   return import('./containers/Page1/Services/Service/Mobile/Mobile');
 });
 
+const ProjectDetailed = React.lazy(() => {
+  return import('./containers/Page1/Portfolio/Project/ProjectSkin/ProjectSkin');
+});
+
 const App = props => {
-console.log(props.location)
+
     const routes = (
       <Switch location={props.location}>
           <Route path='/' exact component={Page1} />
           <Route path='/web' render={props => <ServiceWrapper {...props}><Web /></ServiceWrapper>} />
           <Route path='/mobile' render={props => <ServiceWrapper {...props}><Mobile /></ServiceWrapper>} />
+          <Route path='/projectDetailed' render={props => props.history.location.state ? <ProjectDetailed {...props} /> : <Redirect to="/" />} />
           <Redirect to="/" />
       </Switch>
     );
@@ -44,7 +49,7 @@ console.log(props.location)
     const wrapper = (
       <Layout>
         <TransitionWrapper location={props.location}>
-          <Suspense fallback={<Loader active />}>
+          <Suspense fallback={<Spinner style={{ width: '25rem', height: '25rem' }} type="grow" />}>
             {routes}
           </Suspense>
         </TransitionWrapper>

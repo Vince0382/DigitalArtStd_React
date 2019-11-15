@@ -38,11 +38,14 @@ const scrollToComponent = props => {
         }
         case "external" : {
             navlink = ( 
-                <a      className={props.className}
-                        target="_blank"
-                        href={props.element}
-                        onClick={functionHandler}
-                        style={props.style}>
+                <a  className={props.className}
+                    target="_blank"
+                    rel={'noopener'}
+                    href={props.element}
+                    onClick={functionHandler}
+                    style={props.style}
+                    >
+                        
                     {props.children}
                 </a>
             );

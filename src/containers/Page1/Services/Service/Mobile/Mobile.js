@@ -1,11 +1,20 @@
 import React from "react";
 import {Container, Row, Col} from "reactstrap";
+import { Helmet } from 'react-helmet';
 
 import iphone from '../../../../../assets/img/sections/iphone.png';
 
 const Mobile = props => {
     return (
         <div className="section section-feature cd-section" id="features">
+
+            
+            <Helmet>
+            <title>Mobile application development with cross-platform compatibility</title>
+            <meta name="description" content="Mobile application development using cross-platform technologies. UI/UX design to provide the best user experience. Xamarin, React Native" />
+            </Helmet>
+
+
 
             <div className="features-3">
                 <Container>
