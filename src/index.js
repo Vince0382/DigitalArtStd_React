@@ -3,7 +3,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import 'babel-polyfill';
@@ -21,8 +20,12 @@ const app = (
     </Provider>
 
 );
+
+const rootElement = document.getElementById('root');
    
+if (rootElement.hasChildNodes()) {
+    ReactDOM.hydrate(app, rootElement);
+} else {
+    ReactDOM.render(app, rootElement);
+}
 
-
-ReactDOM.render(app, document.getElementById('root'));
-registerServiceWorker();

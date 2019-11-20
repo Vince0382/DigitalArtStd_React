@@ -273,7 +273,7 @@ const Contact = props => {
 
         <div className="section section-contactus cd-section" id="contact-us" style={{background: '#282725'}}>
         {/* ********* CONTACT US 1 ********* */}
-            <Parallax contentClassName="contactus-1 section-image" bgImage={bgImage} strength={-300}>
+            <Parallax contentClassName="contactus-1 section-image" bgImage={bgImage} bgImageAlt="Contact" strength={-300}>
                 <Container>
                     <Row>
                         <Col className="ml-auto mr-auto" md="10">

@@ -77,8 +77,8 @@ const Footer = props => {
             <SocialBar className={classes.SocialBar} size="20px"/>
 
             <div className={classes.MobileNav}>
-                <Link style={{color: color }} to="/terms">Terms and Services</Link>
-                <Link style={{color: color}} to="/privacy">Privacy Policy</Link>
+                <Link style={{color: color }} title="Terms and Services" to="/terms">Terms and Services</Link>
+                <Link style={{color: color}} title="Privacy Policy" to="/privacy">Privacy Policy</Link>
             </div>
 
             <div className={classes.Flex}>

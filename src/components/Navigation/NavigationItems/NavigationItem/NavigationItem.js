@@ -27,6 +27,7 @@ const navigationItem = props => {
                 toTop={props.toTop}
                 element={props.link}
                 exact={props.exact}
+                title={props.title}
                 fixed={props.fixed}
                 clickHandler={props.clickHandler}
                 active={classes.active}

@@ -4,6 +4,7 @@ import SVG from 'react-inlinesvg';
 
 import classes from './Toolbar.css';
 import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle';
+import ScrollTo from '../../../hoc/scrollToComponent';
 
 import Logo from '../../../assets/img/shared/Digital_small.svg';
 
@@ -29,7 +30,7 @@ const Toolbar = props => {
             <div className={classes.Controls}>
                 {
                     window.location.pathname !== '/' 
-                        ?   <div className={classes.BackButton} onClick={() => props.history.push('/')}>&#8592; Go back</div>
+                        ?   <ScrollTo className={classes.BackButton} element="/" title="Home">&#8592; Go back</ScrollTo>
                         :   null
                 }
 

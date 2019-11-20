@@ -53,6 +53,7 @@
     "react-redux": "^5.1.1",
     "react-router-dom": "^4.3.1",
     "react-scroll-collision": "^1.0.5",
+    "react-snap": "^1.23.0",
     "react-transition-group": "^2.8.0",
     "reactstrap": "^8.0.1",
     "redux": "^4.0.1",
@@ -73,6 +74,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
+    "postbuild": "react-snap",
     "deploy": "npm run build && firebase deploy",
     "extract:messages": "react-intl-cra 'src/**/*.{js,jsx}' -o 'src/languages/messages/messages.json'",
     "manage:translations": "node src/translationRunner.js",

@@ -47,7 +47,7 @@ const ProjectListItem = props => {
                 <p className="card-description">{props.project.description}</p>
 
                 <CardFooter>
-                    <ScrollTo type='external' element={props.project.website}>
+                    <ScrollTo type='external' element={props.project.website} title={props.project.website}>
                         <Button className="btn-neutral mr-1" color="link">
                             <i className="fa fa-book mr-1" />
                             Visit website

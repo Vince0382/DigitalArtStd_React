@@ -10,8 +10,8 @@ const Mobile = props => {
 
             
             <Helmet>
-            <title>Mobile application development with cross-platform compatibility</title>
-            <meta name="description" content="Mobile application development using cross-platform technologies. UI/UX design to provide the best user experience. Xamarin, React Native" />
+                <title>Mobile application development with cross-platform compatibility</title>
+                <meta name="description" content="Mobile application development using cross-platform technologies. UI/UX design to provide the best user experience. Xamarin, React Native" />
             </Helmet>
 
 

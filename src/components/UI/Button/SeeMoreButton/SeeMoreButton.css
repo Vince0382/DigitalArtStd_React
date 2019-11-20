@@ -5,12 +5,17 @@
     cursor: pointer;
     width: fit-content;
     margin: 20px auto auto;
+    color: white;
+}
+
+.SeeMoreButton a {
+    color: inherit;
 }
 
 @media (min-width: 550px) {
     .SeeMoreButton:hover {
         background: white;
-        color: black !important;
+        color: black;
         transition: all 0.3s ease;
     }
 }

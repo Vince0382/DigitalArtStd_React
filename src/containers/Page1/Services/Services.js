@@ -18,7 +18,7 @@ const SectionHeader = props => {
     return (
         <div style={{background: 'black', padding: '70px 0 0'}} className="section section-feature cd-section" id="services">
 
-            <Parallax contentClassName="features-5 section-image" bgImage={bgImage} strength={-500} >
+            <Parallax contentClassName="features-5 section-image" bgImage={bgImage} bgImageAlt="Services" strength={-500} >
                 <Container>
                     <Row>
                         <div className="ml-auto mr-auto">

@@ -12,7 +12,7 @@ import ArrowUp from '../../../assets/img/shared/arrow_up.svg';
 const sideScroll = props => {
 
     return (
-        <ScrollTo element={props.up? window.location.pathname : props.element} toTop={props.up} className={props.className} style={props.style}>
+        <ScrollTo element={props.up? window.location.pathname : props.element} toTop={props.up} title="To Top" className={props.className} style={props.style}>
 
             <ScrollCollision className={classes.ScrollDiv}>
                 <div className={classes.TextDiv}>

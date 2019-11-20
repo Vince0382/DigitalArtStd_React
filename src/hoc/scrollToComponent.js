@@ -40,6 +40,7 @@ const scrollToComponent = props => {
             navlink = ( 
                 <a  className={props.className}
                     target="_blank"
+                    title={props.title}
                     rel={'noopener'}
                     href={props.element}
                     onClick={functionHandler}
@@ -67,6 +68,7 @@ const scrollToComponent = props => {
                 <NavLink    className={props.className}
                             activeClassName={props.active}
                             to={pathName}
+                            title={props.title}
                             location={{pathname: pathName, hash: hash}}
                             isActive={() => activeLinkHandler(props.fixed)}
                             onClick={(event) => {

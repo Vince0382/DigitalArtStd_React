@@ -26,7 +26,7 @@ const home = props  => {
 
     return (
         <div className={classes.Home}>
-            <img className={classes.BackImg} src={backImg} alt=''/>
+            <img className={classes.BackImg} src={backImg} alt='Back'/>
 
             <div className={classes.Content}>
                 <div className={classes.Logo + ' ' + logoClass}><SVG src={logo} /></div>
@@ -38,7 +38,7 @@ const home = props  => {
                         <h3 className={classes.Item + ' ' + itemClass}>We are creative, passionated and innovative designers and developpers</h3>
                         <div className={classes.ButtonMask + ' ' + buttonClass}>
                             <div className={classes.Button}>
-                                <ScrollTo element="/#whoweare">
+                                <ScrollTo element="/#whoweare" title="About Us">
                                     <Button clicked={props.clicked}
                                         color={"white"}
                                         bgColor1="#1E1D1C">See who we are
