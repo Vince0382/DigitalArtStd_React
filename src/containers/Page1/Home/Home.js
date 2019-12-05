@@ -35,7 +35,7 @@ const home = props  => {
                         <h2 className={classes.Item + ' ' + itemClass}>Inspired</h2>
                         <h2 className={classes.Item + ' ' + itemClass}>Digital</h2>
                         <h2 className={classes.Item + ' ' + itemClass}>Solutions.</h2>
-                        <h3 className={classes.Item + ' ' + itemClass}>We are creative, passionated and innovative designers and developpers</h3>
+                        <h3 className={classes.Item + ' ' + itemClass}>We are creative, passionate and innovative designers and developers</h3>
                         <div className={classes.ButtonMask + ' ' + buttonClass}>
                             <div className={classes.Button}>
                                 <ScrollTo element="/#whoweare" title="About Us">

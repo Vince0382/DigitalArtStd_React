@@ -32,7 +32,7 @@
     top: 50%;
     transform: translateY(-50%);
     color: white;
-    background: rgba(0,0,0,0.3);
+    background: rgba(80, 168, 236, 0.7);
 }
 
 .HeaderBanner .Title {
@@ -43,6 +43,7 @@
 .HeaderBanner .Text {
     width: 50%;
     margin: auto;
+    margin-bottom: 20px;
     font-weight: 400;
     font-size: 18px;
 }
@@ -61,7 +62,10 @@
 .Button {
     margin: auto;
     width: fit-content;
-    padding-top: 100px;
+    /* position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translatex(-50%); */
 }
 
 .SectionWork,
@@ -162,6 +166,12 @@
     width: calc(50% - 20px);
 }
 
+
+@media screen and (max-width: 1200px){
+    .HeaderBanner .Title {
+        font-size: 50px;
+    }
+}
 @media screen and (max-width: 749px){
     
     .Project {

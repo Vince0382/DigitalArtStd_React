@@ -49,13 +49,14 @@ const Project = props => {
                 <div className={classes.HeaderBanner}>
                     <p className={classes.Title}>{project.name}</p>
                     <p className={classes.Text}>{project.description}</p>
+                    <div className={classes.Button}>
+                        <ScrollTo type='external' element={project.website}>
+                            <Button bgColor1='rgba(75, 158, 101, 0.9)' color='#fff'>Visit Website</Button>
+                        </ScrollTo>
+                    </div>
                 </div>
 
-                <div className={classes.Button}>
-                    <ScrollTo type='external' element={project.website}>
-                        <Button bgColor1='rgba(0, 0, 0, 0.3)' color='#272825'>Visit Website</Button>
-                    </ScrollTo>
-                </div>
+
             </div>
             <div className={classes.MiddleLine} />
 
