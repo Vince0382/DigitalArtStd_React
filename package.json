@@ -75,7 +75,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "postbuild": "react-snap",
-    "deploy": "npm run build && firebase deploy",
+    "deploy": "yarn build && firebase deploy",
     "extract:messages": "react-intl-cra 'src/**/*.{js,jsx}' -o 'src/languages/messages/messages.json'",
     "manage:translations": "node src/translationRunner.js",
     "test": "node scripts/test.js --env=jsdom"
